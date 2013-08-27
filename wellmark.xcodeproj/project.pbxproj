@@ -1,0 +1,308 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9517CD3BEA005E4B0A /* UIKit.framework */; };
+		B0F88C9817CD3BEA005E4B0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9717CD3BEA005E4B0A /* Foundation.framework */; };
+		B0F88C9A17CD3BEA005E4B0A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9917CD3BEA005E4B0A /* CoreGraphics.framework */; };
+		B0F88CA017CD3BEA005E4B0A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0F88C9E17CD3BEA005E4B0A /* InfoPlist.strings */; };
+		B0F88CA217CD3BEA005E4B0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F88CA117CD3BEA005E4B0A /* main.m */; };
+		B0F88CA617CD3BEA005E4B0A /* LLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F88CA517CD3BEA005E4B0A /* LLAppDelegate.m */; };
+		B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CA717CD3BEA005E4B0A /* Default.png */; };
+		B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CA917CD3BEA005E4B0A /* Default@2x.png */; };
+		B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CAB17CD3BEA005E4B0A /* Default-568h@2x.png */; };
+		B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */; };
+		B0F88CB217CD3BEA005E4B0A /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F88CB117CD3BEA005E4B0A /* LLViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B0F88C9217CD3BEA005E4B0A /* wellmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wellmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0F88C9517CD3BEA005E4B0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B0F88C9717CD3BEA005E4B0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B0F88C9917CD3BEA005E4B0A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B0F88C9D17CD3BEA005E4B0A /* wellmark-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "wellmark-Info.plist"; sourceTree = "<group>"; };
+		B0F88C9F17CD3BEA005E4B0A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B0F88CA117CD3BEA005E4B0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B0F88CA317CD3BEA005E4B0A /* wellmark-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wellmark-Prefix.pch"; sourceTree = "<group>"; };
+		B0F88CA417CD3BEA005E4B0A /* LLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLAppDelegate.h; sourceTree = "<group>"; };
+		B0F88CA517CD3BEA005E4B0A /* LLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLAppDelegate.m; sourceTree = "<group>"; };
+		B0F88CA717CD3BEA005E4B0A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B0F88CA917CD3BEA005E4B0A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B0F88CAB17CD3BEA005E4B0A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B0F88CAE17CD3BEA005E4B0A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		B0F88CB017CD3BEA005E4B0A /* LLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLViewController.h; sourceTree = "<group>"; };
+		B0F88CB117CD3BEA005E4B0A /* LLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0F88C8F17CD3BEA005E4B0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */,
+				B0F88C9817CD3BEA005E4B0A /* Foundation.framework in Frameworks */,
+				B0F88C9A17CD3BEA005E4B0A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B0F88C8917CD3BEA005E4B0A = {
+			isa = PBXGroup;
+			children = (
+				B0F88C9B17CD3BEA005E4B0A /* wellmark */,
+				B0F88C9417CD3BEA005E4B0A /* Frameworks */,
+				B0F88C9317CD3BEA005E4B0A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B0F88C9317CD3BEA005E4B0A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0F88C9217CD3BEA005E4B0A /* wellmark.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0F88C9417CD3BEA005E4B0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0F88C9517CD3BEA005E4B0A /* UIKit.framework */,
+				B0F88C9717CD3BEA005E4B0A /* Foundation.framework */,
+				B0F88C9917CD3BEA005E4B0A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B0F88C9B17CD3BEA005E4B0A /* wellmark */ = {
+			isa = PBXGroup;
+			children = (
+				B0F88CA417CD3BEA005E4B0A /* LLAppDelegate.h */,
+				B0F88CA517CD3BEA005E4B0A /* LLAppDelegate.m */,
+				B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */,
+				B0F88CB017CD3BEA005E4B0A /* LLViewController.h */,
+				B0F88CB117CD3BEA005E4B0A /* LLViewController.m */,
+				B0F88C9C17CD3BEA005E4B0A /* Supporting Files */,
+			);
+			path = wellmark;
+			sourceTree = "<group>";
+		};
+		B0F88C9C17CD3BEA005E4B0A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B0F88C9D17CD3BEA005E4B0A /* wellmark-Info.plist */,
+				B0F88C9E17CD3BEA005E4B0A /* InfoPlist.strings */,
+				B0F88CA117CD3BEA005E4B0A /* main.m */,
+				B0F88CA317CD3BEA005E4B0A /* wellmark-Prefix.pch */,
+				B0F88CA717CD3BEA005E4B0A /* Default.png */,
+				B0F88CA917CD3BEA005E4B0A /* Default@2x.png */,
+				B0F88CAB17CD3BEA005E4B0A /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0F88C9117CD3BEA005E4B0A /* wellmark */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0F88CB517CD3BEA005E4B0A /* Build configuration list for PBXNativeTarget "wellmark" */;
+			buildPhases = (
+				B0F88C8E17CD3BEA005E4B0A /* Sources */,
+				B0F88C8F17CD3BEA005E4B0A /* Frameworks */,
+				B0F88C9017CD3BEA005E4B0A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wellmark;
+			productName = wellmark;
+			productReference = B0F88C9217CD3BEA005E4B0A /* wellmark.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0F88C8A17CD3BEA005E4B0A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LL;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Stroll;
+			};
+			buildConfigurationList = B0F88C8D17CD3BEA005E4B0A /* Build configuration list for PBXProject "wellmark" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B0F88C8917CD3BEA005E4B0A;
+			productRefGroup = B0F88C9317CD3BEA005E4B0A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0F88C9117CD3BEA005E4B0A /* wellmark */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0F88C9017CD3BEA005E4B0A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F88CA017CD3BEA005E4B0A /* InfoPlist.strings in Resources */,
+				B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */,
+				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
+				B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */,
+				B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0F88C8E17CD3BEA005E4B0A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0F88CA217CD3BEA005E4B0A /* main.m in Sources */,
+				B0F88CA617CD3BEA005E4B0A /* LLAppDelegate.m in Sources */,
+				B0F88CB217CD3BEA005E4B0A /* LLViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B0F88C9E17CD3BEA005E4B0A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F88C9F17CD3BEA005E4B0A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F88CAE17CD3BEA005E4B0A /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0F88CB317CD3BEA005E4B0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		B0F88CB417CD3BEA005E4B0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0F88CB617CD3BEA005E4B0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
+				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B0F88CB717CD3BEA005E4B0A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
+				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0F88C8D17CD3BEA005E4B0A /* Build configuration list for PBXProject "wellmark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F88CB317CD3BEA005E4B0A /* Debug */,
+				B0F88CB417CD3BEA005E4B0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0F88CB517CD3BEA005E4B0A /* Build configuration list for PBXNativeTarget "wellmark" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0F88CB617CD3BEA005E4B0A /* Debug */,
+				B0F88CB717CD3BEA005E4B0A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0F88C8A17CD3BEA005E4B0A /* Project object */;
+}
