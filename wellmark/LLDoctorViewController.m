@@ -44,6 +44,13 @@
     return cell;
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [[self insuranceTextField1] resignFirstResponder];
+    [[self insuranceTextField2] resignFirstResponder];
+
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     _selectedRow = [indexPath row];
@@ -66,6 +73,8 @@
 {
     if ([[_insuranceTextField1 text] length] && [[_insuranceTextField2 text] length]) {
         [_nextButtonItem setEnabled:YES];
+    } else {
+        [_nextButtonItem setEnabled:NO];
     }
     return YES;
 }

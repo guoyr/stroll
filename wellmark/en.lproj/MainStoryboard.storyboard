@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="TNW-bx-Nh4" customClass="LLDoctorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pqx-zx-aGR">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select Doctor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctz-Vg-Hiq">
@@ -103,7 +103,7 @@
             <objects>
                 <viewController id="gkm-uw-sif" customClass="LLTreatmentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lSw-2y-b9L">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Treatment Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMY-Cl-ksl">
@@ -152,6 +152,7 @@
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="nextButtonItem" destination="tPT-qy-32d" id="OQY-OI-Aee"/>
                         <outlet property="treatmentTableView" destination="HZ6-XB-9ct" id="14u-LC-3n3"/>
                         <outlet property="view" destination="lSw-2y-b9L" id="1Zv-cB-JOy"/>
                     </connections>
@@ -165,7 +166,7 @@
             <objects>
                 <viewController id="N6b-YJ-dxH" customClass="LLLocationsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UqU-SY-X9h">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dx-UK-amI">
@@ -177,9 +178,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5dx-UK-amI" firstAttribute="centerX" secondItem="UqU-SY-X9h" secondAttribute="centerX" type="default" id="7VI-MX-Ieq"/>
-                            <constraint firstAttribute="bottom" secondItem="5dx-UK-amI" secondAttribute="bottom" constant="76" id="9AA-eJ-uzq"/>
-                            <constraint firstItem="5dx-UK-amI" firstAttribute="top" secondItem="UqU-SY-X9h" secondAttribute="top" constant="75" id="I30-wV-diL"/>
+                            <constraint firstItem="5dx-UK-amI" firstAttribute="centerY" secondItem="UqU-SY-X9h" secondAttribute="centerY" type="default" id="Syn-9C-oHH"/>
                             <constraint firstItem="5dx-UK-amI" firstAttribute="leading" secondItem="UqU-SY-X9h" secondAttribute="leading" constant="102" id="eGG-zn-0TW"/>
+                            <constraint firstItem="5dx-UK-amI" firstAttribute="top" secondItem="UqU-SY-X9h" secondAttribute="top" constant="92" id="vSL-fI-L4s"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -198,7 +199,7 @@
             <objects>
                 <viewController id="tqg-Y3-0SU" customClass="LLSchedulingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q1p-QL-2Qw">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scheduling Options" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMX-L0-4gn">
@@ -215,6 +216,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="bookNowClicked:" destination="tqg-Y3-0SU" eventType="touchUpInside" id="DaG-ef-Tm4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKY-dx-c6U">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -263,24 +267,14 @@
             </objects>
             <point key="canvasLocation" x="4901" y="-561"/>
         </scene>
-        <!--View Controller-->
+        <!--Booking View Controller-->
         <scene sceneID="AuK-rw-LDz">
             <objects>
-                <viewController id="b2R-AE-7yU" sceneMemberID="viewController">
+                <viewController id="b2R-AE-7yU" customClass="LLBookingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w3h-6f-gms">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6YX-Wc-AKM">
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="302" id="gWO-tE-5Eo"/>
-                                    <constraint firstAttribute="height" constant="21" id="xnC-yn-m6l"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Call now" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zum-G8-gQV">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="HoQ-bx-bRM"/>
@@ -303,6 +297,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="WG2-Nl-MJc" kind="push" id="AfE-rG-UXV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vj3-q3-J4i">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -313,6 +310,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="N6b-YJ-dxH" kind="push" id="txI-sB-wIl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ski-Mu-Fda">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -342,23 +342,31 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nF9-bC-KK2">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="319" id="EQf-EE-eJZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nF9-bC-KK2" firstAttribute="top" secondItem="w3h-6f-gms" secondAttribute="top" constant="135" id="7ih-Qp-THQ"/>
                             <constraint firstItem="Vj3-q3-J4i" firstAttribute="leading" secondItem="w3h-6f-gms" secondAttribute="leading" constant="403" id="9I3-ZP-q7M"/>
                             <constraint firstItem="zum-G8-gQV" firstAttribute="top" secondItem="w3h-6f-gms" secondAttribute="top" constant="226" id="EhH-gP-O8E"/>
+                            <constraint firstItem="zfn-n9-Fkb" firstAttribute="centerX" secondItem="nF9-bC-KK2" secondAttribute="centerX" type="default" id="IMj-TY-0Uf"/>
                             <constraint firstItem="eIB-By-tWC" firstAttribute="leading" secondItem="9cc-mK-ekC" secondAttribute="leading" type="default" id="L1a-Lb-Ljw"/>
-                            <constraint firstItem="zfn-n9-Fkb" firstAttribute="leading" secondItem="6YX-Wc-AKM" secondAttribute="leading" type="default" id="VAD-TJ-1ks"/>
                             <constraint firstItem="9cc-mK-ekC" firstAttribute="leading" secondItem="zum-G8-gQV" secondAttribute="leading" type="default" id="WJF-h5-QS1"/>
                             <constraint firstAttribute="trailing" secondItem="Ski-Mu-Fda" secondAttribute="trailing" constant="367" id="Ykh-S5-y0q"/>
                             <constraint firstItem="Vj3-q3-J4i" firstAttribute="baseline" secondItem="eIB-By-tWC" secondAttribute="baseline" type="default" id="bMj-Ap-oSH"/>
-                            <constraint firstItem="6YX-Wc-AKM" firstAttribute="top" secondItem="w3h-6f-gms" secondAttribute="top" constant="141" id="fdr-kn-0JT"/>
-                            <constraint firstItem="6YX-Wc-AKM" firstAttribute="leading" secondItem="w3h-6f-gms" secondAttribute="leading" constant="285" id="iBO-3e-riu"/>
                             <constraint firstItem="zfn-n9-Fkb" firstAttribute="leading" secondItem="zum-G8-gQV" secondAttribute="leading" type="default" id="jUD-pf-ZVI"/>
+                            <constraint firstItem="zfn-n9-Fkb" firstAttribute="top" secondItem="nF9-bC-KK2" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="jzi-Ug-aTX"/>
                             <constraint firstItem="Ski-Mu-Fda" firstAttribute="baseline" secondItem="Vj3-q3-J4i" secondAttribute="baseline" type="default" id="rSE-Qe-ytg"/>
+                            <constraint firstItem="nF9-bC-KK2" firstAttribute="leading" secondItem="w3h-6f-gms" secondAttribute="leading" constant="279" id="sOL-gC-dUQ"/>
                             <constraint firstAttribute="bottom" secondItem="eIB-By-tWC" secondAttribute="bottom" constant="298" id="u6p-NP-sVB"/>
                             <constraint firstItem="veO-iu-CCg" firstAttribute="baseline" secondItem="zum-G8-gQV" secondAttribute="baseline" type="default" id="uhQ-4W-vgz"/>
-                            <constraint firstItem="zfn-n9-Fkb" firstAttribute="top" secondItem="w3h-6f-gms" secondAttribute="top" constant="164" id="vop-aU-KUM"/>
                             <constraint firstItem="zfn-n9-Fkb" firstAttribute="trailing" secondItem="veO-iu-CCg" secondAttribute="trailing" type="default" id="wU0-vb-E0s"/>
                             <constraint firstItem="9cc-mK-ekC" firstAttribute="top" secondItem="w3h-6f-gms" secondAttribute="top" constant="329" id="wZD-aL-gwR"/>
                         </constraints>
@@ -366,7 +374,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="5rm-4G-Kwd"/>
                     <connections>
-                        <segue destination="WG2-Nl-MJc" kind="push" identifier="showConfirmation" id="89E-cW-f8a"/>
+                        <outlet property="abort" destination="Ski-Mu-Fda" id="djJ-Cq-a59"/>
+                        <outlet property="doctorAddress" destination="zfn-n9-Fkb" id="ATX-pK-Cow"/>
+                        <outlet property="doctorNumber" destination="veO-iu-CCg" id="uv6-Pv-5kt"/>
+                        <outlet property="retry" destination="Vj3-q3-J4i" id="CkS-m3-J8r"/>
+                        <outlet property="success" destination="eIB-By-tWC" id="ira-L5-gcv"/>
+                        <outlet property="treatmentLabel" destination="nF9-bC-KK2" id="G2P-TA-whS"/>
+                        <outlet property="view" destination="w3h-6f-gms" id="UD1-1b-yWl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0I-QO-Dit" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,7 +392,7 @@
             <objects>
                 <viewController id="WG2-Nl-MJc" customClass="LLConfirmViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DOQ-Ey-JH8">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Confirm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePZ-ml-xCY">
@@ -492,7 +506,7 @@
             <objects>
                 <viewController id="rAp-W1-sT8" customClass="LLConfirmedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Te-mH-Nmc">
-                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Confirmed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQU-fv-Ydz">
@@ -556,6 +570,17 @@
         </scene>
     </scenes>
     <classes>
+        <class className="LLBookingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LLBookingViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="abort" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="doctorAddress" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doctorNumber" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="retry" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="success" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="treatmentLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="LLConfirmViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LLConfirmViewController.h"/>
         </class>
@@ -581,6 +606,7 @@
         <class className="LLSchedulingViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LLSchedulingViewController.h"/>
             <relationships>
+                <relationship kind="action" name="bookNowClicked:"/>
                 <relationship kind="outlet" name="bookLater" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookNow" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="bookUpFront" candidateClass="UIButton"/>
@@ -589,6 +615,7 @@
         <class className="LLTreatmentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LLTreatmentViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="nextButtonItem" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="treatmentTableView" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -605,6 +632,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="txI-sB-wIl"/>
         <segue reference="yQv-4O-Evy"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,6 +12,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *treatmentTableView;
-@property (nonatomic, assign) NSString *patientName;
+@property (nonatomic, strong) NSString *patientName;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButtonItem;
 
 @end

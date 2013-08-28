@@ -10,4 +10,9 @@
 
 @interface LLLocationView : UIView
 
+@property (nonatomic, assign) int index;
+
+- (void)setProviderAltName:(NSString *)name;
+- (void)setProviderDistance:(NSString *)dist;
+
 @end

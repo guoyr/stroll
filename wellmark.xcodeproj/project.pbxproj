@@ -16,6 +16,22 @@
 		B02F17BC17CD7CDC007EA8A7 /* LLConfirmedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17BB17CD7CDC007EA8A7 /* LLConfirmedViewController.m */; };
 		B02F17BE17CD8094007EA8A7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02F17BD17CD8094007EA8A7 /* MessageUI.framework */; };
 		B02F17C117CD90E5007EA8A7 /* LLBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17C017CD90E5007EA8A7 /* LLBookingViewController.m */; };
+		B02F180917CD9A79007EA8A7 /* MBBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17C517CD9A79007EA8A7 /* MBBaseRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F180A17CD9A79007EA8A7 /* MBHTTPConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17C817CD9A79007EA8A7 /* MBHTTPConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F180B17CD9A79007EA8A7 /* MBHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17CA17CD9A79007EA8A7 /* MBHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F180C17CD9A79007EA8A7 /* MBImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17CC17CD9A79007EA8A7 /* MBImageRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F180D17CD9A79007EA8A7 /* MBJSONRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17CE17CD9A79007EA8A7 /* MBJSONRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F180E17CD9A79007EA8A7 /* MBMultipartFormData.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17D017CD9A79007EA8A7 /* MBMultipartFormData.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F180F17CD9A79007EA8A7 /* MBNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17D217CD9A79007EA8A7 /* MBNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F181017CD9A79007EA8A7 /* MBRequestError.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17D517CD9A79007EA8A7 /* MBRequestError.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F181117CD9A79007EA8A7 /* MBURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17D917CD9A79007EA8A7 /* MBURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F181217CD9A79007EA8A7 /* MBXMLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17DC17CD9A79007EA8A7 /* MBXMLRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F181317CD9A79007EA8A7 /* NSDictionary+MBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17DE17CD9A79007EA8A7 /* NSDictionary+MBRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F181417CD9A79007EA8A7 /* NSString+MBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17E017CD9A79007EA8A7 /* NSString+MBRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F181517CD9A79007EA8A7 /* NSURL+MBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17E217CD9A79007EA8A7 /* NSURL+MBRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B02F182617CD9A79007EA8A7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B02F180717CD9A79007EA8A7 /* LICENSE */; };
+		B02F182717CD9A79007EA8A7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B02F180817CD9A79007EA8A7 /* README.md */; };
+		B02F182F17CDAA4A007EA8A7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02F182E17CDAA4A007EA8A7 /* CoreLocation.framework */; };
 		B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9517CD3BEA005E4B0A /* UIKit.framework */; };
 		B0F88C9817CD3BEA005E4B0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9717CD3BEA005E4B0A /* Foundation.framework */; };
 		B0F88C9A17CD3BEA005E4B0A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9917CD3BEA005E4B0A /* CoreGraphics.framework */; };
@@ -46,6 +62,40 @@
 		B02F17BD17CD8094007EA8A7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B02F17BF17CD90E5007EA8A7 /* LLBookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookingViewController.h; sourceTree = "<group>"; };
 		B02F17C017CD90E5007EA8A7 /* LLBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBookingViewController.m; sourceTree = "<group>"; };
+		B02F17C417CD9A79007EA8A7 /* MBBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBaseRequest.h; sourceTree = "<group>"; };
+		B02F17C517CD9A79007EA8A7 /* MBBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBBaseRequest.m; sourceTree = "<group>"; };
+		B02F17C617CD9A79007EA8A7 /* MBBaseRequestSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBBaseRequestSubclass.h; sourceTree = "<group>"; };
+		B02F17C717CD9A79007EA8A7 /* MBHTTPConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBHTTPConnectionOperation.h; sourceTree = "<group>"; };
+		B02F17C817CD9A79007EA8A7 /* MBHTTPConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBHTTPConnectionOperation.m; sourceTree = "<group>"; };
+		B02F17C917CD9A79007EA8A7 /* MBHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBHTTPRequest.h; sourceTree = "<group>"; };
+		B02F17CA17CD9A79007EA8A7 /* MBHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBHTTPRequest.m; sourceTree = "<group>"; };
+		B02F17CB17CD9A79007EA8A7 /* MBImageRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBImageRequest.h; sourceTree = "<group>"; };
+		B02F17CC17CD9A79007EA8A7 /* MBImageRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBImageRequest.m; sourceTree = "<group>"; };
+		B02F17CD17CD9A79007EA8A7 /* MBJSONRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBJSONRequest.h; sourceTree = "<group>"; };
+		B02F17CE17CD9A79007EA8A7 /* MBJSONRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBJSONRequest.m; sourceTree = "<group>"; };
+		B02F17CF17CD9A79007EA8A7 /* MBMultipartFormData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBMultipartFormData.h; sourceTree = "<group>"; };
+		B02F17D017CD9A79007EA8A7 /* MBMultipartFormData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBMultipartFormData.m; sourceTree = "<group>"; };
+		B02F17D117CD9A79007EA8A7 /* MBNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		B02F17D217CD9A79007EA8A7 /* MBNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		B02F17D317CD9A79007EA8A7 /* MBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRequest.h; sourceTree = "<group>"; };
+		B02F17D417CD9A79007EA8A7 /* MBRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRequestError.h; sourceTree = "<group>"; };
+		B02F17D517CD9A79007EA8A7 /* MBRequestError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBRequestError.m; sourceTree = "<group>"; };
+		B02F17D617CD9A79007EA8A7 /* MBRequestLocalization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRequestLocalization.h; sourceTree = "<group>"; };
+		B02F17D717CD9A79007EA8A7 /* MBRequestLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBRequestLog.h; sourceTree = "<group>"; };
+		B02F17D817CD9A79007EA8A7 /* MBURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBURLConnectionOperation.h; sourceTree = "<group>"; };
+		B02F17D917CD9A79007EA8A7 /* MBURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBURLConnectionOperation.m; sourceTree = "<group>"; };
+		B02F17DA17CD9A79007EA8A7 /* MBURLConnectionOperationSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBURLConnectionOperationSubclass.h; sourceTree = "<group>"; };
+		B02F17DB17CD9A79007EA8A7 /* MBXMLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBXMLRequest.h; sourceTree = "<group>"; };
+		B02F17DC17CD9A79007EA8A7 /* MBXMLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBXMLRequest.m; sourceTree = "<group>"; };
+		B02F17DD17CD9A79007EA8A7 /* NSDictionary+MBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MBRequest.h"; sourceTree = "<group>"; };
+		B02F17DE17CD9A79007EA8A7 /* NSDictionary+MBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MBRequest.m"; sourceTree = "<group>"; };
+		B02F17DF17CD9A79007EA8A7 /* NSString+MBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MBRequest.h"; sourceTree = "<group>"; };
+		B02F17E017CD9A79007EA8A7 /* NSString+MBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MBRequest.m"; sourceTree = "<group>"; };
+		B02F17E117CD9A79007EA8A7 /* NSURL+MBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+MBRequest.h"; sourceTree = "<group>"; };
+		B02F17E217CD9A79007EA8A7 /* NSURL+MBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+MBRequest.m"; sourceTree = "<group>"; };
+		B02F180717CD9A79007EA8A7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B02F180817CD9A79007EA8A7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		B02F182E17CDAA4A007EA8A7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B0F88C9217CD3BEA005E4B0A /* wellmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wellmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F88C9517CD3BEA005E4B0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0F88C9717CD3BEA005E4B0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02F182F17CDAA4A007EA8A7 /* CoreLocation.framework in Frameworks */,
 				B02F17BE17CD8094007EA8A7 /* MessageUI.framework in Frameworks */,
 				B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */,
 				B0F88C9817CD3BEA005E4B0A /* Foundation.framework in Frameworks */,
@@ -77,13 +128,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B02F17C217CD9A79007EA8A7 /* MBRequest */ = {
+			isa = PBXGroup;
+			children = (
+				B02F17C317CD9A79007EA8A7 /* Classes */,
+				B02F180717CD9A79007EA8A7 /* LICENSE */,
+				B02F180817CD9A79007EA8A7 /* README.md */,
+			);
+			path = MBRequest;
+			sourceTree = "<group>";
+		};
+		B02F17C317CD9A79007EA8A7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B02F17C417CD9A79007EA8A7 /* MBBaseRequest.h */,
+				B02F17C517CD9A79007EA8A7 /* MBBaseRequest.m */,
+				B02F17C617CD9A79007EA8A7 /* MBBaseRequestSubclass.h */,
+				B02F17C717CD9A79007EA8A7 /* MBHTTPConnectionOperation.h */,
+				B02F17C817CD9A79007EA8A7 /* MBHTTPConnectionOperation.m */,
+				B02F17C917CD9A79007EA8A7 /* MBHTTPRequest.h */,
+				B02F17CA17CD9A79007EA8A7 /* MBHTTPRequest.m */,
+				B02F17CB17CD9A79007EA8A7 /* MBImageRequest.h */,
+				B02F17CC17CD9A79007EA8A7 /* MBImageRequest.m */,
+				B02F17CD17CD9A79007EA8A7 /* MBJSONRequest.h */,
+				B02F17CE17CD9A79007EA8A7 /* MBJSONRequest.m */,
+				B02F17CF17CD9A79007EA8A7 /* MBMultipartFormData.h */,
+				B02F17D017CD9A79007EA8A7 /* MBMultipartFormData.m */,
+				B02F17D117CD9A79007EA8A7 /* MBNetworkActivityIndicatorManager.h */,
+				B02F17D217CD9A79007EA8A7 /* MBNetworkActivityIndicatorManager.m */,
+				B02F17D317CD9A79007EA8A7 /* MBRequest.h */,
+				B02F17D417CD9A79007EA8A7 /* MBRequestError.h */,
+				B02F17D517CD9A79007EA8A7 /* MBRequestError.m */,
+				B02F17D617CD9A79007EA8A7 /* MBRequestLocalization.h */,
+				B02F17D717CD9A79007EA8A7 /* MBRequestLog.h */,
+				B02F17D817CD9A79007EA8A7 /* MBURLConnectionOperation.h */,
+				B02F17D917CD9A79007EA8A7 /* MBURLConnectionOperation.m */,
+				B02F17DA17CD9A79007EA8A7 /* MBURLConnectionOperationSubclass.h */,
+				B02F17DB17CD9A79007EA8A7 /* MBXMLRequest.h */,
+				B02F17DC17CD9A79007EA8A7 /* MBXMLRequest.m */,
+				B02F17DD17CD9A79007EA8A7 /* NSDictionary+MBRequest.h */,
+				B02F17DE17CD9A79007EA8A7 /* NSDictionary+MBRequest.m */,
+				B02F17DF17CD9A79007EA8A7 /* NSString+MBRequest.h */,
+				B02F17E017CD9A79007EA8A7 /* NSString+MBRequest.m */,
+				B02F17E117CD9A79007EA8A7 /* NSURL+MBRequest.h */,
+				B02F17E217CD9A79007EA8A7 /* NSURL+MBRequest.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		B0F88C8917CD3BEA005E4B0A = {
 			isa = PBXGroup;
 			children = (
-				B02F17BD17CD8094007EA8A7 /* MessageUI.framework */,
+				B02F182E17CDAA4A007EA8A7 /* CoreLocation.framework */,
 				B0F88C9B17CD3BEA005E4B0A /* wellmark */,
 				B0F88C9417CD3BEA005E4B0A /* Frameworks */,
 				B0F88C9317CD3BEA005E4B0A /* Products */,
+				B02F17C217CD9A79007EA8A7 /* MBRequest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +198,7 @@
 		B0F88C9417CD3BEA005E4B0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B02F17BD17CD8094007EA8A7 /* MessageUI.framework */,
 				B0F88C9517CD3BEA005E4B0A /* UIKit.framework */,
 				B0F88C9717CD3BEA005E4B0A /* Foundation.framework */,
 				B0F88C9917CD3BEA005E4B0A /* CoreGraphics.framework */,
@@ -114,19 +215,19 @@
 				B02F17A617CD6B5C007EA8A7 /* LLDoctorViewController.m */,
 				B02F17A817CD6CE7007EA8A7 /* LLTreatmentViewController.h */,
 				B02F17A917CD6CE7007EA8A7 /* LLTreatmentViewController.m */,
-				B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */,
-				B02F17BF17CD90E5007EA8A7 /* LLBookingViewController.h */,
-				B02F17C017CD90E5007EA8A7 /* LLBookingViewController.m */,
-				B02F17B717CD7CD4007EA8A7 /* LLConfirmViewController.h */,
-				B02F17B817CD7CD5007EA8A7 /* LLConfirmViewController.m */,
-				B02F17BA17CD7CDC007EA8A7 /* LLConfirmedViewController.h */,
-				B02F17BB17CD7CDC007EA8A7 /* LLConfirmedViewController.m */,
-				B02F17B417CD7BC6007EA8A7 /* LLSchedulingViewController.h */,
-				B02F17B517CD7BC6007EA8A7 /* LLSchedulingViewController.m */,
 				B02F17B117CD7607007EA8A7 /* LLLocationView.h */,
 				B02F17B217CD7607007EA8A7 /* LLLocationView.m */,
 				B02F17AE17CD757C007EA8A7 /* LLLocationsViewController.h */,
 				B02F17AF17CD757C007EA8A7 /* LLLocationsViewController.m */,
+				B02F17B417CD7BC6007EA8A7 /* LLSchedulingViewController.h */,
+				B02F17B517CD7BC6007EA8A7 /* LLSchedulingViewController.m */,
+				B02F17BF17CD90E5007EA8A7 /* LLBookingViewController.h */,
+				B02F17C017CD90E5007EA8A7 /* LLBookingViewController.m */,
+				B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */,
+				B02F17B717CD7CD4007EA8A7 /* LLConfirmViewController.h */,
+				B02F17B817CD7CD5007EA8A7 /* LLConfirmViewController.m */,
+				B02F17BA17CD7CDC007EA8A7 /* LLConfirmedViewController.h */,
+				B02F17BB17CD7CDC007EA8A7 /* LLConfirmedViewController.m */,
 				B0F88C9C17CD3BEA005E4B0A /* Supporting Files */,
 			);
 			path = wellmark;
@@ -203,6 +304,8 @@
 				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
 				B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */,
 				B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */,
+				B02F182617CD9A79007EA8A7 /* LICENSE in Resources */,
+				B02F182717CD9A79007EA8A7 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +326,19 @@
 				B02F17B917CD7CD5007EA8A7 /* LLConfirmViewController.m in Sources */,
 				B02F17BC17CD7CDC007EA8A7 /* LLConfirmedViewController.m in Sources */,
 				B02F17C117CD90E5007EA8A7 /* LLBookingViewController.m in Sources */,
+				B02F180917CD9A79007EA8A7 /* MBBaseRequest.m in Sources */,
+				B02F180A17CD9A79007EA8A7 /* MBHTTPConnectionOperation.m in Sources */,
+				B02F180B17CD9A79007EA8A7 /* MBHTTPRequest.m in Sources */,
+				B02F180C17CD9A79007EA8A7 /* MBImageRequest.m in Sources */,
+				B02F180D17CD9A79007EA8A7 /* MBJSONRequest.m in Sources */,
+				B02F180E17CD9A79007EA8A7 /* MBMultipartFormData.m in Sources */,
+				B02F180F17CD9A79007EA8A7 /* MBNetworkActivityIndicatorManager.m in Sources */,
+				B02F181017CD9A79007EA8A7 /* MBRequestError.m in Sources */,
+				B02F181117CD9A79007EA8A7 /* MBURLConnectionOperation.m in Sources */,
+				B02F181217CD9A79007EA8A7 /* MBXMLRequest.m in Sources */,
+				B02F181317CD9A79007EA8A7 /* NSDictionary+MBRequest.m in Sources */,
+				B02F181417CD9A79007EA8A7 /* NSString+MBRequest.m in Sources */,
+				B02F181517CD9A79007EA8A7 /* NSURL+MBRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
