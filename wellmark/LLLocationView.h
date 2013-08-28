@@ -1,5 +1,5 @@
 //
-//  LLViewController.h
+//  LLLocationView.h
 //  wellmark
 //
 //  Created by Robert Guo on 8/27/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LLViewController : UIViewController
+@interface LLLocationView : UIView
 
 @end

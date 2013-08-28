@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B02F17A717CD6B5C007EA8A7 /* LLDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17A617CD6B5C007EA8A7 /* LLDoctorViewController.m */; };
+		B02F17AA17CD6CE7007EA8A7 /* LLTreatmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17A917CD6CE7007EA8A7 /* LLTreatmentViewController.m */; };
+		B02F17B017CD757C007EA8A7 /* LLLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17AF17CD757C007EA8A7 /* LLLocationsViewController.m */; };
+		B02F17B317CD7607007EA8A7 /* LLLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17B217CD7607007EA8A7 /* LLLocationView.m */; };
+		B02F17B617CD7BC6007EA8A7 /* LLSchedulingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17B517CD7BC6007EA8A7 /* LLSchedulingViewController.m */; };
+		B02F17B917CD7CD5007EA8A7 /* LLConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17B817CD7CD5007EA8A7 /* LLConfirmViewController.m */; };
+		B02F17BC17CD7CDC007EA8A7 /* LLConfirmedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17BB17CD7CDC007EA8A7 /* LLConfirmedViewController.m */; };
+		B02F17BE17CD8094007EA8A7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02F17BD17CD8094007EA8A7 /* MessageUI.framework */; };
+		B02F17C117CD90E5007EA8A7 /* LLBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17C017CD90E5007EA8A7 /* LLBookingViewController.m */; };
 		B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9517CD3BEA005E4B0A /* UIKit.framework */; };
 		B0F88C9817CD3BEA005E4B0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9717CD3BEA005E4B0A /* Foundation.framework */; };
 		B0F88C9A17CD3BEA005E4B0A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9917CD3BEA005E4B0A /* CoreGraphics.framework */; };
@@ -17,10 +26,26 @@
 		B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CA917CD3BEA005E4B0A /* Default@2x.png */; };
 		B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CAB17CD3BEA005E4B0A /* Default-568h@2x.png */; };
 		B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */; };
-		B0F88CB217CD3BEA005E4B0A /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F88CB117CD3BEA005E4B0A /* LLViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B02F17A517CD6B5C007EA8A7 /* LLDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDoctorViewController.h; sourceTree = "<group>"; };
+		B02F17A617CD6B5C007EA8A7 /* LLDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDoctorViewController.m; sourceTree = "<group>"; };
+		B02F17A817CD6CE7007EA8A7 /* LLTreatmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTreatmentViewController.h; sourceTree = "<group>"; };
+		B02F17A917CD6CE7007EA8A7 /* LLTreatmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLTreatmentViewController.m; sourceTree = "<group>"; };
+		B02F17AE17CD757C007EA8A7 /* LLLocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLLocationsViewController.h; sourceTree = "<group>"; };
+		B02F17AF17CD757C007EA8A7 /* LLLocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLLocationsViewController.m; sourceTree = "<group>"; };
+		B02F17B117CD7607007EA8A7 /* LLLocationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLLocationView.h; sourceTree = "<group>"; };
+		B02F17B217CD7607007EA8A7 /* LLLocationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLLocationView.m; sourceTree = "<group>"; };
+		B02F17B417CD7BC6007EA8A7 /* LLSchedulingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSchedulingViewController.h; sourceTree = "<group>"; };
+		B02F17B517CD7BC6007EA8A7 /* LLSchedulingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSchedulingViewController.m; sourceTree = "<group>"; };
+		B02F17B717CD7CD4007EA8A7 /* LLConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLConfirmViewController.h; sourceTree = "<group>"; };
+		B02F17B817CD7CD5007EA8A7 /* LLConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLConfirmViewController.m; sourceTree = "<group>"; };
+		B02F17BA17CD7CDC007EA8A7 /* LLConfirmedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLConfirmedViewController.h; sourceTree = "<group>"; };
+		B02F17BB17CD7CDC007EA8A7 /* LLConfirmedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLConfirmedViewController.m; sourceTree = "<group>"; };
+		B02F17BD17CD8094007EA8A7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		B02F17BF17CD90E5007EA8A7 /* LLBookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookingViewController.h; sourceTree = "<group>"; };
+		B02F17C017CD90E5007EA8A7 /* LLBookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBookingViewController.m; sourceTree = "<group>"; };
 		B0F88C9217CD3BEA005E4B0A /* wellmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wellmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F88C9517CD3BEA005E4B0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0F88C9717CD3BEA005E4B0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -35,8 +60,6 @@
 		B0F88CA917CD3BEA005E4B0A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B0F88CAB17CD3BEA005E4B0A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B0F88CAE17CD3BEA005E4B0A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		B0F88CB017CD3BEA005E4B0A /* LLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LLViewController.h; sourceTree = "<group>"; };
-		B0F88CB117CD3BEA005E4B0A /* LLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LLViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02F17BE17CD8094007EA8A7 /* MessageUI.framework in Frameworks */,
 				B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */,
 				B0F88C9817CD3BEA005E4B0A /* Foundation.framework in Frameworks */,
 				B0F88C9A17CD3BEA005E4B0A /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +80,7 @@
 		B0F88C8917CD3BEA005E4B0A = {
 			isa = PBXGroup;
 			children = (
+				B02F17BD17CD8094007EA8A7 /* MessageUI.framework */,
 				B0F88C9B17CD3BEA005E4B0A /* wellmark */,
 				B0F88C9417CD3BEA005E4B0A /* Frameworks */,
 				B0F88C9317CD3BEA005E4B0A /* Products */,
@@ -85,9 +110,23 @@
 			children = (
 				B0F88CA417CD3BEA005E4B0A /* LLAppDelegate.h */,
 				B0F88CA517CD3BEA005E4B0A /* LLAppDelegate.m */,
+				B02F17A517CD6B5C007EA8A7 /* LLDoctorViewController.h */,
+				B02F17A617CD6B5C007EA8A7 /* LLDoctorViewController.m */,
+				B02F17A817CD6CE7007EA8A7 /* LLTreatmentViewController.h */,
+				B02F17A917CD6CE7007EA8A7 /* LLTreatmentViewController.m */,
 				B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */,
-				B0F88CB017CD3BEA005E4B0A /* LLViewController.h */,
-				B0F88CB117CD3BEA005E4B0A /* LLViewController.m */,
+				B02F17BF17CD90E5007EA8A7 /* LLBookingViewController.h */,
+				B02F17C017CD90E5007EA8A7 /* LLBookingViewController.m */,
+				B02F17B717CD7CD4007EA8A7 /* LLConfirmViewController.h */,
+				B02F17B817CD7CD5007EA8A7 /* LLConfirmViewController.m */,
+				B02F17BA17CD7CDC007EA8A7 /* LLConfirmedViewController.h */,
+				B02F17BB17CD7CDC007EA8A7 /* LLConfirmedViewController.m */,
+				B02F17B417CD7BC6007EA8A7 /* LLSchedulingViewController.h */,
+				B02F17B517CD7BC6007EA8A7 /* LLSchedulingViewController.m */,
+				B02F17B117CD7607007EA8A7 /* LLLocationView.h */,
+				B02F17B217CD7607007EA8A7 /* LLLocationView.m */,
+				B02F17AE17CD757C007EA8A7 /* LLLocationsViewController.h */,
+				B02F17AF17CD757C007EA8A7 /* LLLocationsViewController.m */,
 				B0F88C9C17CD3BEA005E4B0A /* Supporting Files */,
 			);
 			path = wellmark;
@@ -176,7 +215,14 @@
 			files = (
 				B0F88CA217CD3BEA005E4B0A /* main.m in Sources */,
 				B0F88CA617CD3BEA005E4B0A /* LLAppDelegate.m in Sources */,
-				B0F88CB217CD3BEA005E4B0A /* LLViewController.m in Sources */,
+				B02F17A717CD6B5C007EA8A7 /* LLDoctorViewController.m in Sources */,
+				B02F17AA17CD6CE7007EA8A7 /* LLTreatmentViewController.m in Sources */,
+				B02F17B017CD757C007EA8A7 /* LLLocationsViewController.m in Sources */,
+				B02F17B317CD7607007EA8A7 /* LLLocationView.m in Sources */,
+				B02F17B617CD7BC6007EA8A7 /* LLSchedulingViewController.m in Sources */,
+				B02F17B917CD7CD5007EA8A7 /* LLConfirmViewController.m in Sources */,
+				B02F17BC17CD7CDC007EA8A7 /* LLConfirmedViewController.m in Sources */,
+				B02F17C117CD90E5007EA8A7 /* LLBookingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +347,7 @@
 				B0F88CB717CD3BEA005E4B0A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,23 +1,23 @@
 //
-//  LLViewController.m
+//  LLBookingViewController.m
 //  wellmark
 //
 //  Created by Robert Guo on 8/27/13.
 //  Copyright (c) 2013 Stroll. All rights reserved.
 //
 
-#import "LLViewController.h"
+#import "LLBookingViewController.h"
 
-@interface LLViewController ()
+@interface LLBookingViewController ()
 
 @end
 
-@implementation LLViewController
+@implementation LLBookingViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
