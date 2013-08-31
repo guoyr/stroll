@@ -14,6 +14,7 @@
 @property (nonatomic, weak) IBOutlet UIButton *retry;
 @property (nonatomic, weak) IBOutlet UIButton *abort;
 @property (nonatomic, weak) IBOutlet UILabel *treatmentLabel;
+@property (nonatomic, weak) IBOutlet UILabel *doctorName;
 @property (nonatomic, weak) IBOutlet UILabel *doctorAddress;
 @property (nonatomic, weak) IBOutlet UILabel *doctorNumber;
 

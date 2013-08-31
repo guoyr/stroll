@@ -24,14 +24,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self setTitle:[NSString stringWithFormat:@"Select Treatment for %@", _patientName]];
+    [self setTitle:[NSString stringWithFormat:@"Select Treatment for %@",[[LLTreatmentManager sharedInstance] patientName]]];
     [self setTreatments:[NSArray arrayWithObjects:@"CT Scan", @"MRI Scan", @"Ultrasound", nil]];
     [[self nextButtonItem] setEnabled:NO];
     [[_treatmentLabel layer] setCornerRadius:5];
-    
-    UIImageView *bg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-    [[self view] addSubview:bg];
-    [[self view] sendSubviewToBack:bg];
+
+    [[LLTreatmentManager sharedInstance] addBackground:[self view]];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,9 +63,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showLocations"]) {
-        LLLocationsViewController *vc = [segue destinationViewController];
-        [vc setPatientName:_patientName];
-        [vc setTreatment:_selectedTreatment];
+        [[LLTreatmentManager sharedInstance] setSelectedTreatment:_selectedTreatment];
     }
 }
 

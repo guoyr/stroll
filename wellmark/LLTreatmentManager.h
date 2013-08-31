@@ -10,4 +10,10 @@
 
 @interface LLTreatmentManager : NSObject
 
+@property (nonatomic, strong) NSString *selectedTreatment;
+@property (nonatomic, strong) NSString *patientName;
+
++ (LLTreatmentManager*)sharedInstance;
+- (void)addBackground:(UIView *)view;
+
 @end

@@ -9,36 +9,30 @@
 #import "LLLocationsViewController.h"
 #import "MBJSONRequest.h"
 #import "LLSchedulingViewController.h"
-
+#import "LLTreatmentManager.h"
+#import <QuartzCore/QuartzCore.h>
 @interface LLLocationsViewController ()
 
 @property (nonatomic, strong) NSMutableArray *providers;
 @property (nonatomic, strong) NSDictionary *providerInformation;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-
+@property (nonatomic, strong) MBJSONRequest *jsonRequest;
 @end
 
 @implementation LLLocationsViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [[self scrollView] setBackgroundColor:[UIColor redColor]];
-    [self setTitle:[NSString stringWithFormat:@"Select Location for %@", _patientName]];
+    [self setTitle:[NSString stringWithFormat:@"Select Location for %@", [[LLTreatmentManager sharedInstance] patientName]]];
     [self startStandardUpdates];
+    [[_treatmentLabel layer] setCornerRadius:5];
+    [_treatmentLabel setText:[[LLTreatmentManager sharedInstance] selectedTreatment]];
     //TODO: title name - treatment
-    
+    [[LLTreatmentManager sharedInstance] addBackground:[self view]];
+
     
 }
 
@@ -66,15 +60,27 @@
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    if (_jsonRequest && [_jsonRequest isRunning]) {
+        [_jsonRequest cancel];
+    }
+
+
+}
+
 - (void)getProviderDataForLocation:(CLLocation *)location
 {
+    if (_jsonRequest && ![_jsonRequest isCancelled]) {
+        return;
+    }
     [[_scrollView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     CLLocationCoordinate2D coord = [location coordinate];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://carefinder-dev.cloudapp.net/carefinder.svc/providersnearlocation?p=1&lat=%f&lng=%f&r=25&sv=dist&o=asc&ps=5&key=81BA5", coord.latitude, coord.longitude]];
     NSLog(@"%@",url);
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    MBJSONRequest *jsonRequest = [[MBJSONRequest alloc] init];
-    [jsonRequest performJSONRequest:urlRequest completionHandler:^(id responseJSON, NSError *error) {
+    _jsonRequest = [[MBJSONRequest alloc] init];
+    [_jsonRequest performJSONRequest:urlRequest completionHandler:^(id responseJSON, NSError *error) {
         if (error != nil) {
             NSLog(@"Error requesting top-rated videos: %@", error);
         } else {
@@ -111,7 +117,6 @@
     if ([segue.identifier isEqualToString:@"ShowSchedulingOptions"]) {
         LLSchedulingViewController *vc = [segue destinationViewController];
         [vc setProviderInformation:_providerInformation];
-        [vc setPatientName:_patientName];
         [vc setTreatment:_treatment];
     }
 }

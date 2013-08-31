@@ -8,6 +8,7 @@
 
 #import "LLDoctorViewController.h"
 #import "LLTreatmentViewController.h"
+#import "LLTreatmentManager.h"
 #import <QuartzCore/QuartzCore.h>
 @interface LLDoctorViewController ()
 
@@ -36,9 +37,9 @@
     [[_insuranceTextField2 layer] setCornerRadius:5];
     [[_patientTextField layer] setCornerRadius:5];
     
-    UIImageView *bg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-    [[self view] addSubview:bg];
-    [[self view] sendSubviewToBack:bg];
+    [[LLTreatmentManager sharedInstance] addBackground:[self view]];
+    
+    
 
 //    [[self insuranceTextField1] setEnabled:NO];
 //    [[self insuranceTextField2] setEnabled:NO];
@@ -118,8 +119,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showTreatment"]) {
-        LLTreatmentViewController *vc = [segue destinationViewController];
-        [vc setPatientName:[_names objectAtIndex:_selectedRow]];
+        [[LLTreatmentManager sharedInstance] setPatientName:[_names objectAtIndex:_selectedRow]];
     }
 }
 

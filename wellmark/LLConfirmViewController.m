@@ -7,6 +7,7 @@
 //
 
 #import "LLConfirmViewController.h"
+#import "LLTreatmentManager.h"
 
 @interface LLConfirmViewController ()
 
@@ -14,19 +15,12 @@
 
 @implementation LLConfirmViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [[LLTreatmentManager sharedInstance] addBackground:[self view]];
+
 }
 
 - (void)didReceiveMemoryWarning

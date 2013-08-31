@@ -13,7 +13,7 @@
 @interface LLLocationsViewController : UIViewController <CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) NSString *patientName;
 @property (nonatomic, strong) NSString *treatment;
+@property (nonatomic, weak) IBOutlet UILabel *treatmentLabel;
 
 @end

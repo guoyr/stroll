@@ -15,14 +15,21 @@
 @implementation LLTreatmentManager
 
 
-+ (id)sharedInstance
++ (LLTreatmentManager*)sharedInstance
 {
     static dispatch_once_t pred = 0;
-    __strong static id _sharedObject = nil;
+    __strong static LLTreatmentManager* _sharedObject = nil;
     dispatch_once(&pred, ^{
         _sharedObject = [[self alloc] init];
     });
     return _sharedObject;
+}
+
+- (void)addBackground:(UIView *)view
+{
+    UIImageView *bg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    [view addSubview:bg];
+    [view sendSubviewToBack:bg];
 }
 
 @end

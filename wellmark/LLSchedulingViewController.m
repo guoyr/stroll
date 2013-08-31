@@ -8,6 +8,7 @@
 
 #import "LLSchedulingViewController.h"
 #import "LLBookingViewController.h"
+#import "LLTreatmentManager.h"
 
 @interface LLSchedulingViewController ()
 
@@ -20,6 +21,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setTitle:[NSString stringWithFormat:@"Select Scheduling Options for %@", _patientName]];
+    [[LLTreatmentManager sharedInstance] addBackground:[self view]];
 
 }
 
