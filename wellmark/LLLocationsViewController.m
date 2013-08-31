@@ -70,7 +70,8 @@
 {
     [[_scrollView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     CLLocationCoordinate2D coord = [location coordinate];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://carefinder-dev.cloudapp.net/carefinder.svc/providersnearlocation?p=1&lat=%f&lng=%f&r=10&if=1&n=P0HI0WY9J5&sv=dist&o=asc&ps=5&key=81BA5", coord.latitude, coord.longitude]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://carefinder-dev.cloudapp.net/carefinder.svc/providersnearlocation?p=1&lat=%f&lng=%f&r=25&sv=dist&o=asc&ps=5&key=81BA5", coord.latitude, coord.longitude]];
+    NSLog(@"%@",url);
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     MBJSONRequest *jsonRequest = [[MBJSONRequest alloc] init];
     [jsonRequest performJSONRequest:urlRequest completionHandler:^(id responseJSON, NSError *error) {
@@ -81,10 +82,15 @@
             int curX = 50, curY = 10;
             for (int i = 0; i < [_providers count]; i++) {
                 NSDictionary *provider = [_providers objectAtIndex:i];
+//                CLLocation *providerLocation = [[CLLocation alloc] initWithLatitude:[[provider objectForKey:@"Latitude"] doubleValue] longitude:[[provider objectForKey:@"Longitude"] doubleValue]];
+//                CLLocationDistance distance = [providerLocation distanceFromLocation:location];
                 UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
                 LLLocationView *curLocationView = [[LLLocationView alloc] initWithFrame:CGRectMake(curX, curY, 300, 500)];
                 [curLocationView addGestureRecognizer:tapGestureRecognizer];
                 [curLocationView setProviderAltName:[provider objectForKey:@"AltName"]];
+//                [curLocationView setProviderDistance:[NSString stringWithFormat:@"%2.2f km",distance/1000]];
+                [curLocationView setProviderDistance:[provider objectForKey:@"Distance"]];
+
                 [curLocationView setIndex:i];
                 [[self scrollView] addSubview:curLocationView];
                 curX += 350;

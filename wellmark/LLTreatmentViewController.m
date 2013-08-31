@@ -6,8 +6,10 @@
 //  Copyright (c) 2013 Stroll. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "LLTreatmentViewController.h"
 #import "LLLocationsViewController.h"
+#import "LLTreatmentManager.h"
 
 @interface LLTreatmentViewController ()
 
@@ -25,6 +27,11 @@
     [self setTitle:[NSString stringWithFormat:@"Select Treatment for %@", _patientName]];
     [self setTreatments:[NSArray arrayWithObjects:@"CT Scan", @"MRI Scan", @"Ultrasound", nil]];
     [[self nextButtonItem] setEnabled:NO];
+    [[_treatmentLabel layer] setCornerRadius:5];
+    
+    UIImageView *bg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    [[self view] addSubview:bg];
+    [[self view] sendSubviewToBack:bg];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +45,7 @@
     static NSString *CellIdentifier = @"TreatmentCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     [[cell textLabel] setText:[[self treatments] objectAtIndex:[indexPath row]]];
+    [[cell textLabel] setBackgroundColor:[UIColor clearColor]];
     return cell;
 }
 

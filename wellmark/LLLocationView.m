@@ -41,6 +41,8 @@
 - (void)setProviderDistance:(NSString *)dist
 {
     
+    [_providerDistanceLabel setText:dist];
+
 }
 
 /*

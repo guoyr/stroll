@@ -12,6 +12,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UITableView *treatmentTableView;
+@property (weak, nonatomic) IBOutlet UILabel *treatmentLabel;
+
 @property (nonatomic, strong) NSString *patientName;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButtonItem;
 

@@ -18,11 +18,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
     [_doctorAddress setText:[_providerInformation objectForKey:@"Address"]];
     [_doctorNumber setText:[_providerInformation objectForKey:@"Phone"]];
     [_treatmentLabel setText:_treatment];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
