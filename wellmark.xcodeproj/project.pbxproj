@@ -35,6 +35,14 @@
 		B06571F717D17FAD005CB364 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = B06571F617D17FAD005CB364 /* background.png */; };
 		B06571F917D1817F005CB364 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06571F817D1817F005CB364 /* QuartzCore.framework */; };
 		B06571FC17D18AD5005CB364 /* LLTreatmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B06571FB17D18AD5005CB364 /* LLTreatmentManager.m */; };
+		B06571FE17D2D616005CB364 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06571FD17D2D616005CB364 /* Parse.framework */; };
+		B065720017D2D644005CB364 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06571FF17D2D644005CB364 /* AudioToolbox.framework */; };
+		B065720217D2D649005CB364 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720117D2D649005CB364 /* CFNetwork.framework */; };
+		B065720417D2D65E005CB364 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720317D2D65E005CB364 /* libz.1.2.5.dylib */; };
+		B065720617D2D664005CB364 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720517D2D664005CB364 /* MobileCoreServices.framework */; };
+		B065720817D2D66F005CB364 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720717D2D66F005CB364 /* Security.framework */; };
+		B065720A17D2D674005CB364 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720917D2D674005CB364 /* StoreKit.framework */; };
+		B065720C17D2D679005CB364 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720B17D2D679005CB364 /* SystemConfiguration.framework */; };
 		B0F0E52C17CEEC4C003EF566 /* LLBookUpfrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */; };
 		B0F0E52F17CEEC6D003EF566 /* LLBookLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52E17CEEC6D003EF566 /* LLBookLaterViewController.m */; };
 		B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9517CD3BEA005E4B0A /* UIKit.framework */; };
@@ -105,6 +113,14 @@
 		B06571F817D1817F005CB364 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B06571FA17D18AD5005CB364 /* LLTreatmentManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTreatmentManager.h; sourceTree = "<group>"; };
 		B06571FB17D18AD5005CB364 /* LLTreatmentManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLTreatmentManager.m; sourceTree = "<group>"; };
+		B06571FD17D2D616005CB364 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		B06571FF17D2D644005CB364 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B065720117D2D649005CB364 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		B065720317D2D65E005CB364 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		B065720517D2D664005CB364 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		B065720717D2D66F005CB364 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B065720917D2D674005CB364 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B065720B17D2D679005CB364 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B0F0E52A17CEEC4C003EF566 /* LLBookUpfrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookUpfrontViewController.h; sourceTree = "<group>"; };
 		B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBookUpfrontViewController.m; sourceTree = "<group>"; };
 		B0F0E52D17CEEC6D003EF566 /* LLBookLaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookLaterViewController.h; sourceTree = "<group>"; };
@@ -130,12 +146,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B065720C17D2D679005CB364 /* SystemConfiguration.framework in Frameworks */,
+				B065720A17D2D674005CB364 /* StoreKit.framework in Frameworks */,
+				B065720817D2D66F005CB364 /* Security.framework in Frameworks */,
 				B06571F917D1817F005CB364 /* QuartzCore.framework in Frameworks */,
+				B065720617D2D664005CB364 /* MobileCoreServices.framework in Frameworks */,
+				B065720417D2D65E005CB364 /* libz.1.2.5.dylib in Frameworks */,
 				B02F182F17CDAA4A007EA8A7 /* CoreLocation.framework in Frameworks */,
+				B0F88C9A17CD3BEA005E4B0A /* CoreGraphics.framework in Frameworks */,
+				B065720217D2D649005CB364 /* CFNetwork.framework in Frameworks */,
+				B065720017D2D644005CB364 /* AudioToolbox.framework in Frameworks */,
 				B02F17BE17CD8094007EA8A7 /* MessageUI.framework in Frameworks */,
 				B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */,
 				B0F88C9817CD3BEA005E4B0A /* Foundation.framework in Frameworks */,
-				B0F88C9A17CD3BEA005E4B0A /* CoreGraphics.framework in Frameworks */,
+				B06571FE17D2D616005CB364 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +217,13 @@
 		B0F88C8917CD3BEA005E4B0A = {
 			isa = PBXGroup;
 			children = (
-				B06571F817D1817F005CB364 /* QuartzCore.framework */,
+				B065720B17D2D679005CB364 /* SystemConfiguration.framework */,
+				B065720917D2D674005CB364 /* StoreKit.framework */,
+				B065720717D2D66F005CB364 /* Security.framework */,
+				B065720517D2D664005CB364 /* MobileCoreServices.framework */,
+				B065720317D2D65E005CB364 /* libz.1.2.5.dylib */,
+				B065720117D2D649005CB364 /* CFNetwork.framework */,
+				B06571FF17D2D644005CB364 /* AudioToolbox.framework */,
 				B0F88C9B17CD3BEA005E4B0A /* wellmark */,
 				B0F88C9417CD3BEA005E4B0A /* Frameworks */,
 				B0F88C9317CD3BEA005E4B0A /* Products */,
@@ -212,6 +242,8 @@
 		B0F88C9417CD3BEA005E4B0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B06571F817D1817F005CB364 /* QuartzCore.framework */,
+				B06571FD17D2D616005CB364 /* Parse.framework */,
 				B02F182E17CDAA4A007EA8A7 /* CoreLocation.framework */,
 				B02F17BD17CD8094007EA8A7 /* MessageUI.framework */,
 				B0F88C9517CD3BEA005E4B0A /* UIKit.framework */,
@@ -451,6 +483,10 @@
 		B0F88CB617CD3BEA005E4B0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
 				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
@@ -462,6 +498,10 @@
 		B0F88CB717CD3BEA005E4B0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
 				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";

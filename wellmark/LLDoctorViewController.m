@@ -10,6 +10,8 @@
 #import "LLTreatmentViewController.h"
 #import "LLTreatmentManager.h"
 #import <QuartzCore/QuartzCore.h>
+#import <Parse/Parse.h>
+
 @interface LLDoctorViewController ()
 
 @property (nonatomic, strong) NSArray *doctors;
@@ -26,7 +28,7 @@
     [super viewDidLoad];
     [self setDoctors:[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon", nil]];
     [self setNames:[NSArray arrayWithObjects:@"Gertie Troup", @"Brigitte Denner", @"Ethelyn Desanto", @"Leeanna Halm", @"Jama Sing", nil]];
-    [self setInsurances:[NSArray arrayWithObjects:@"WellMark", @"other", nil]];
+    [self setInsurances:[NSArray arrayWithObjects:@"Wellmark Blue Cross Blue Shield", @"Medicare", @"No Insurance", nil]];
 //    [[self nextButtonItem] setEnabled:NO];
     [[_selectDoctorLabel layer] setCornerRadius:5];
     [[_selectInsuranceLabel layer] setCornerRadius:5];
@@ -38,6 +40,14 @@
     [[_patientTextField layer] setCornerRadius:5];
     
     [[LLTreatmentManager sharedInstance] addBackground:[self view]];
+    
+//    NSDictionary *params = [NSDictionary  dictionaryWithObject:@"test" forKey:@"text"];
+//    [PFCloud callFunctionInBackground:@"emailTest" withParameters:params block:^(id object, NSError *error){
+//        NSLog(@"done");
+//        NSLog(@"%@",object);
+//        NSLog(@"%@", error);
+//    } ];
+
     
     
 

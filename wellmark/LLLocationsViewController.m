@@ -91,7 +91,7 @@
 //                CLLocation *providerLocation = [[CLLocation alloc] initWithLatitude:[[provider objectForKey:@"Latitude"] doubleValue] longitude:[[provider objectForKey:@"Longitude"] doubleValue]];
 //                CLLocationDistance distance = [providerLocation distanceFromLocation:location];
                 UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-                LLLocationView *curLocationView = [[LLLocationView alloc] initWithFrame:CGRectMake(curX, curY, 300, 500)];
+                LLLocationView *curLocationView = [[LLLocationView alloc] initWithFrame:CGRectMake(curX, curY, 250, 500)];
                 [curLocationView addGestureRecognizer:tapGestureRecognizer];
                 [curLocationView setProviderAltName:[provider objectForKey:@"AltName"]];
 //                [curLocationView setProviderDistance:[NSString stringWithFormat:@"%2.2f km",distance/1000]];
