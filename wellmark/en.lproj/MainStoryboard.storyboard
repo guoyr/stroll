@@ -12,132 +12,92 @@
                         <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Group ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6a-lQ-fqU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6a-lQ-fqU">
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="NEi-Ta-jHj"/>
-                                    <constraint firstAttribute="height" constant="48" id="Vhb-yx-bXM"/>
+                                    <constraint firstAttribute="height" constant="48" id="RCz-3E-l9V"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="TNW-bx-Nh4" id="fpb-sj-1bX"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Member ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsL-0k-jOm">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Member ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsL-0k-jOm">
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="4SE-o3-bJJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="TNW-bx-Nh4" id="aw2-BW-T7G"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cal-Ul-UUh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Patient Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cal-Ul-UUh">
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="2jj-lg-9Mx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="TNW-bx-Nh4" id="gu1-5O-zl0"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Patient Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqx-PV-BvX">
-                                <color key="backgroundColor" red="0.1098039299249649" green="0.73725491762161255" blue="0.61176472902297974" alpha="1" colorSpace="deviceRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlY-ol-bNt">
+                                <color key="backgroundColor" red="0.1098039299" green="0.73725491759999995" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="XsD-Po-Os3"/>
-                                    <constraint firstAttribute="width" constant="320" id="j53-q6-xOT"/>
+                                    <constraint firstAttribute="height" constant="48" id="2lr-Sy-at9"/>
+                                    <constraint firstAttribute="width" constant="320" id="lSZ-n8-vie"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select Doctor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdr-CV-QhL">
-                                <color key="backgroundColor" red="0.1098039299249649" green="0.73725491762161255" blue="0.61176472902297974" alpha="1" colorSpace="deviceRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="do7-lE-4xa"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="HBM-Ew-GBP">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell opaque="NO" alpha="0.0" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="InsuranceCell" id="S0w-XY-geN">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
+                                <state key="normal" title="Select Doctor">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="dataSource" destination="TNW-bx-Nh4" id="h4t-0K-fP3"/>
-                                    <outlet property="delegate" destination="TNW-bx-Nh4" id="7hu-1b-6Ul"/>
+                                    <action selector="selectDoctorButtonClicked:" destination="TNW-bx-Nh4" eventType="touchUpInside" id="VIK-7i-dLS"/>
                                 </connections>
-                            </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select Insurance Provider" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U65-JH-rhZ">
-                                <color key="backgroundColor" red="0.1098039299249649" green="0.73725491762161255" blue="0.61176472902297974" alpha="1" colorSpace="deviceRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9CY-0k-Kgg">
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8D-LW-RaS">
+                                <color key="backgroundColor" red="0.1098039299" green="0.73725491759999995" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="SzD-9Y-0Mg"/>
+                                    <constraint firstAttribute="height" constant="48" id="Pyh-8e-EAA"/>
+                                    <constraint firstAttribute="width" constant="320" id="xsv-MT-21w"/>
                                 </constraints>
-                                <prototypes>
-                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="DoctorCell" id="PE7-fy-5xU">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Select Insurance Type">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <outlet property="dataSource" destination="TNW-bx-Nh4" id="VpB-aM-n9e"/>
-                                    <outlet property="delegate" destination="TNW-bx-Nh4" id="M1F-xl-yrA"/>
+                                    <action selector="selectInsuranceButtonClicked:" destination="TNW-bx-Nh4" eventType="touchUpInside" id="UeZ-Cu-rgZ"/>
                                 </connections>
-                            </tableView>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Uqx-PV-BvX" firstAttribute="leading" secondItem="cal-Ul-UUh" secondAttribute="leading" type="default" id="0SY-23-dM4"/>
-                            <constraint firstItem="Uqx-PV-BvX" firstAttribute="leading" secondItem="pqx-zx-aGR" secondAttribute="leading" constant="107" id="CIJ-5U-P7A"/>
-                            <constraint firstItem="wsL-0k-jOm" firstAttribute="trailing" secondItem="U65-JH-rhZ" secondAttribute="trailing" type="default" id="CaV-cz-URf"/>
-                            <constraint firstItem="Kdr-CV-QhL" firstAttribute="trailing" secondItem="9CY-0k-Kgg" secondAttribute="trailing" type="default" id="ExI-5A-TPZ"/>
-                            <constraint firstItem="HBM-Ew-GBP" firstAttribute="leading" secondItem="U65-JH-rhZ" secondAttribute="leading" type="default" id="G4d-xd-xwg"/>
+                            <constraint firstItem="QlY-ol-bNt" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="197" id="Fxt-8s-uEW"/>
                             <constraint firstItem="wsL-0k-jOm" firstAttribute="trailing" secondItem="d6a-lQ-fqU" secondAttribute="trailing" type="default" id="Jge-ti-QDz"/>
-                            <constraint firstItem="wsL-0k-jOm" firstAttribute="leading" secondItem="U65-JH-rhZ" secondAttribute="leading" type="default" id="LHe-9S-wUg"/>
-                            <constraint firstItem="Kdr-CV-QhL" firstAttribute="top" secondItem="U65-JH-rhZ" secondAttribute="top" type="default" id="OKp-df-Sas"/>
-                            <constraint firstItem="wsL-0k-jOm" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="182" id="ReD-OC-ZNW"/>
-                            <constraint firstItem="Uqx-PV-BvX" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="94" id="SXs-ay-gMb"/>
-                            <constraint firstItem="cal-Ul-UUh" firstAttribute="trailing" secondItem="Kdr-CV-QhL" secondAttribute="trailing" type="default" id="ZQo-ll-yXS"/>
-                            <constraint firstItem="cal-Ul-UUh" firstAttribute="top" secondItem="Uqx-PV-BvX" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dvC-2d-cOH"/>
-                            <constraint firstItem="U65-JH-rhZ" firstAttribute="trailing" secondItem="HBM-Ew-GBP" secondAttribute="trailing" type="default" id="eAg-8m-YaF"/>
-                            <constraint firstItem="9CY-0k-Kgg" firstAttribute="bottom" secondItem="HBM-Ew-GBP" secondAttribute="bottom" type="default" id="frE-mc-ITQ"/>
-                            <constraint firstItem="Kdr-CV-QhL" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="302" id="hj4-5s-f8h"/>
-                            <constraint firstItem="9CY-0k-Kgg" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="359" id="hjW-XP-vDn"/>
-                            <constraint firstItem="9CY-0k-Kgg" firstAttribute="top" secondItem="HBM-Ew-GBP" secondAttribute="top" type="default" id="kTH-l7-cqm"/>
-                            <constraint firstItem="9CY-0k-Kgg" firstAttribute="leading" secondItem="Kdr-CV-QhL" secondAttribute="leading" type="default" id="kuN-3T-YHn"/>
-                            <constraint firstItem="Kdr-CV-QhL" firstAttribute="baseline" secondItem="U65-JH-rhZ" secondAttribute="baseline" type="default" id="lv0-Ry-ixF"/>
-                            <constraint firstItem="d6a-lQ-fqU" firstAttribute="baseline" secondItem="Uqx-PV-BvX" secondAttribute="baseline" type="default" id="oKs-E1-uzO"/>
-                            <constraint firstItem="Uqx-PV-BvX" firstAttribute="trailing" secondItem="cal-Ul-UUh" secondAttribute="trailing" type="default" id="phu-AL-cpo"/>
+                            <constraint firstItem="wsL-0k-jOm" firstAttribute="top" secondItem="d6a-lQ-fqU" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KHQ-KB-cak"/>
+                            <constraint firstItem="d6a-lQ-fqU" firstAttribute="trailing" secondItem="D8D-LW-RaS" secondAttribute="trailing" type="default" id="Pyb-49-S6x"/>
+                            <constraint firstItem="d6a-lQ-fqU" firstAttribute="leading" secondItem="D8D-LW-RaS" secondAttribute="leading" type="default" id="ViH-nd-P7I"/>
+                            <constraint firstItem="D8D-LW-RaS" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="199" id="YB9-sL-Wjm"/>
+                            <constraint firstItem="d6a-lQ-fqU" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="269" id="ZsR-78-W1g"/>
+                            <constraint firstItem="cal-Ul-UUh" firstAttribute="baseline" secondItem="d6a-lQ-fqU" secondAttribute="baseline" type="default" id="aGK-cQ-4Bq"/>
+                            <constraint firstAttribute="trailing" secondItem="D8D-LW-RaS" secondAttribute="trailing" constant="128" id="b9d-J5-6MM"/>
+                            <constraint firstItem="QlY-ol-bNt" firstAttribute="trailing" secondItem="cal-Ul-UUh" secondAttribute="trailing" type="default" id="hRT-Xg-dbV"/>
+                            <constraint firstItem="QlY-ol-bNt" firstAttribute="leading" secondItem="pqx-zx-aGR" secondAttribute="leading" constant="128" id="j5p-9y-PBc"/>
+                            <constraint firstItem="QlY-ol-bNt" firstAttribute="leading" secondItem="cal-Ul-UUh" secondAttribute="leading" type="default" id="rWg-qV-o1K"/>
+                            <constraint firstItem="cal-Ul-UUh" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="270" id="sBp-SV-wHl"/>
                             <constraint firstItem="wsL-0k-jOm" firstAttribute="leading" secondItem="d6a-lQ-fqU" secondAttribute="leading" type="default" id="t1r-p1-H5h"/>
-                            <constraint firstAttribute="trailing" secondItem="d6a-lQ-fqU" secondAttribute="trailing" constant="136" id="usj-zM-6Qz"/>
-                            <constraint firstItem="d6a-lQ-fqU" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="115" id="w73-Sz-Dz3"/>
-                            <constraint firstItem="cal-Ul-UUh" firstAttribute="leading" secondItem="Kdr-CV-QhL" secondAttribute="leading" type="default" id="y6x-Po-MiT"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
@@ -150,15 +110,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="doctorTableView" destination="9CY-0k-Kgg" id="OkW-hM-dGE"/>
-                        <outlet property="insuranceTableView" destination="HBM-Ew-GBP" id="wBF-08-cqc"/>
                         <outlet property="insuranceTextField1" destination="d6a-lQ-fqU" id="5rk-4e-HV7"/>
                         <outlet property="insuranceTextField2" destination="wsL-0k-jOm" id="84o-Q5-psA"/>
                         <outlet property="nextButtonItem" destination="Lht-Ja-1Me" id="2tO-VY-zAy"/>
-                        <outlet property="patientLabel" destination="Uqx-PV-BvX" id="7RQ-cY-UWx"/>
                         <outlet property="patientTextField" destination="cal-Ul-UUh" id="E2J-tc-h4E"/>
-                        <outlet property="selectDoctorLabel" destination="Kdr-CV-QhL" id="X47-di-sXo"/>
-                        <outlet property="selectInsuranceLabel" destination="U65-JH-rhZ" id="PEu-gI-hNH"/>
+                        <outlet property="selectDoctorButton" destination="QlY-ol-bNt" id="YSh-KQ-LHd"/>
+                        <outlet property="selectInsuranceButton" destination="D8D-LW-RaS" id="jd3-Kh-vkH"/>
                         <outlet property="view" destination="pqx-zx-aGR" id="wch-WR-XL6"/>
                     </connections>
                 </viewController>
@@ -816,17 +773,18 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LLDoctorViewController.h"/>
             <relationships>
                 <relationship kind="action" name="nextButtonClicked:"/>
-                <relationship kind="outlet" name="doctorTableView" candidateClass="UITableView"/>
+                <relationship kind="action" name="selectDoctButton:"/>
+                <relationship kind="action" name="selectDoctorButtonClicked:"/>
+                <relationship kind="action" name="selectInsuranceButtonClicked:"/>
                 <relationship kind="outlet" name="insuranceLabel1" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="insuranceLabel2" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="insuranceTableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="insuranceTextField1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="insuranceTextField2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="nextButtonItem" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="patientLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="patientTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectDoctorLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="selectInsuranceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="selectDoctorButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="selectInsuranceButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="LLLocationsViewController" superclassName="UIViewController">

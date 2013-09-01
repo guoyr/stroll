@@ -7,21 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLSelectDoctorViewController.h"
+#import "LLSelectInsuranceViewController.h"
 
-@interface LLDoctorViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface LLDoctorViewController : UIViewController <UITextFieldDelegate, LLSelectDoctorViewControllerDelegate, LLSelectInsuranceViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *insuranceTextField1;
 @property (weak, nonatomic) IBOutlet UITextField *insuranceTextField2;
 @property (weak, nonatomic) IBOutlet UITextField *patientTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButtonItem;
-@property (weak, nonatomic) IBOutlet UITableView *doctorTableView;
-@property (weak, nonatomic) IBOutlet UITableView *insuranceTableView;
-@property (weak, nonatomic) IBOutlet UILabel *selectDoctorLabel;
-@property (weak, nonatomic) IBOutlet UILabel *selectInsuranceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *patientLabel;
-@property (weak, nonatomic) IBOutlet UILabel *insuranceLabel1;
-@property (weak, nonatomic) IBOutlet UILabel *insuranceLabel2;
+@property (weak, nonatomic) IBOutlet UIButton *selectDoctorButton;
+@property (weak, nonatomic) IBOutlet UIButton *selectInsuranceButton;
 
 -(IBAction)nextButtonClicked:(id)sender;
+-(IBAction)selectDoctorButtonClicked:(id)sender;
+-(IBAction)selectInsuranceButtonClicked:(id)sender;
 
 @end

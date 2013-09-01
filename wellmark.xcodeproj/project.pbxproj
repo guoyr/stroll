@@ -43,6 +43,9 @@
 		B065720817D2D66F005CB364 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720717D2D66F005CB364 /* Security.framework */; };
 		B065720A17D2D674005CB364 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720917D2D674005CB364 /* StoreKit.framework */; };
 		B065720C17D2D679005CB364 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720B17D2D679005CB364 /* SystemConfiguration.framework */; };
+		B065721217D3DA90005CB364 /* LLSelectDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B065721117D3DA8F005CB364 /* LLSelectDoctorViewController.m */; };
+		B065721517D3DAA1005CB364 /* LLSelectInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B065721417D3DAA1005CB364 /* LLSelectInsuranceViewController.m */; };
+		B065721717D3F0D8005CB364 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B065721617D3F0D8005CB364 /* Settings.bundle */; };
 		B0F0E52C17CEEC4C003EF566 /* LLBookUpfrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */; };
 		B0F0E52F17CEEC6D003EF566 /* LLBookLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52E17CEEC6D003EF566 /* LLBookLaterViewController.m */; };
 		B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9517CD3BEA005E4B0A /* UIKit.framework */; };
@@ -121,6 +124,11 @@
 		B065720717D2D66F005CB364 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B065720917D2D674005CB364 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B065720B17D2D679005CB364 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B065721017D3DA8F005CB364 /* LLSelectDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSelectDoctorViewController.h; sourceTree = "<group>"; };
+		B065721117D3DA8F005CB364 /* LLSelectDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSelectDoctorViewController.m; sourceTree = "<group>"; };
+		B065721317D3DAA1005CB364 /* LLSelectInsuranceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSelectInsuranceViewController.h; sourceTree = "<group>"; };
+		B065721417D3DAA1005CB364 /* LLSelectInsuranceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSelectInsuranceViewController.m; sourceTree = "<group>"; };
+		B065721617D3F0D8005CB364 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		B0F0E52A17CEEC4C003EF566 /* LLBookUpfrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookUpfrontViewController.h; sourceTree = "<group>"; };
 		B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBookUpfrontViewController.m; sourceTree = "<group>"; };
 		B0F0E52D17CEEC6D003EF566 /* LLBookLaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookLaterViewController.h; sourceTree = "<group>"; };
@@ -217,13 +225,6 @@
 		B0F88C8917CD3BEA005E4B0A = {
 			isa = PBXGroup;
 			children = (
-				B065720B17D2D679005CB364 /* SystemConfiguration.framework */,
-				B065720917D2D674005CB364 /* StoreKit.framework */,
-				B065720717D2D66F005CB364 /* Security.framework */,
-				B065720517D2D664005CB364 /* MobileCoreServices.framework */,
-				B065720317D2D65E005CB364 /* libz.1.2.5.dylib */,
-				B065720117D2D649005CB364 /* CFNetwork.framework */,
-				B06571FF17D2D644005CB364 /* AudioToolbox.framework */,
 				B0F88C9B17CD3BEA005E4B0A /* wellmark */,
 				B0F88C9417CD3BEA005E4B0A /* Frameworks */,
 				B0F88C9317CD3BEA005E4B0A /* Products */,
@@ -242,6 +243,13 @@
 		B0F88C9417CD3BEA005E4B0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B065720B17D2D679005CB364 /* SystemConfiguration.framework */,
+				B065720917D2D674005CB364 /* StoreKit.framework */,
+				B065720717D2D66F005CB364 /* Security.framework */,
+				B065720517D2D664005CB364 /* MobileCoreServices.framework */,
+				B065720317D2D65E005CB364 /* libz.1.2.5.dylib */,
+				B065720117D2D649005CB364 /* CFNetwork.framework */,
+				B06571FF17D2D644005CB364 /* AudioToolbox.framework */,
 				B06571F817D1817F005CB364 /* QuartzCore.framework */,
 				B06571FD17D2D616005CB364 /* Parse.framework */,
 				B02F182E17CDAA4A007EA8A7 /* CoreLocation.framework */,
@@ -261,6 +269,10 @@
 				B06571F617D17FAD005CB364 /* background.png */,
 				B0F88CA417CD3BEA005E4B0A /* LLAppDelegate.h */,
 				B0F88CA517CD3BEA005E4B0A /* LLAppDelegate.m */,
+				B065721017D3DA8F005CB364 /* LLSelectDoctorViewController.h */,
+				B065721117D3DA8F005CB364 /* LLSelectDoctorViewController.m */,
+				B065721317D3DAA1005CB364 /* LLSelectInsuranceViewController.h */,
+				B065721417D3DAA1005CB364 /* LLSelectInsuranceViewController.m */,
 				B02F17A517CD6B5C007EA8A7 /* LLDoctorViewController.h */,
 				B02F17A617CD6B5C007EA8A7 /* LLDoctorViewController.m */,
 				B02F17A817CD6CE7007EA8A7 /* LLTreatmentViewController.h */,
@@ -290,6 +302,7 @@
 		B0F88C9C17CD3BEA005E4B0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B065721617D3F0D8005CB364 /* Settings.bundle */,
 				B0F88C9D17CD3BEA005E4B0A /* wellmark-Info.plist */,
 				B0F88C9E17CD3BEA005E4B0A /* InfoPlist.strings */,
 				B0F88CA117CD3BEA005E4B0A /* main.m */,
@@ -361,6 +374,7 @@
 				B02F182617CD9A79007EA8A7 /* LICENSE in Resources */,
 				B02F182717CD9A79007EA8A7 /* README.md in Resources */,
 				B06571F717D17FAD005CB364 /* background.png in Resources */,
+				B065721717D3F0D8005CB364 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +411,8 @@
 				B0F0E52C17CEEC4C003EF566 /* LLBookUpfrontViewController.m in Sources */,
 				B0F0E52F17CEEC6D003EF566 /* LLBookLaterViewController.m in Sources */,
 				B06571FC17D18AD5005CB364 /* LLTreatmentManager.m in Sources */,
+				B065721217D3DA90005CB364 /* LLSelectDoctorViewController.m in Sources */,
+				B065721517D3DAA1005CB364 /* LLSelectInsuranceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
