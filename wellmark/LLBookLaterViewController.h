@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LLBookLaterViewController : UIViewController
+@interface LLBookLaterViewController : UIViewController <UITextFieldDelegate>
+
+@property (nonatomic, weak) IBOutlet UILabel *enterEmailLabel;
+@property (nonatomic, weak) IBOutlet UITextField *emailField;
+@property (nonatomic, weak) IBOutlet UIButton *sendEmailButton;
+
+-(IBAction)sendEmail:(id)sender;
 
 @end

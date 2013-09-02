@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *selectedTreatment;
 @property (nonatomic, strong) NSString *patientName;
+@property (nonatomic, strong) NSDictionary *providerInformation;
 
 + (LLTreatmentManager*)sharedInstance;
 - (void)addBackground:(UIView *)view;

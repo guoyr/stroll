@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self setTitle:[NSString stringWithFormat:@"Select Scheduling Options for %@", _patientName]];
+    [self setTitle:[NSString stringWithFormat:@"Select Scheduling Options for %@", [[LLTreatmentManager sharedInstance] patientName]]];
     [[LLTreatmentManager sharedInstance] addBackground:[self view]];
 
 }
@@ -31,18 +31,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"showBookingInformation"]) {
-        LLBookingViewController *vc = [segue destinationViewController];
-        [vc setProviderInformation:_providerInformation];
-        [vc setTreatment:_treatment];
-    }
-}
-
 - (IBAction)bookNowClicked:(id)sender
 {
     [self performSegueWithIdentifier:@"showBookingInformation" sender:self];
+}
+
+- (IBAction)bookLaterClicked:(id)sender
+{
+    [self performSegueWithIdentifier:@"showBookLater" sender:self];
 }
 
 @end

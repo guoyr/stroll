@@ -63,11 +63,11 @@
 {
     [[self delegate] selectedDoctor:[_doctors objectAtIndex:[indexPath row]]];
     
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-    
     UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:_selectedIndexPath];
     [oldCell setAccessoryType:UITableViewCellAccessoryNone];
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     
     _selectedIndexPath = indexPath;
 }

@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setNames:[NSArray arrayWithObjects:@"Gertie Troup", @"Brigitte Denner", @"Ethelyn Desanto", @"Leeanna Halm", @"Jama Sing", nil]];
+//    [self setNames:[NSArray arrayWithObjects:@"Gertie Troup", @"Brigitte Denner", @"Ethelyn Desanto", @"Leeanna Halm", @"Jama Sing", nil]];
     [[_selectDoctorButton layer] setCornerRadius:5];
     [[_selectInsuranceButton layer] setCornerRadius:5];
     [[_insuranceTextField1 layer] setCornerRadius:5];
@@ -48,17 +48,18 @@
     _doctorPopoverController = [[UIPopoverController alloc] initWithContentViewController:_selectDoctorViewController];
     _insurancePopoverController = [[UIPopoverController alloc] initWithContentViewController:_selectInsuranceViewController];
 
-//    NSDictionary *params = [NSDictionary  dictionaryWithObject:@"test" forKey:@"text"];
-//    [PFCloud callFunctionInBackground:@"emailTest" withParameters:params block:^(id object, NSError *error){
-//        NSLog(@"done");
-//        NSLog(@"%@",object);
-//        NSLog(@"%@", error);
-//    } ];
-
-    [[self nextButtonItem] setEnabled:NO];
-    [[self insuranceTextField1] setHidden:YES];
-    [[self insuranceTextField2] setHidden:YES];
+    [[self insuranceTextField1] setAlpha:0];
+    [[self insuranceTextField2] setAlpha:0];
+    [[self insuranceTextField1] setEnabled:NO];
+    [[self insuranceTextField2] setEnabled:NO];
 	// Do any additional setup after loading the view.
+}
+
+#warning testing code
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+//    [self performSegueWithIdentifier:@"showTreatment" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,27 +87,17 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    if (textField == _patientTextField) {
+        [[LLTreatmentManager sharedInstance] setPatientName:[textField text]];
+    }
+    
+    if ([[_insuranceTextField1 text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
+        [self performSegueWithIdentifier:@"showTreatment" sender:self];
+    } 
+    
     [textField resignFirstResponder];
     return YES;
 }
-
--(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-{
-    if ([[_insuranceTextField1 text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
-        [_nextButtonItem setEnabled:YES];
-    } else {
-        [_nextButtonItem setEnabled:NO];
-    }
-    return YES;
-}
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"showTreatment"]) {
-        [[LLTreatmentManager sharedInstance] setPatientName:[_names objectAtIndex:_selectedRow]];
-    }
-}
-
 
 #pragma mark LLSelectInsuranceViewControllerDelegate
 
@@ -115,8 +106,22 @@
     [_insurancePopoverController dismissPopoverAnimated:YES];
     [_selectInsuranceButton setTitle:insurance forState:UIControlStateNormal];
     if ([insurance rangeOfString:@"Wellmark"].location != NSNotFound) {
-        [_insuranceTextField1 setHidden:NO];
-        [_insuranceTextField2 setHidden:NO];
+        [UIView animateWithDuration:0.25 animations:^{
+            [_insuranceTextField1 setAlpha:1];
+            [_insuranceTextField2 setAlpha:1];
+        } completion:^(BOOL finished){
+            [_insuranceTextField2 setEnabled:YES];
+            [_insuranceTextField1 setEnabled:YES];
+        }];
+        
+    } else if ([_insuranceTextField1 isEnabled] || [_insuranceTextField2 isEnabled]) {
+        [UIView animateWithDuration:0.25 animations:^{
+            [_insuranceTextField1 setAlpha:0];
+            [_insuranceTextField2 setAlpha:0];
+        } completion:^(BOOL finished){
+            [_insuranceTextField2 setEnabled:NO];
+            [_insuranceTextField1 setEnabled:NO];
+        }];
     }
 
 }

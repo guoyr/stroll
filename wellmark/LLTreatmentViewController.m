@@ -26,11 +26,16 @@
 	// Do any additional setup after loading the view.
     [self setTitle:[NSString stringWithFormat:@"Select Treatment for %@",[[LLTreatmentManager sharedInstance] patientName]]];
     [self setTreatments:[NSArray arrayWithObjects:@"CT Scan", @"MRI Scan", @"Ultrasound", nil]];
-    [[self nextButtonItem] setEnabled:NO];
     [[_treatmentLabel layer] setCornerRadius:5];
 
     [[LLTreatmentManager sharedInstance] addBackground:[self view]];
 
+}
+
+#warning testing code
+-(void)viewDidAppear:(BOOL)animated
+{
+//    [self performSegueWithIdentifier:@"showLocation" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,16 +60,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    _selectedTreatment = [_treatments objectAtIndex:[indexPath row]];
-    [[self nextButtonItem] setEnabled:YES];
-}
-
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"showLocations"]) {
-        [[LLTreatmentManager sharedInstance] setSelectedTreatment:_selectedTreatment];
-    }
+    [[LLTreatmentManager sharedInstance] setSelectedTreatment:_selectedTreatment];
+    [self performSegueWithIdentifier:@"showLocation" sender:self];
 }
 
 @end

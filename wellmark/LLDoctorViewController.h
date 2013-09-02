@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *insuranceTextField1;
 @property (weak, nonatomic) IBOutlet UITextField *insuranceTextField2;
 @property (weak, nonatomic) IBOutlet UITextField *patientTextField;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButtonItem;
 @property (weak, nonatomic) IBOutlet UIButton *selectDoctorButton;
 @property (weak, nonatomic) IBOutlet UIButton *selectInsuranceButton;
 

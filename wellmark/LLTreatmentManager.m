@@ -25,6 +25,18 @@
     return _sharedObject;
 }
 
+-(id)init
+{
+    self = [super init];
+
+    if (self) {
+        [self setPatientName:@"Test User"];
+        [self setSelectedTreatment:@"Test Treatment"];
+    }
+    
+    return self;
+}
+
 - (void)addBackground:(UIView *)view
 {
     UIImageView *bg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
