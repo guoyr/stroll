@@ -8,8 +8,8 @@
         <scene sceneID="5OB-4j-g6b">
             <objects>
                 <viewController id="TNW-bx-Nh4" customClass="LLDoctorViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pqx-zx-aGR">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                    <view key="view" contentMode="scaleToFill" id="pqx-zx-aGR" customClass="LLBackgroundView">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Group ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6a-lQ-fqU">
@@ -101,10 +101,17 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Select Doctor and Insurance Provider" id="0jn-7s-kZU"/>
+                    <navigationItem key="navigationItem" title="Select Doctor and Insurance Provider" id="0jn-7s-kZU">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="Phx-g1-b84">
+                            <connections>
+                                <action selector="nextButtonClicked:" destination="TNW-bx-Nh4" id="90j-Mv-BjK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="insuranceTextField1" destination="d6a-lQ-fqU" id="5rk-4e-HV7"/>
                         <outlet property="insuranceTextField2" destination="wsL-0k-jOm" id="84o-Q5-psA"/>
+                        <outlet property="nextButtonItem" destination="Phx-g1-b84" id="B12-Bc-6nh"/>
                         <outlet property="patientTextField" destination="cal-Ul-UUh" id="E2J-tc-h4E"/>
                         <outlet property="selectDoctorButton" destination="QlY-ol-bNt" id="YSh-KQ-LHd"/>
                         <outlet property="selectInsuranceButton" destination="D8D-LW-RaS" id="jd3-Kh-vkH"/>
@@ -120,8 +127,8 @@
         <scene sceneID="ZGs-ti-rhL">
             <objects>
                 <viewController id="gkm-uw-sif" customClass="LLTreatmentViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lSw-2y-b9L">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                    <view key="view" contentMode="scaleToFill" id="lSw-2y-b9L" customClass="LLBackgroundView">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Select Treatment Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMY-Cl-ksl">
@@ -183,8 +190,8 @@
         <scene sceneID="O44-Yf-efJ">
             <objects>
                 <viewController id="N6b-YJ-dxH" customClass="LLLocationsViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UqU-SY-X9h">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                    <view key="view" contentMode="scaleToFill" id="UqU-SY-X9h" customClass="LLBackgroundView">
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dx-UK-amI">
@@ -202,20 +209,33 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Fetching Price ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKz-ES-NaF">
+                                <color key="backgroundColor" red="0.1098039299" green="0.73725491759999995" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="3MI-7P-LC7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5dx-UK-amI" firstAttribute="leading" secondItem="UqU-SY-X9h" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="3Zo-Fg-Hq0"/>
+                            <constraint firstItem="kKz-ES-NaF" firstAttribute="centerX" secondItem="UqU-SY-X9h" secondAttribute="centerX" type="default" id="MhY-PD-9B5"/>
                             <constraint firstItem="8TO-pr-Fmj" firstAttribute="top" secondItem="UqU-SY-X9h" secondAttribute="top" constant="20" symbolic="YES" type="default" id="MtA-E4-JKx"/>
-                            <constraint firstItem="5dx-UK-amI" firstAttribute="centerY" secondItem="UqU-SY-X9h" secondAttribute="centerY" type="default" id="Syn-9C-oHH"/>
+                            <constraint firstAttribute="trailing" secondItem="5dx-UK-amI" secondAttribute="trailing" constant="36" id="ZeK-q4-cP1"/>
                             <constraint firstItem="8TO-pr-Fmj" firstAttribute="leading" secondItem="UqU-SY-X9h" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ew9-to-Bwt"/>
-                            <constraint firstAttribute="trailing" secondItem="5dx-UK-amI" secondAttribute="trailing" constant="31" id="meQ-V8-Jet"/>
+                            <constraint firstAttribute="bottom" secondItem="5dx-UK-amI" secondAttribute="bottom" constant="12" id="h0O-cD-gaN"/>
+                            <constraint firstItem="kKz-ES-NaF" firstAttribute="baseline" secondItem="8TO-pr-Fmj" secondAttribute="baseline" type="default" id="iQr-NJ-AyD"/>
+                            <constraint firstItem="kKz-ES-NaF" firstAttribute="top" secondItem="UqU-SY-X9h" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ofA-7b-US5"/>
                             <constraint firstItem="5dx-UK-amI" firstAttribute="top" secondItem="UqU-SY-X9h" secondAttribute="top" constant="92" id="vSL-fI-L4s"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" id="JoN-x8-VdR"/>
                     <connections>
+                        <outlet property="priceRangeLabel" destination="kKz-ES-NaF" id="BwZ-wJ-fc4"/>
                         <outlet property="scrollView" destination="5dx-UK-amI" id="3sA-XP-gil"/>
                         <outlet property="treatmentLabel" destination="8TO-pr-Fmj" id="5GN-hC-TfI"/>
                         <segue destination="tqg-Y3-0SU" kind="push" identifier="ShowSchedulingOptions" id="tpz-n3-Yug"/>
@@ -230,7 +250,7 @@
             <objects>
                 <viewController id="Iuw-nA-hKV" customClass="LLBookUpfrontViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="83V-yO-aHc">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please Go To The Front Desk" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQw-uQ-bf0">
@@ -258,7 +278,7 @@
             <objects>
                 <viewController id="tqg-Y3-0SU" customClass="LLSchedulingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q1p-QL-2Qw">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Scheduling Options:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMX-L0-4gn">
@@ -353,10 +373,10 @@
             <objects>
                 <viewController id="5Wo-su-HSn" customClass="LLBookLaterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vxB-pA-7dX">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Please enter your email address to book later" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibH-dL-Oek">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="To schedule, please enter your email address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibH-dL-Oek">
                                 <color key="backgroundColor" red="0.20392158627510071" green="0.59607845544815063" blue="0.85882359743118286" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="L3i-vl-zNv"/>
@@ -408,11 +428,18 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Uwk-oX-QG2"/>
+                    <navigationItem key="navigationItem" id="Uwk-oX-QG2">
+                        <barButtonItem key="rightBarButtonItem" title="Finish" id="hTp-oB-W8v">
+                            <connections>
+                                <action selector="finish:" destination="5Wo-su-HSn" id="sVt-2N-nbj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="emailField" destination="cIS-fX-zBe" id="CTe-eR-Y0n"/>
                         <outlet property="enterEmailLabel" destination="ibH-dL-Oek" id="5HE-Fk-iIR"/>
+                        <outlet property="finishButtonItem" destination="hTp-oB-W8v" id="TDh-wG-LCS"/>
                         <outlet property="sendEmailButton" destination="zOc-9V-GAW" id="2Aw-G1-B4V"/>
                     </connections>
                 </viewController>
@@ -425,7 +452,7 @@
             <objects>
                 <viewController id="b2R-AE-7yU" customClass="LLBookingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w3h-6f-gms">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWC-H2-vBP">
@@ -595,7 +622,7 @@
             <objects>
                 <viewController id="WG2-Nl-MJc" customClass="LLConfirmViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DOQ-Ey-JH8">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Confirm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePZ-ml-xCY">
@@ -692,7 +719,7 @@
             <objects>
                 <viewController id="7wk-eo-uTO" customClass="MFMailComposeViewController" sceneMemberID="viewController">
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="c0J-kr-CcA">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="0.0" width="513" height="352"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0039215688589999999" green="0.0" blue="1" alpha="1" colorSpace="deviceRGB"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -709,7 +736,7 @@
             <objects>
                 <viewController id="rAp-W1-sT8" customClass="LLConfirmedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Te-mH-Nmc">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Confirmed" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQU-fv-Ydz">
@@ -773,12 +800,17 @@
         </scene>
     </scenes>
     <classes>
-        <class className="LLBookLaterViewController" superclassName="UIViewController">
+        <class className="LLBackgroundView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LLBackgroundView.h"/>
+        </class>
+        <class className="LLBookLaterViewController" superclassName="LLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LLBookLaterViewController.h"/>
             <relationships>
+                <relationship kind="action" name="finish:"/>
                 <relationship kind="action" name="sendEmail:"/>
                 <relationship kind="outlet" name="emailField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="enterEmailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="finishButtonItem" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="sendEmailButton" candidateClass="UIButton"/>
             </relationships>
         </class>
@@ -803,27 +835,24 @@
         <class className="LLConfirmedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LLConfirmedViewController.h"/>
         </class>
-        <class className="LLDoctorViewController" superclassName="UIViewController">
+        <class className="LLDoctorViewController" superclassName="LLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LLDoctorViewController.h"/>
             <relationships>
                 <relationship kind="action" name="nextButtonClicked:"/>
-                <relationship kind="action" name="selectDoctButton:"/>
                 <relationship kind="action" name="selectDoctorButtonClicked:"/>
                 <relationship kind="action" name="selectInsuranceButtonClicked:"/>
-                <relationship kind="outlet" name="insuranceLabel1" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="insuranceLabel2" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="insuranceTextField1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="insuranceTextField2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="nextButtonItem" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="patientLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="patientTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="selectDoctorButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="selectInsuranceButton" candidateClass="UIButton"/>
             </relationships>
         </class>
-        <class className="LLLocationsViewController" superclassName="UIViewController">
+        <class className="LLLocationsViewController" superclassName="LLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LLLocationsViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="priceRangeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
                 <relationship kind="outlet" name="treatmentLabel" candidateClass="UILabel"/>
             </relationships>
@@ -838,12 +867,15 @@
                 <relationship kind="outlet" name="bookUpFront" candidateClass="UIButton"/>
             </relationships>
         </class>
-        <class className="LLTreatmentViewController" superclassName="UIViewController">
+        <class className="LLTreatmentViewController" superclassName="LLViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LLTreatmentViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="treatmentLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="treatmentTableView" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="LLViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LLViewController.h"/>
         </class>
         <class className="MFMailComposeViewController" superclassName="UINavigationController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MFMailComposeViewController.h"/>
@@ -858,7 +890,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="e8y-PN-Tpe"/>
         <segue reference="7Y7-YF-a06"/>
-        <segue reference="yQv-4O-Evy"/>
     </inferredMetricsTieBreakers>
 </document>

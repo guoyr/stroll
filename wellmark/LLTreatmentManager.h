@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#define WELLMARK @"Wellmark"
+
 @interface LLTreatmentManager : NSObject
 
 @property (nonatomic, strong) NSString *selectedTreatment;
 @property (nonatomic, strong) NSString *patientName;
 @property (nonatomic, strong) NSDictionary *providerInformation;
+@property (nonatomic, strong) NSString *insuranceCompany;
 
 + (LLTreatmentManager*)sharedInstance;
-- (void)addBackground:(UIView *)view;
-
+- (NSString *)getEmail;
 @end

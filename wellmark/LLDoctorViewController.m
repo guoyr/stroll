@@ -36,9 +36,6 @@
     [[_insuranceTextField1 layer] setCornerRadius:5];
     [[_insuranceTextField2 layer] setCornerRadius:5];
     [[_patientTextField layer] setCornerRadius:5];
-
-
-    [[LLTreatmentManager sharedInstance] addBackground:[self view]];
     
     _selectDoctorViewController = [[LLSelectDoctorViewController alloc] initWithStyle:UITableViewStylePlain];
     _selectInsuranceViewController = [[LLSelectInsuranceViewController alloc] initWithStyle:UITableViewStylePlain];
@@ -70,19 +67,20 @@
 
 -(void)selectDoctorButtonClicked:(id)sender
 {
-    [_doctorPopoverController presentPopoverFromRect:CGRectMake(128, -72, 320, 320) inView:[self view] permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    [_doctorPopoverController presentPopoverFromRect:CGRectMake(128, -150, 320, 320) inView:[self view] permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     [_doctorPopoverController setPopoverContentSize:CGSizeMake(320, 320) animated:NO];
 }
 
 -(void)selectInsuranceButtonClicked:(id)sender
 {
-    [_insurancePopoverController presentPopoverFromRect:CGRectMake(576, -72, 320, 320) inView:[self view] permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+    [_insurancePopoverController presentPopoverFromRect:CGRectMake(576, -150, 320, 320) inView:[self view] permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     [_doctorPopoverController setPopoverContentSize:CGSizeMake(320, 320) animated:NO];
 }
 
 -(void)nextButtonClicked:(id)sender
 {
     [[self view] resignFirstResponder];
+    [self performSegueWithIdentifier:@"showTreatment" sender:self];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -105,7 +103,9 @@
 {
     [_insurancePopoverController dismissPopoverAnimated:YES];
     [_selectInsuranceButton setTitle:insurance forState:UIControlStateNormal];
-    if ([insurance rangeOfString:@"Wellmark"].location != NSNotFound) {
+    if ([insurance rangeOfString:WELLMARK].location != NSNotFound) {
+        [[LLTreatmentManager sharedInstance] setInsuranceCompany:WELLMARK];
+        [self addBackground:YES];
         [UIView animateWithDuration:0.25 animations:^{
             [_insuranceTextField1 setAlpha:1];
             [_insuranceTextField2 setAlpha:1];

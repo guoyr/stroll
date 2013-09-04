@@ -10,6 +10,8 @@
 
 @interface LLTreatmentManager()
 
+@property (nonatomic, strong) NSDictionary *patientInfo;
+
 @end
 
 @implementation LLTreatmentManager
@@ -25,6 +27,17 @@
     return _sharedObject;
 }
 
+-(void)setPatientName:(NSString *)patientName
+{
+    _patientName = patientName;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"dummyUserInfo" ofType:@"plist"];
+    NSDictionary *userInfoDict = [NSDictionary dictionaryWithContentsOfFile:path];
+    if ([userInfoDict objectForKey:patientName]) {
+        _patientInfo = [userInfoDict objectForKey:patientName];
+    }
+  
+}
+
 -(id)init
 {
     self = [super init];
@@ -37,11 +50,9 @@
     return self;
 }
 
-- (void)addBackground:(UIView *)view
+-(NSString *)getEmail
 {
-    UIImageView *bg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-    [view addSubview:bg];
-    [view sendSubviewToBack:bg];
+    return [_patientInfo objectForKey:@"email"];
 }
 
 @end

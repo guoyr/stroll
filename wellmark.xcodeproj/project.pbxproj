@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */; };
+		B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */; };
+		B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02ABE4F17D66646005A5F5C /* LLViewController.m */; };
 		B02F17A717CD6B5C007EA8A7 /* LLDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17A617CD6B5C007EA8A7 /* LLDoctorViewController.m */; };
 		B02F17AA17CD6CE7007EA8A7 /* LLTreatmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17A917CD6CE7007EA8A7 /* LLTreatmentViewController.m */; };
 		B02F17B017CD757C007EA8A7 /* LLLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17AF17CD757C007EA8A7 /* LLLocationsViewController.m */; };
@@ -49,6 +52,8 @@
 		B065721E17D41285005CB364 /* wellmark_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B065721C17D41285005CB364 /* wellmark_logo.png */; };
 		B065721F17D41285005CB364 /* wellmark_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B065721D17D41285005CB364 /* wellmark_logo@2x.png */; };
 		B065722217D42BAF005CB364 /* doctor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B065722117D42BAF005CB364 /* doctor.jpg */; };
+		B065722417D4398A005CB364 /* dummy_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B065722317D4398A005CB364 /* dummy_data.json */; };
+		B0E5B18C17D589D6000E82A8 /* wellmark_logo_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E5B18B17D589D6000E82A8 /* wellmark_logo_background.png */; };
 		B0F0E52C17CEEC4C003EF566 /* LLBookUpfrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */; };
 		B0F0E52F17CEEC6D003EF566 /* LLBookLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52E17CEEC6D003EF566 /* LLBookLaterViewController.m */; };
 		B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9517CD3BEA005E4B0A /* UIKit.framework */; };
@@ -64,6 +69,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wellmark_hq_data.json; sourceTree = "<group>"; };
+		B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dummyUserInfo.plist; sourceTree = "<group>"; };
+		B02ABE4E17D66646005A5F5C /* LLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLViewController.h; sourceTree = "<group>"; };
+		B02ABE4F17D66646005A5F5C /* LLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLViewController.m; sourceTree = "<group>"; };
 		B02F17A517CD6B5C007EA8A7 /* LLDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDoctorViewController.h; sourceTree = "<group>"; };
 		B02F17A617CD6B5C007EA8A7 /* LLDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDoctorViewController.m; sourceTree = "<group>"; };
 		B02F17A817CD6CE7007EA8A7 /* LLTreatmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLTreatmentViewController.h; sourceTree = "<group>"; };
@@ -136,6 +145,8 @@
 		B065721D17D41285005CB364 /* wellmark_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wellmark_logo@2x.png"; sourceTree = "<group>"; };
 		B065722017D41757005CB364 /* LLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLColors.h; sourceTree = "<group>"; };
 		B065722117D42BAF005CB364 /* doctor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doctor.jpg; sourceTree = "<group>"; };
+		B065722317D4398A005CB364 /* dummy_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummy_data.json; sourceTree = "<group>"; };
+		B0E5B18B17D589D6000E82A8 /* wellmark_logo_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wellmark_logo_background.png; sourceTree = "<group>"; };
 		B0F0E52A17CEEC4C003EF566 /* LLBookUpfrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookUpfrontViewController.h; sourceTree = "<group>"; };
 		B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBookUpfrontViewController.m; sourceTree = "<group>"; };
 		B0F0E52D17CEEC6D003EF566 /* LLBookLaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookLaterViewController.h; sourceTree = "<group>"; };
@@ -271,6 +282,8 @@
 		B0F88C9B17CD3BEA005E4B0A /* wellmark */ = {
 			isa = PBXGroup;
 			children = (
+				B02ABE4E17D66646005A5F5C /* LLViewController.h */,
+				B02ABE4F17D66646005A5F5C /* LLViewController.m */,
 				B06571FA17D18AD5005CB364 /* LLTreatmentManager.h */,
 				B06571FB17D18AD5005CB364 /* LLTreatmentManager.m */,
 				B0F88CA417CD3BEA005E4B0A /* LLAppDelegate.h */,
@@ -309,6 +322,10 @@
 		B0F88C9C17CD3BEA005E4B0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */,
+				B0E5B18B17D589D6000E82A8 /* wellmark_logo_background.png */,
+				B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */,
+				B065722317D4398A005CB364 /* dummy_data.json */,
 				B065722117D42BAF005CB364 /* doctor.jpg */,
 				B065721C17D41285005CB364 /* wellmark_logo.png */,
 				B065721D17D41285005CB364 /* wellmark_logo@2x.png */,
@@ -389,6 +406,10 @@
 				B065721E17D41285005CB364 /* wellmark_logo.png in Resources */,
 				B065721F17D41285005CB364 /* wellmark_logo@2x.png in Resources */,
 				B065722217D42BAF005CB364 /* doctor.jpg in Resources */,
+				B065722417D4398A005CB364 /* dummy_data.json in Resources */,
+				B0E5B18C17D589D6000E82A8 /* wellmark_logo_background.png in Resources */,
+				B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */,
+				B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +448,7 @@
 				B06571FC17D18AD5005CB364 /* LLTreatmentManager.m in Sources */,
 				B065721217D3DA90005CB364 /* LLSelectDoctorViewController.m in Sources */,
 				B065721517D3DAA1005CB364 /* LLSelectInsuranceViewController.m in Sources */,
+				B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLViewController.h"
 
-@interface LLTreatmentViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface LLTreatmentViewController : LLViewController <UITableViewDataSource, UITableViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *treatmentTableView;

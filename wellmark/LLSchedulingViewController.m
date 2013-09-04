@@ -21,8 +21,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setTitle:[NSString stringWithFormat:@"Select Scheduling Options for %@", [[LLTreatmentManager sharedInstance] patientName]]];
-    [[LLTreatmentManager sharedInstance] addBackground:[self view]];
-
 }
 
 - (void)didReceiveMemoryWarning

@@ -17,15 +17,17 @@
 			<string>Choose Location</string>
 			<key>Values</key>
 			<array>
-				<string>0</string>
-				<string>1</string>
-				<string>2</string>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+				<string>3</string>
 			</array>
 			<key>Titles</key>
 			<array>
 				<string>Current Location</string>
 				<string>Des Moines City Hall</string>
 				<string>West Des Moines</string>
+				<string>Wellmark HQ</string>
 			</array>
 			<key>Key</key>
 			<string>location_preference</string>
@@ -44,7 +46,7 @@
 			<key>Title</key>
 			<string>Use Dummy Data</string>
 			<key>Key</key>
-			<string>dummy_data_preference</string>
+			<string>data_preference</string>
 			<key>DefaultValue</key>
 			<false/>
 		</dict>

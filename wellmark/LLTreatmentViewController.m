@@ -25,10 +25,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setTitle:[NSString stringWithFormat:@"Select Treatment for %@",[[LLTreatmentManager sharedInstance] patientName]]];
-    [self setTreatments:[NSArray arrayWithObjects:@"CT Scan", @"MRI Scan", @"Ultrasound", nil]];
+    [self setTreatments:[NSArray arrayWithObjects:@"CT Scan", @"MRI Scan", @"PET Scan", @"EKG", @"X-Ray", nil]];
     [[_treatmentLabel layer] setCornerRadius:5];
-
-    [[LLTreatmentManager sharedInstance] addBackground:[self view]];
 
 }
 
@@ -60,6 +58,8 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    _selectedTreatment = [[cell textLabel] text];
     [[LLTreatmentManager sharedInstance] setSelectedTreatment:_selectedTreatment];
     [self performSegueWithIdentifier:@"showLocation" sender:self];
 }

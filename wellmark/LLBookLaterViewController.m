@@ -22,10 +22,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [[LLTreatmentManager sharedInstance] addBackground:[self view]];
     [[_sendEmailButton layer] setCornerRadius:5.0];
-    [_sendEmailButton setHidden:YES];
-    [_sendEmailButton setEnabled:NO];
+    _emailAddress = [[LLTreatmentManager sharedInstance] getEmail];
+    if (!_emailAddress) {
+        [_sendEmailButton setHidden:YES];
+        [_sendEmailButton setEnabled:NO];
+    } else {
+        [_emailField setPlaceholder:_emailAddress];
+    }
 
 }
 
@@ -56,6 +60,11 @@
     [_sendEmailButton setEnabled:YES];
     [textField resignFirstResponder];
     return YES;
+}
+
+-(void)finish:(id)sender
+{
+    [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

@@ -11,15 +11,21 @@
 #import "LLColors.h"
 
 #define PROVIDER_HEIGHT 96
+#define PRICE_HEIGHT 48
+#define SCHEDULE_HEIGHT 48
+
 #define MARGIN 10
 #define DISTANCE_HEIGHT 32
+#define DOCTOR_HEIGHT 48
 #define IMAGE_HEIGHT 200
-
+#define PRICE_LABEL_FONT_SIZE 32.0f
 @interface LLLocationView()
 
 @property (nonatomic, strong) UILabel *providerAltNameLabel;
 @property (nonatomic, strong) UILabel *providerDistanceLabel;
 @property (nonatomic, strong) UILabel *priceLabel;
+@property (nonatomic, strong) UILabel *scheduleAppointmentLabel;
+@property (nonatomic, strong) UILabel *providerDoctorNameLabel;
 @property (nonatomic, strong) UIImageView *doctorImageView;
 
 @end
@@ -39,22 +45,35 @@
         [_providerAltNameLabel setNumberOfLines:2];
         [_providerAltNameLabel setBackgroundColor:[UIColor clearColor]];
         
-        _providerDistanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, PROVIDER_HEIGHT + MARGIN, self.frame.size.width - MARGIN * 2, DISTANCE_HEIGHT)];
+        _providerDoctorNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, MARGIN + PROVIDER_HEIGHT, self.frame.size.width - MARGIN * 2, DOCTOR_HEIGHT)];
+        [_providerDoctorNameLabel setTextAlignment:NSTextAlignmentCenter];
+        [_providerDoctorNameLabel setBackgroundColor:[UIColor clearColor]];
+        
+        
+        _providerDistanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, PROVIDER_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3, self.frame.size.width - MARGIN * 2, DISTANCE_HEIGHT)];
         [_providerDistanceLabel setTextAlignment:NSTextAlignmentCenter];
         [_providerDistanceLabel setBackgroundColor:[UIColor clearColor]];
+        
+        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctor.jpg"]];
+        [_doctorImageView setCenter:CGPointMake(LOCATION_CARD_WIDTH / 2, IMAGE_HEIGHT / 2 + PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3)];
 
-        _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, PROVIDER_HEIGHT + DISTANCE_HEIGHT + IMAGE_HEIGHT + MARGIN * 4, self.frame.size.width - MARGIN * 2, 48)];
-        [_priceLabel setFont:[UIFont systemFontOfSize:32.0]];
+        _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + IMAGE_HEIGHT + MARGIN * 4, self.frame.size.width - MARGIN * 2, PRICE_HEIGHT)];
         [_priceLabel setTextAlignment:NSTextAlignmentCenter];
         [_priceLabel setBackgroundColor:[UIColor clearColor]];
-
-        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctor.jpg"]];
-        [_doctorImageView setCenter:CGPointMake(LOCATION_CARD_WIDTH / 2, IMAGE_HEIGHT / 2 + PROVIDER_HEIGHT + DISTANCE_HEIGHT + MARGIN * 2)];
+        
+        _scheduleAppointmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, PROVIDER_HEIGHT + DOCTOR_HEIGHT + DISTANCE_HEIGHT + IMAGE_HEIGHT + MARGIN * 5 + PRICE_HEIGHT, self.frame.size.width - MARGIN * 2, SCHEDULE_HEIGHT)];
+        [_scheduleAppointmentLabel setText:@"Schedule Appointment"];
+        [_scheduleAppointmentLabel setBackgroundColor:TORQUOISE];
+        [_scheduleAppointmentLabel setTextAlignment:NSTextAlignmentCenter];
+        [_scheduleAppointmentLabel setTextColor:[UIColor whiteColor]];
+        [[_scheduleAppointmentLabel layer] setCornerRadius:5.0];
         
         [self addSubview:_providerAltNameLabel];
         [self addSubview:_providerDistanceLabel];
         [self addSubview:_priceLabel];
         [self addSubview:_doctorImageView];
+        [self addSubview:_scheduleAppointmentLabel];
+        [self addSubview:_providerDoctorNameLabel];
     }
     return self;
 }
@@ -71,14 +90,21 @@
 
 }
 
+-(void)setDoctorName:(NSString *)name
+{
+    [_providerDoctorNameLabel setText:name];
+}
+
 -(void)setPrice:(float)price
 {
     if (price < 0.1) {
         [_priceLabel setText:@"Free"];
+        [_priceLabel setFont:[UIFont boldSystemFontOfSize:PRICE_LABEL_FONT_SIZE]];
         [_priceLabel setTextColor:TORQUOISE];
     } else {
-        [_priceLabel setText:[NSString stringWithFormat:@"$%2.1f",price]];
-        [_priceLabel setTextColor:RED];
+        [_priceLabel setText:[NSString stringWithFormat:@"$%2.2f",price]];
+        [_priceLabel setFont:[UIFont systemFontOfSize:PRICE_LABEL_FONT_SIZE]];
+        [_priceLabel setTextColor:[UIColor blackColor]];
     }
     
 }
