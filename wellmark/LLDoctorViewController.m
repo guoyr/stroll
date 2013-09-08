@@ -115,6 +115,8 @@
         }];
         
     } else if ([_insuranceTextField1 isEnabled] || [_insuranceTextField2 isEnabled]) {
+        [[LLTreatmentManager sharedInstance] setInsuranceCompany:nil];
+        [self addBackground:YES];
         [UIView animateWithDuration:0.25 animations:^{
             [_insuranceTextField1 setAlpha:0];
             [_insuranceTextField2 setAlpha:0];

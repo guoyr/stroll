@@ -27,31 +27,41 @@
 
 -(void)addBackground:(BOOL)animated
 {
-    if ([_backgroundView superview]) {
-        [_backgroundView removeFromSuperview];
-    }
+    
+    UIImageView *backgroundView;
 
-    if ([[LLTreatmentManager sharedInstance] insuranceCompany]) {
-        _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wellmark_logo_background.png"]];
+    if ([[[LLTreatmentManager sharedInstance] insuranceCompany] isEqualToString:WELLMARK]) {
+        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wellmark_bg.png"]];
 
     } else {
-        _backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
 
     }
     
+    void (^completion)(BOOL) = ^(BOOL finished) {
+        if ([_backgroundView superview]) {
+            [_backgroundView removeFromSuperview];
+        }
+        _backgroundView = backgroundView;
+    };
     if (animated) {
-        [_backgroundView setAlpha:0.0];
-        [[self view] addSubview:_backgroundView];
-        [[self view] sendSubviewToBack:_backgroundView];
+        [backgroundView setAlpha:0.0];
+        [[self view] addSubview:backgroundView];
+        [[self view] sendSubviewToBack:backgroundView];
         
         [UIView animateWithDuration:1.0 animations:^{
-            [_backgroundView setAlpha:1.0];
+            [_backgroundView setAlpha:0.0];
+            [backgroundView setAlpha:1.0];
+            
+        } completion:^(BOOL finished){
+            completion(finished);
         }];
     } else {
-        [[self view] addSubview:_backgroundView];
-        [[self view] sendSubviewToBack:_backgroundView];
-        
+        [[self view] addSubview:backgroundView];
+        [[self view] sendSubviewToBack:backgroundView];
+        completion(YES);
     }
+    
 }
 
 - (void)didReceiveMemoryWarning

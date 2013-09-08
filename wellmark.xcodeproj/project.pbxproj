@@ -53,7 +53,6 @@
 		B065721F17D41285005CB364 /* wellmark_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B065721D17D41285005CB364 /* wellmark_logo@2x.png */; };
 		B065722217D42BAF005CB364 /* doctor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B065722117D42BAF005CB364 /* doctor.jpg */; };
 		B065722417D4398A005CB364 /* dummy_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B065722317D4398A005CB364 /* dummy_data.json */; };
-		B0E5B18C17D589D6000E82A8 /* wellmark_logo_background.png in Resources */ = {isa = PBXBuildFile; fileRef = B0E5B18B17D589D6000E82A8 /* wellmark_logo_background.png */; };
 		B0F0E52C17CEEC4C003EF566 /* LLBookUpfrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */; };
 		B0F0E52F17CEEC6D003EF566 /* LLBookLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52E17CEEC6D003EF566 /* LLBookLaterViewController.m */; };
 		B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9517CD3BEA005E4B0A /* UIKit.framework */; };
@@ -66,6 +65,8 @@
 		B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CA917CD3BEA005E4B0A /* Default@2x.png */; };
 		B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CAB17CD3BEA005E4B0A /* Default-568h@2x.png */; };
 		B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */; };
+		BC25779417DC27980087C6DB /* wellmark_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BC25779217DC27980087C6DB /* wellmark_bg.png */; };
+		BC25779517DC27980087C6DB /* wellmark_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC25779317DC27980087C6DB /* wellmark_bg@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,7 +147,6 @@
 		B065722017D41757005CB364 /* LLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLColors.h; sourceTree = "<group>"; };
 		B065722117D42BAF005CB364 /* doctor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doctor.jpg; sourceTree = "<group>"; };
 		B065722317D4398A005CB364 /* dummy_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummy_data.json; sourceTree = "<group>"; };
-		B0E5B18B17D589D6000E82A8 /* wellmark_logo_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wellmark_logo_background.png; sourceTree = "<group>"; };
 		B0F0E52A17CEEC4C003EF566 /* LLBookUpfrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookUpfrontViewController.h; sourceTree = "<group>"; };
 		B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBookUpfrontViewController.m; sourceTree = "<group>"; };
 		B0F0E52D17CEEC6D003EF566 /* LLBookLaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookLaterViewController.h; sourceTree = "<group>"; };
@@ -165,6 +165,8 @@
 		B0F88CA917CD3BEA005E4B0A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B0F88CAB17CD3BEA005E4B0A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B0F88CAE17CD3BEA005E4B0A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		BC25779217DC27980087C6DB /* wellmark_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wellmark_bg.png; sourceTree = "<group>"; };
+		BC25779317DC27980087C6DB /* wellmark_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wellmark_bg@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,8 +324,9 @@
 		B0F88C9C17CD3BEA005E4B0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BC25779217DC27980087C6DB /* wellmark_bg.png */,
+				BC25779317DC27980087C6DB /* wellmark_bg@2x.png */,
 				B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */,
-				B0E5B18B17D589D6000E82A8 /* wellmark_logo_background.png */,
 				B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */,
 				B065722317D4398A005CB364 /* dummy_data.json */,
 				B065722117D42BAF005CB364 /* doctor.jpg */,
@@ -371,6 +374,11 @@
 				CLASSPREFIX = LL;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Stroll;
+				TargetAttributes = {
+					B0F88C9117CD3BEA005E4B0A = {
+						DevelopmentTeam = 7J555P3K78;
+					};
+				};
 			};
 			buildConfigurationList = B0F88C8D17CD3BEA005E4B0A /* Build configuration list for PBXProject "wellmark" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -398,16 +406,17 @@
 				B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */,
 				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
 				B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */,
+				BC25779517DC27980087C6DB /* wellmark_bg@2x.png in Resources */,
 				B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */,
 				B02F182617CD9A79007EA8A7 /* LICENSE in Resources */,
 				B02F182717CD9A79007EA8A7 /* README.md in Resources */,
 				B06571F717D17FAD005CB364 /* background.png in Resources */,
 				B065721717D3F0D8005CB364 /* Settings.bundle in Resources */,
+				BC25779417DC27980087C6DB /* wellmark_bg.png in Resources */,
 				B065721E17D41285005CB364 /* wellmark_logo.png in Resources */,
 				B065721F17D41285005CB364 /* wellmark_logo@2x.png in Resources */,
 				B065722217D42BAF005CB364 /* doctor.jpg in Resources */,
 				B065722417D4398A005CB364 /* dummy_data.json in Resources */,
-				B0E5B18C17D589D6000E82A8 /* wellmark_logo_background.png in Resources */,
 				B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */,
 				B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */,
 			);
@@ -535,6 +544,7 @@
 		B0F88CB617CD3BEA005E4B0A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -542,6 +552,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
 				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -550,6 +561,7 @@
 		B0F88CB717CD3BEA005E4B0A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -557,6 +569,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
 				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
