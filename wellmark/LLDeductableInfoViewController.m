@@ -21,6 +21,10 @@
 @property (nonatomic, strong) UIView *coinsurance;
 @property (nonatomic, strong) UIView *spent;
 
+@property (nonatomic, strong) UILabel *deductableLabel;
+@property (nonatomic, strong) UILabel *coinsuranceLabel;
+@property (nonatomic, strong) UILabel *spentLabel;
+
 
 @end
 
@@ -47,6 +51,9 @@
     [_spent setBackgroundColor:[UIColor blueColor]];
     [[_spent layer] setCornerRadius:5];
     
+    _deductableLabel = [[UILabel alloc] initWithFrame:CGRectMake(312, 500, 100, 50)];
+    [_deductableLabel setText:@"Deductable, $1000"];
+    
     [[self view] addSubview:_background];
     [[self view] addSubview:_coinsurance];
     [[self view] addSubview:_spent];
@@ -65,8 +72,29 @@
         [_spent setFrame:CGRectMake(412, 500 - SPENT_HEIGHT, 200, SPENT_HEIGHT)];
 
     } completion:^(BOOL finished){
+        _deductableLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - D_HEIGHT - 20, 150, 50)];
+        [_deductableLabel setText:@"Deductable\n $1000"];
+        [_deductableLabel setNumberOfLines:2];
+        [_deductableLabel setAlpha:0];
+        [[self view] addSubview:_deductableLabel];
+        
+        _coinsuranceLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - CO_HEIGHT - 20, 150, 50)];
+        [_coinsuranceLabel setText:@"Fully Covered\n $8000"];
+        [_coinsuranceLabel setNumberOfLines:2];
+        [_coinsuranceLabel setAlpha:0];
+        [[self view] addSubview:_coinsuranceLabel];
+        
+        _spentLabel = [[UILabel alloc] initWithFrame:CGRectMake(412 - 100, 500 - SPENT_HEIGHT - 20, 100, 50)];
+        [_spentLabel setText:@"You Spent\n $5000"];
+        [_spentLabel setNumberOfLines:2];
+        [_spentLabel setAlpha:0];
+        [[self view] addSubview:_spentLabel];
         [UIView animateWithDuration:0.5 animations:^{
-            
+            [_deductableLabel setAlpha:1];
+            [_coinsuranceLabel setAlpha:1];
+            [_spentLabel setAlpha:1];
+
+
         }];
     }];
 }

@@ -31,6 +31,11 @@
         [_emailField setPlaceholder:_emailAddress];
     }
     
+    [[_enterEmailLabel layer] setCornerRadius:5];
+    [[_emailField layer] setCornerRadius:5];
+    [[_sendEmailButton layer] setCornerRadius:5];
+
+
     UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedView:)];
     [[self view] addGestureRecognizer:gr];
 
@@ -73,9 +78,11 @@
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-    _emailAddress = [textField text];
-    [_sendEmailButton setHidden:NO];
-    [_sendEmailButton setEnabled:YES];
+    if ([textField text]) {
+        _emailAddress = [textField text];
+        [_sendEmailButton setHidden:NO];
+        [_sendEmailButton setEnabled:YES];
+    }
     return YES;
 }
 

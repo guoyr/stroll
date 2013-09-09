@@ -70,7 +70,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     
-    [self performSegueWithIdentifier:@"showTreatment" sender:self];
+//    [self performSegueWithIdentifier:@"showTreatment" sender:self];
 }
 
 - (void)didReceiveMemoryWarning

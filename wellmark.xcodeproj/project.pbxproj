@@ -69,6 +69,8 @@
 		BC66AD2017DD47D100C5C1EE /* doctors.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD1F17DD47D100C5C1EE /* doctors.png */; };
 		BC66AD2217DD480000C5C1EE /* doctor.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2117DD480000C5C1EE /* doctor.png */; };
 		BC66AD2517DD60DA00C5C1EE /* LLDeductableInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC66AD2417DD60DA00C5C1EE /* LLDeductableInfoViewController.m */; };
+		BC66AD2817DD6F8F00C5C1EE /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2617DD6F8F00C5C1EE /* settings.png */; };
+		BC66AD2917DD6F8F00C5C1EE /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2717DD6F8F00C5C1EE /* settings@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +174,8 @@
 		BC66AD2117DD480000C5C1EE /* doctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doctor.png; sourceTree = "<group>"; };
 		BC66AD2317DD60DA00C5C1EE /* LLDeductableInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDeductableInfoViewController.h; sourceTree = "<group>"; };
 		BC66AD2417DD60DA00C5C1EE /* LLDeductableInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDeductableInfoViewController.m; sourceTree = "<group>"; };
+		BC66AD2617DD6F8F00C5C1EE /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		BC66AD2717DD6F8F00C5C1EE /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +335,8 @@
 		B0F88C9C17CD3BEA005E4B0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BC66AD2617DD6F8F00C5C1EE /* settings.png */,
+				BC66AD2717DD6F8F00C5C1EE /* settings@2x.png */,
 				BC25779217DC27980087C6DB /* wellmark_bg.png */,
 				BC25779317DC27980087C6DB /* wellmark_bg@2x.png */,
 				B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */,
@@ -415,7 +421,9 @@
 				B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */,
 				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
 				B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */,
+				BC66AD2917DD6F8F00C5C1EE /* settings@2x.png in Resources */,
 				BC25779517DC27980087C6DB /* wellmark_bg@2x.png in Resources */,
+				BC66AD2817DD6F8F00C5C1EE /* settings.png in Resources */,
 				B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */,
 				B02F182617CD9A79007EA8A7 /* LICENSE in Resources */,
 				B02F182717CD9A79007EA8A7 /* README.md in Resources */,

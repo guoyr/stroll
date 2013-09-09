@@ -37,7 +37,7 @@
 #warning testing code
 -(void)viewDidAppear:(BOOL)animated
 {
-    [self performSegueWithIdentifier:@"showDeductable" sender:self];
+//    [self performSegueWithIdentifier:@"showDeductable" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
