@@ -19,4 +19,7 @@
 
 + (LLTreatmentManager*)sharedInstance;
 - (NSString *)getEmail;
+- (NSString *)getProviderName;
+- (NSString *)getProviderPhone;
+
 @end

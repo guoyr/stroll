@@ -17,6 +17,7 @@
 @interface LLSelectDoctorViewController : UITableViewController
 
 @property (nonatomic, retain) id<LLSelectDoctorViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSArray *doctors;
 
 @end
 

@@ -50,12 +50,12 @@
     
     [self setTitle:[NSString stringWithFormat:@"Select Location for %@", [[LLTreatmentManager sharedInstance] patientName]]];
     [[_treatmentLabel layer] setCornerRadius:5];
+    [[_priceRangeLabel layer] setCornerRadius:5];
     [_treatmentLabel setText:[[LLTreatmentManager sharedInstance] selectedTreatment]];
-    //TODO: title name - treatment
     
-    _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wellmark_logo.png"]];
-    [_logoView setCenter:CGPointMake(900, 45)];
-    [[self view] addSubview:_logoView];
+//    _logoView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wellmark_logo.png"]];
+//    [_logoView setCenter:CGPointMake(900, 45)];
+//    [[self view] addSubview:_logoView];
     
     int locationIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"location_preference"];
     _curLocation = locationIndex;
@@ -187,7 +187,7 @@
     for (int i = 0; i < [_providers count]; i++) {
         NSDictionary *provider = [_providers objectAtIndex:i];
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
-        LLLocationView *curLocationView = [[LLLocationView alloc] initWithFrame:CGRectMake(curX, curY, LOCATION_CARD_WIDTH, 500)];
+        LLLocationView *curLocationView = [[LLLocationView alloc] initWithFrame:CGRectMake(curX, curY, LOCATION_CARD_WIDTH, 550)];
         [curLocationView addGestureRecognizer:tapGestureRecognizer];
         [curLocationView setProviderAltName:[provider objectForKey:@"AltName"]];
         [curLocationView setProviderDistance:[provider objectForKey:@"Distance"]];
@@ -195,9 +195,9 @@
         
         NSArray *doctors = [provider objectForKey:@"Name"];
         if ([doctors count] > 1) {
-            [curLocationView setDoctorName:@"Multiple Doctors Available"];
+            [curLocationView setDoctorName:@"Multiple Doctors Available" isMultiple:YES];
         } else {
-            [curLocationView setDoctorName:[doctors lastObject]];
+            [curLocationView setDoctorName:[doctors lastObject] isMultiple:NO];
         }
         dummyPrice += rand() % 100;
         [curLocationView setIndex:i];

@@ -21,6 +21,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setTitle:[NSString stringWithFormat:@"Select Scheduling Options for %@", [[LLTreatmentManager sharedInstance] patientName]]];
+    [[_bookNow layer] setCornerRadius:5];
+    [[_bookLater layer] setCornerRadius:5];
+    [[_bookUpFront layer] setCornerRadius:5];
+    [[_schedulingOptionsLabel layer] setCornerRadius:5];
+
+
+
 }
 
 - (void)didReceiveMemoryWarning

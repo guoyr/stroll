@@ -17,5 +17,6 @@
 @interface LLSelectInsuranceViewController : UITableViewController
 
 @property (nonatomic, retain) id<LLSelectInsuranceViewControllerDelegate> delegate;
+@property (nonatomic, strong) NSArray *insurances;
 
 @end

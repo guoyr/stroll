@@ -19,5 +19,5 @@
 - (void)setProviderAltName:(NSString *)name;
 - (void)setProviderDistance:(NSString *)dist;
 -(void)setPrice:(float)price;
--(void)setDoctorName:(NSString *)name;
+-(void)setDoctorName:(NSString *)name isMultiple:(BOOL)multiple;
 @end

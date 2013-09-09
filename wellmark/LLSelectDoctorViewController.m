@@ -10,7 +10,6 @@
 
 @interface LLSelectDoctorViewController ()
 
-@property (nonatomic, strong) NSArray *doctors;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
 @end

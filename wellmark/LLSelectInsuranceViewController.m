@@ -10,7 +10,6 @@
 
 @interface LLSelectInsuranceViewController ()
 
-@property (nonatomic, strong) NSArray *insurances;
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
 
 @end

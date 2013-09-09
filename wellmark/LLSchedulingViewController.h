@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LLViewController.h"
 
-@interface LLSchedulingViewController : UIViewController
+@interface LLSchedulingViewController : LLViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *bookNow;
 @property (weak, nonatomic) IBOutlet UIButton *bookUpFront;
 @property (weak, nonatomic) IBOutlet UIButton *bookLater;
+@property (weak, nonatomic) IBOutlet UILabel *schedulingOptionsLabel;
 
 - (IBAction)bookNowClicked:(id)sender;
 - (IBAction)bookLaterClicked:(id)sender;

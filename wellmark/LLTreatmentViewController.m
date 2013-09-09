@@ -11,6 +11,8 @@
 #import "LLLocationsViewController.h"
 #import "LLTreatmentManager.h"
 
+#define CELL_HEIGHT 44
+
 @interface LLTreatmentViewController ()
 
 @property (nonatomic, strong) NSArray *treatments;
@@ -27,13 +29,15 @@
     [self setTitle:[NSString stringWithFormat:@"Select Treatment for %@",[[LLTreatmentManager sharedInstance] patientName]]];
     [self setTreatments:[NSArray arrayWithObjects:@"CT Scan", @"MRI Scan", @"PET Scan", @"EKG", @"X-Ray", nil]];
     [[_treatmentLabel layer] setCornerRadius:5];
-
+    int height = [[self treatments] count] * CELL_HEIGHT > 320 ? 320 : [[self treatments] count] * CELL_HEIGHT;
+    [[self treatmentTableView] setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, height)];
+    [[_treatmentTableView layer] setCornerRadius:5];
 }
 
 #warning testing code
 -(void)viewDidAppear:(BOOL)animated
 {
-//    [self performSegueWithIdentifier:@"showLocation" sender:self];
+    [self performSegueWithIdentifier:@"showDeductable" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,7 +65,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     _selectedTreatment = [[cell textLabel] text];
     [[LLTreatmentManager sharedInstance] setSelectedTreatment:_selectedTreatment];
-    [self performSegueWithIdentifier:@"showLocation" sender:self];
+    [self performSegueWithIdentifier:@"showDeductable" sender:self];
 }
 
 @end

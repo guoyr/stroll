@@ -13,6 +13,7 @@
 #import "LLTreatmentViewController.h"
 #import "LLTreatmentManager.h"
 
+#define CELL_HEIGHT 44
 
 @interface LLDoctorViewController ()
 
@@ -30,7 +31,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [self setNames:[NSArray arrayWithObjects:@"Gertie Troup", @"Brigitte Denner", @"Ethelyn Desanto", @"Leeanna Halm", @"Jama Sing", nil]];
     [[_selectDoctorButton layer] setCornerRadius:5];
     [[_selectInsuranceButton layer] setCornerRadius:5];
     [[_insuranceTextField1 layer] setCornerRadius:5];
@@ -50,13 +50,27 @@
     [[self insuranceTextField1] setEnabled:NO];
     [[self insuranceTextField2] setEnabled:NO];
 	// Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedView:)];
+    [[self view] addGestureRecognizer:gr];
+}
+
+-(void)tappedView:(id)sender
+{
+    if ([_insuranceTextField1 isFirstResponder]) {
+        [_insuranceTextField1 resignFirstResponder];
+    } else if([_insuranceTextField2 isFirstResponder]) {
+        [_insuranceTextField2 resignFirstResponder];
+    } else if ([_patientTextField isFirstResponder]) {
+        [_patientTextField resignFirstResponder];
+    }
 }
 
 #warning testing code
 -(void)viewDidAppear:(BOOL)animated
 {
     
-//    [self performSegueWithIdentifier:@"showTreatment" sender:self];
+    [self performSegueWithIdentifier:@"showTreatment" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,34 +81,42 @@
 
 -(void)selectDoctorButtonClicked:(id)sender
 {
+    int height = [[_selectDoctorViewController doctors] count] * CELL_HEIGHT > 320 ? 320 : [[_selectDoctorViewController doctors] count] * CELL_HEIGHT;
     [_doctorPopoverController presentPopoverFromRect:CGRectMake(128, -150, 320, 320) inView:[self view] permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-    [_doctorPopoverController setPopoverContentSize:CGSizeMake(320, 320) animated:NO];
+    [_doctorPopoverController setPopoverContentSize:CGSizeMake(320, height) animated:NO];
 }
 
 -(void)selectInsuranceButtonClicked:(id)sender
 {
+    int height = [[_selectInsuranceViewController  insurances] count] * CELL_HEIGHT > 320 ? 320 : [[_selectInsuranceViewController insurances] count] * CELL_HEIGHT;
     [_insurancePopoverController presentPopoverFromRect:CGRectMake(576, -150, 320, 320) inView:[self view] permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-    [_doctorPopoverController setPopoverContentSize:CGSizeMake(320, 320) animated:NO];
+    [_insurancePopoverController setPopoverContentSize:CGSizeMake(320, height) animated:NO];
 }
 
 -(void)nextButtonClicked:(id)sender
 {
-    [[self view] resignFirstResponder];
     [self performSegueWithIdentifier:@"showTreatment" sender:self];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
     if (textField == _patientTextField) {
         [[LLTreatmentManager sharedInstance] setPatientName:[textField text]];
     }
-    
+    return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
     if ([[_insuranceTextField1 text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
         [self performSegueWithIdentifier:@"showTreatment" sender:self];
-    } 
-    
-    [textField resignFirstResponder];
-    return YES;
+    }
 }
 
 #pragma mark LLSelectInsuranceViewControllerDelegate
@@ -125,9 +147,7 @@
             [_insuranceTextField1 setEnabled:NO];
         }];
     }
-
 }
-
 
 #pragma mark LLSelectDoctorViewControllerDelegate
 
@@ -136,5 +156,21 @@
     [_doctorPopoverController dismissPopoverAnimated:YES];
     [_selectDoctorButton setTitle:doctor forState:UIControlStateNormal];
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"returnToBeginning"]) {
+        //clear all fields
+        [_insuranceTextField2 setText:@""];
+        [_insuranceTextField1 setText:@""];
+        [_patientTextField setText:@""];
+        [[_selectDoctorViewController tableView]  deselectRowAtIndexPath:[[_selectDoctorViewController tableView] indexPathForSelectedRow] animated:NO];
+        [[_selectInsuranceViewController tableView]  deselectRowAtIndexPath:[[_selectInsuranceViewController tableView] indexPathForSelectedRow] animated:NO];
+        [_selectDoctorButton setTitle:@"Select Doctor" forState:UIControlStateNormal];
+        [_selectInsuranceButton setTitle:@"Select Insurance" forState:UIControlStateNormal];
+
+    }
+}
+
 
 @end

@@ -44,22 +44,25 @@
         [_providerAltNameLabel setFont:[UIFont systemFontOfSize:24]];
         [_providerAltNameLabel setNumberOfLines:2];
         [_providerAltNameLabel setBackgroundColor:[UIColor clearColor]];
+        [[_providerAltNameLabel layer] setCornerRadius:5];
         
         _providerDoctorNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, MARGIN + PROVIDER_HEIGHT, self.frame.size.width - MARGIN * 2, DOCTOR_HEIGHT)];
         [_providerDoctorNameLabel setTextAlignment:NSTextAlignmentCenter];
         [_providerDoctorNameLabel setBackgroundColor:[UIColor clearColor]];
-        
+        [[_providerDoctorNameLabel layer] setCornerRadius:5];
+
         
         _providerDistanceLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, PROVIDER_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3, self.frame.size.width - MARGIN * 2, DISTANCE_HEIGHT)];
         [_providerDistanceLabel setTextAlignment:NSTextAlignmentCenter];
         [_providerDistanceLabel setBackgroundColor:[UIColor clearColor]];
-        
-        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctor.jpg"]];
-        [_doctorImageView setCenter:CGPointMake(LOCATION_CARD_WIDTH / 2, IMAGE_HEIGHT / 2 + PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3)];
+        [[_providerDistanceLabel layer] setCornerRadius:5];
+
 
         _priceLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + IMAGE_HEIGHT + MARGIN * 4, self.frame.size.width - MARGIN * 2, PRICE_HEIGHT)];
         [_priceLabel setTextAlignment:NSTextAlignmentCenter];
         [_priceLabel setBackgroundColor:[UIColor clearColor]];
+        [[_priceLabel layer] setCornerRadius:5];
+
         
         _scheduleAppointmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, PROVIDER_HEIGHT + DOCTOR_HEIGHT + DISTANCE_HEIGHT + IMAGE_HEIGHT + MARGIN * 5 + PRICE_HEIGHT, self.frame.size.width - MARGIN * 2, SCHEDULE_HEIGHT)];
         [_scheduleAppointmentLabel setText:@"Schedule Appointment"];
@@ -71,7 +74,6 @@
         [self addSubview:_providerAltNameLabel];
         [self addSubview:_providerDistanceLabel];
         [self addSubview:_priceLabel];
-        [self addSubview:_doctorImageView];
         [self addSubview:_scheduleAppointmentLabel];
         [self addSubview:_providerDoctorNameLabel];
     }
@@ -90,9 +92,17 @@
 
 }
 
--(void)setDoctorName:(NSString *)name
+-(void)setDoctorName:(NSString *)name isMultiple:(BOOL)multiple
 {
     [_providerDoctorNameLabel setText:name];
+    
+    if (multiple) {
+        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctors.png"]];
+    } else {
+        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctor.png"]];
+    }
+    [_doctorImageView setCenter:CGPointMake(LOCATION_CARD_WIDTH / 2, IMAGE_HEIGHT / 2 + PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3)];
+    [self addSubview:_doctorImageView];
 }
 
 -(void)setPrice:(float)price

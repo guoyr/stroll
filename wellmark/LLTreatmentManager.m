@@ -55,4 +55,16 @@
     return [_patientInfo objectForKey:@"email"];
 }
 
+- (NSString *)getProviderName
+{
+    return [_providerInformation objectForKey:@"AltName"];
+}
+
+- (NSString *)getProviderPhone
+{
+    return [_providerInformation objectForKey:@"Phone"];
+}
+
+
+
 @end

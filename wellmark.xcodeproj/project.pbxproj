@@ -51,7 +51,6 @@
 		B065721717D3F0D8005CB364 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B065721617D3F0D8005CB364 /* Settings.bundle */; };
 		B065721E17D41285005CB364 /* wellmark_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B065721C17D41285005CB364 /* wellmark_logo.png */; };
 		B065721F17D41285005CB364 /* wellmark_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B065721D17D41285005CB364 /* wellmark_logo@2x.png */; };
-		B065722217D42BAF005CB364 /* doctor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B065722117D42BAF005CB364 /* doctor.jpg */; };
 		B065722417D4398A005CB364 /* dummy_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B065722317D4398A005CB364 /* dummy_data.json */; };
 		B0F0E52C17CEEC4C003EF566 /* LLBookUpfrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */; };
 		B0F0E52F17CEEC6D003EF566 /* LLBookLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52E17CEEC6D003EF566 /* LLBookLaterViewController.m */; };
@@ -67,6 +66,9 @@
 		B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */; };
 		BC25779417DC27980087C6DB /* wellmark_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BC25779217DC27980087C6DB /* wellmark_bg.png */; };
 		BC25779517DC27980087C6DB /* wellmark_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC25779317DC27980087C6DB /* wellmark_bg@2x.png */; };
+		BC66AD2017DD47D100C5C1EE /* doctors.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD1F17DD47D100C5C1EE /* doctors.png */; };
+		BC66AD2217DD480000C5C1EE /* doctor.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2117DD480000C5C1EE /* doctor.png */; };
+		BC66AD2517DD60DA00C5C1EE /* LLDeductableInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC66AD2417DD60DA00C5C1EE /* LLDeductableInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,7 +147,6 @@
 		B065721C17D41285005CB364 /* wellmark_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wellmark_logo.png; sourceTree = "<group>"; };
 		B065721D17D41285005CB364 /* wellmark_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wellmark_logo@2x.png"; sourceTree = "<group>"; };
 		B065722017D41757005CB364 /* LLColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLColors.h; sourceTree = "<group>"; };
-		B065722117D42BAF005CB364 /* doctor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = doctor.jpg; sourceTree = "<group>"; };
 		B065722317D4398A005CB364 /* dummy_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummy_data.json; sourceTree = "<group>"; };
 		B0F0E52A17CEEC4C003EF566 /* LLBookUpfrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookUpfrontViewController.h; sourceTree = "<group>"; };
 		B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBookUpfrontViewController.m; sourceTree = "<group>"; };
@@ -167,6 +168,10 @@
 		B0F88CAE17CD3BEA005E4B0A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BC25779217DC27980087C6DB /* wellmark_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wellmark_bg.png; sourceTree = "<group>"; };
 		BC25779317DC27980087C6DB /* wellmark_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wellmark_bg@2x.png"; sourceTree = "<group>"; };
+		BC66AD1F17DD47D100C5C1EE /* doctors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doctors.png; sourceTree = "<group>"; };
+		BC66AD2117DD480000C5C1EE /* doctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doctor.png; sourceTree = "<group>"; };
+		BC66AD2317DD60DA00C5C1EE /* LLDeductableInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLDeductableInfoViewController.h; sourceTree = "<group>"; };
+		BC66AD2417DD60DA00C5C1EE /* LLDeductableInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDeductableInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +303,8 @@
 				B02F17A617CD6B5C007EA8A7 /* LLDoctorViewController.m */,
 				B02F17A817CD6CE7007EA8A7 /* LLTreatmentViewController.h */,
 				B02F17A917CD6CE7007EA8A7 /* LLTreatmentViewController.m */,
+				BC66AD2317DD60DA00C5C1EE /* LLDeductableInfoViewController.h */,
+				BC66AD2417DD60DA00C5C1EE /* LLDeductableInfoViewController.m */,
 				B02F17B117CD7607007EA8A7 /* LLLocationView.h */,
 				B02F17B217CD7607007EA8A7 /* LLLocationView.m */,
 				B02F17AE17CD757C007EA8A7 /* LLLocationsViewController.h */,
@@ -329,7 +336,8 @@
 				B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */,
 				B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */,
 				B065722317D4398A005CB364 /* dummy_data.json */,
-				B065722117D42BAF005CB364 /* doctor.jpg */,
+				BC66AD2117DD480000C5C1EE /* doctor.png */,
+				BC66AD1F17DD47D100C5C1EE /* doctors.png */,
 				B065721C17D41285005CB364 /* wellmark_logo.png */,
 				B065721D17D41285005CB364 /* wellmark_logo@2x.png */,
 				B06571F617D17FAD005CB364 /* background.png */,
@@ -402,6 +410,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC66AD2017DD47D100C5C1EE /* doctors.png in Resources */,
 				B0F88CA017CD3BEA005E4B0A /* InfoPlist.strings in Resources */,
 				B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */,
 				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
@@ -414,8 +423,8 @@
 				B065721717D3F0D8005CB364 /* Settings.bundle in Resources */,
 				BC25779417DC27980087C6DB /* wellmark_bg.png in Resources */,
 				B065721E17D41285005CB364 /* wellmark_logo.png in Resources */,
+				BC66AD2217DD480000C5C1EE /* doctor.png in Resources */,
 				B065721F17D41285005CB364 /* wellmark_logo@2x.png in Resources */,
-				B065722217D42BAF005CB364 /* doctor.jpg in Resources */,
 				B065722417D4398A005CB364 /* dummy_data.json in Resources */,
 				B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */,
 				B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */,
@@ -429,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC66AD2517DD60DA00C5C1EE /* LLDeductableInfoViewController.m in Sources */,
 				B0F88CA217CD3BEA005E4B0A /* main.m in Sources */,
 				B0F88CA617CD3BEA005E4B0A /* LLAppDelegate.m in Sources */,
 				B02F17A717CD6B5C007EA8A7 /* LLDoctorViewController.m in Sources */,
@@ -552,7 +562,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
 				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -569,7 +579,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
 				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
