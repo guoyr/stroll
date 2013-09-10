@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) NSArray *treatments;
 @property (nonatomic, strong) NSString *selectedTreatment;
+@property (strong, nonatomic) UITableView *treatmentTableView;
 
 @end
 
@@ -29,9 +30,12 @@
     [self setTitle:[NSString stringWithFormat:@"Select Treatment for %@",[[LLTreatmentManager sharedInstance] patientName]]];
     [self setTreatments:[NSArray arrayWithObjects:@"CT Scan", @"MRI Scan", @"PET Scan", @"EKG", @"X-Ray", nil]];
     [[_treatmentLabel layer] setCornerRadius:5];
-    int height = [[self treatments] count] * CELL_HEIGHT > 320 ? 320 : [[self treatments] count] * CELL_HEIGHT;
-    [[self treatmentTableView] setFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, height)];
+    _treatmentTableView = [[UITableView alloc] initWithFrame:CGRectMake(352,200,320,44*[_treatments count]) style:UITableViewStylePlain];
+    [_treatmentTableView setDataSource:self];
+    [_treatmentTableView setDelegate:self];
+    [[self view] addSubview:_treatmentTableView];
     [[_treatmentTableView layer] setCornerRadius:5];
+    [_treatmentTableView setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:0.4]];
 }
 
 #warning testing code
@@ -49,7 +53,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"TreatmentCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     [[cell textLabel] setText:[[self treatments] objectAtIndex:[indexPath row]]];
     [[cell textLabel] setBackgroundColor:[UIColor clearColor]];
     return cell;
@@ -65,7 +72,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     _selectedTreatment = [[cell textLabel] text];
     [[LLTreatmentManager sharedInstance] setSelectedTreatment:_selectedTreatment];
-    [self performSegueWithIdentifier:@"showDeductable" sender:self];
+    [self performSegueWithIdentifier:@"showLocation" sender:self];
 }
 
 @end

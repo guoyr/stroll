@@ -158,7 +158,11 @@
     if (![provider objectForKey:@"Name"]) {
         [provider setObject:[NSMutableArray array] forKey:@"Name"];
     }
-    [[provider objectForKey:@"Name"] addObject:[NSString stringWithFormat:@"%@ %@. %@", f, m, l]];
+    if (m) {
+        [[provider objectForKey:@"Name"] addObject:[NSString stringWithFormat:@"%@ %@. %@", f, m, l]];
+    } else {
+        [[provider objectForKey:@"Name"] addObject:[NSString stringWithFormat:@"%@ %@", f, l]];
+    }
 }
 
 -(void)parseProviders
@@ -197,7 +201,7 @@
         if ([doctors count] > 1) {
             [curLocationView setDoctorName:@"Multiple Doctors Available" isMultiple:YES];
         } else {
-            [curLocationView setDoctorName:[doctors lastObject] isMultiple:NO];
+            [curLocationView setDoctorName:[NSString stringWithFormat:@"%@ %@", [doctors lastObject], [provider objectForKey:@"ObtainedDegrees"]] isMultiple:NO];
         }
         dummyPrice += rand() % 100;
         [curLocationView setIndex:i];

@@ -81,6 +81,7 @@
 
 -(void)selectDoctorButtonClicked:(id)sender
 {
+    [self tappedView:sender];
     int height = [[_selectDoctorViewController doctors] count] * CELL_HEIGHT > 320 ? 320 : [[_selectDoctorViewController doctors] count] * CELL_HEIGHT;
     [_doctorPopoverController presentPopoverFromRect:CGRectMake(128, -150, 320, 320) inView:[self view] permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     [_doctorPopoverController setPopoverContentSize:CGSizeMake(320, height) animated:NO];
@@ -88,6 +89,7 @@
 
 -(void)selectInsuranceButtonClicked:(id)sender
 {
+    [self tappedView:sender];
     int height = [[_selectInsuranceViewController  insurances] count] * CELL_HEIGHT > 320 ? 320 : [[_selectInsuranceViewController insurances] count] * CELL_HEIGHT;
     [_insurancePopoverController presentPopoverFromRect:CGRectMake(576, -150, 320, 320) inView:[self view] permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
     [_insurancePopoverController setPopoverContentSize:CGSizeMake(320, height) animated:NO];
@@ -95,7 +97,7 @@
 
 -(void)nextButtonClicked:(id)sender
 {
-    [self performSegueWithIdentifier:@"showTreatment" sender:self];
+    [self tappedView:sender];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -114,7 +116,11 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
-    if ([[_insuranceTextField1 text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
+    if (textField == _patientTextField) {
+        [_selectInsuranceButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    } else if (textField == _insuranceTextField1) {
+        [_insuranceTextField2 becomeFirstResponder];
+    } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
         [self performSegueWithIdentifier:@"showTreatment" sender:self];
     }
 }
@@ -134,6 +140,8 @@
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:YES];
             [_insuranceTextField1 setEnabled:YES];
+            [_insuranceTextField1 becomeFirstResponder];
+
         }];
         
     } else if ([_insuranceTextField1 isEnabled] || [_insuranceTextField2 isEnabled]) {
@@ -145,6 +153,8 @@
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:NO];
             [_insuranceTextField1 setEnabled:NO];
+            [_insuranceTextField1 becomeFirstResponder];
+
         }];
     }
 }
@@ -155,6 +165,7 @@
 {
     [_doctorPopoverController dismissPopoverAnimated:YES];
     [_selectDoctorButton setTitle:doctor forState:UIControlStateNormal];
+    [_patientTextField becomeFirstResponder];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -25,11 +25,16 @@
     [[_sendEmailButton layer] setCornerRadius:5.0];
     _emailAddress = [[LLTreatmentManager sharedInstance] getEmail];
     if (!_emailAddress) {
+        [_enterEmailLabel setText:@"To schedule, please enter your email address"];
         [_sendEmailButton setHidden:YES];
         [_sendEmailButton setEnabled:NO];
     } else {
-        [_emailField setPlaceholder:_emailAddress];
+        [_enterEmailLabel setText:@"Please confirm your email address"];
+        [_emailField setText:_emailAddress];
     }
+    
+    
+    
     
     [[_enterEmailLabel layer] setCornerRadius:5];
     [[_emailField layer] setCornerRadius:5];
@@ -54,7 +59,10 @@
     __block NSString *providerName = [[LLTreatmentManager sharedInstance] getProviderName];
     __block NSString *selectedTreatment = [[LLTreatmentManager sharedInstance] selectedTreatment];
     __block NSString *providerPhone = [[LLTreatmentManager sharedInstance] getProviderPhone];
-
+    NSRange range;
+    range.location = 3;
+    range.length = 3;
+    providerPhone = [NSString stringWithFormat:@"(%@)%@-%@", [providerPhone substringToIndex:3], [providerPhone substringWithRange:range], [providerPhone substringFromIndex:6] ];
 
     NSMutableDictionary *params = [NSMutableDictionary  dictionaryWithObject:_emailAddress forKey:@"to"];
     [params setObject: patientName forKey:@"toname"];
@@ -68,12 +76,20 @@
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
+        [_sendEmailButton setTitle:@"Email Sent!" forState:UIControlStateNormal];
+        [_sendEmailButton setEnabled:NO];
 
         NSLog(@"done");
         NSLog(@"%@",object);
         NSLog(@"%@", error);
     } ];
 
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    [textField setText:@""];
+    return YES;
 }
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField

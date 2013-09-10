@@ -39,6 +39,16 @@
 
 #pragma mark - Table view data source
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *label =  [_insurances objectAtIndex:indexPath.row];
+    CGSize stringSize = [label sizeWithFont:[UIFont systemFontOfSize:18]
+                          constrainedToSize:CGSizeMake(160, 9999)
+                              lineBreakMode:NSLineBreakByWordWrapping];
+    NSLog(@"%f, %f", stringSize.width, stringSize.height);
+    return stringSize.height + 25;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_insurances count];
@@ -51,6 +61,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    [[cell textLabel] setNumberOfLines:2];
+    [[cell textLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     [[cell textLabel] setText:[[self insurances] objectAtIndex:[indexPath row]]];
     // Configure the cell...
     

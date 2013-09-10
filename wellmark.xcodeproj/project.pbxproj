@@ -71,6 +71,7 @@
 		BC66AD2517DD60DA00C5C1EE /* LLDeductableInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC66AD2417DD60DA00C5C1EE /* LLDeductableInfoViewController.m */; };
 		BC66AD2817DD6F8F00C5C1EE /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2617DD6F8F00C5C1EE /* settings.png */; };
 		BC66AD2917DD6F8F00C5C1EE /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2717DD6F8F00C5C1EE /* settings@2x.png */; };
+		BC7A565F17DF9C4900863499 /* LLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7A565E17DF9C4900863499 /* LLSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +177,8 @@
 		BC66AD2417DD60DA00C5C1EE /* LLDeductableInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLDeductableInfoViewController.m; sourceTree = "<group>"; };
 		BC66AD2617DD6F8F00C5C1EE /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		BC66AD2717DD6F8F00C5C1EE /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		BC7A565D17DF9C4900863499 /* LLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSettingsViewController.h; sourceTree = "<group>"; };
+		BC7A565E17DF9C4900863499 /* LLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +308,8 @@
 				B065721417D3DAA1005CB364 /* LLSelectInsuranceViewController.m */,
 				B02F17A517CD6B5C007EA8A7 /* LLDoctorViewController.h */,
 				B02F17A617CD6B5C007EA8A7 /* LLDoctorViewController.m */,
+				BC7A565D17DF9C4900863499 /* LLSettingsViewController.h */,
+				BC7A565E17DF9C4900863499 /* LLSettingsViewController.m */,
 				B02F17A817CD6CE7007EA8A7 /* LLTreatmentViewController.h */,
 				B02F17A917CD6CE7007EA8A7 /* LLTreatmentViewController.m */,
 				BC66AD2317DD60DA00C5C1EE /* LLDeductableInfoViewController.h */,
@@ -456,6 +461,7 @@
 				B02F17B617CD7BC6007EA8A7 /* LLSchedulingViewController.m in Sources */,
 				B02F17B917CD7CD5007EA8A7 /* LLConfirmViewController.m in Sources */,
 				B02F17BC17CD7CDC007EA8A7 /* LLConfirmedViewController.m in Sources */,
+				BC7A565F17DF9C4900863499 /* LLSettingsViewController.m in Sources */,
 				B02F17C117CD90E5007EA8A7 /* LLBookingViewController.m in Sources */,
 				B02F180917CD9A79007EA8A7 /* MBBaseRequest.m in Sources */,
 				B02F180A17CD9A79007EA8A7 /* MBHTTPConnectionOperation.m in Sources */,

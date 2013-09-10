@@ -20,7 +20,8 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        [self setDoctors:[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon", nil]];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(defaultsChanged:) name:NSUserDefaultsDidChangeNotification object:nil];
+
     }
     return self;
 }
@@ -28,7 +29,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctors"] ];
+}
 
+-(void)defaultsChanged:(id)sender
+{
+    [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctors"] ];
+    [[self tableView] reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,6 +51,7 @@
     return [_doctors count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"DoctorCell";
@@ -51,6 +59,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    [[cell textLabel] setNumberOfLines:1];
+    [[cell textLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     [[cell textLabel] setText:[[self doctors] objectAtIndex:[indexPath row]]];
     
     return cell;
