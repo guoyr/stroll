@@ -38,6 +38,7 @@
 @property (nonatomic, strong) MBJSONRequest *jsonRequest;
 @property (nonatomic, strong) UIImageView *logoView;
 @property (nonatomic, assign) int curLocation;
+@property (nonatomic, strong) UIActivityIndicatorView *activityView;
 
 @end
 
@@ -139,11 +140,17 @@
         NSLog(@"%@",url);
         
         _jsonRequest = [[MBJSONRequest alloc] init];
+        _activityView = [[UIActivityIndicatorView alloc]  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        [_activityView setCenter: CGPointMake(_scrollView.frame.size.width/2,_scrollView.frame.size.height/2)];
+        [[self scrollView] addSubview:_activityView];
+        [_activityView startAnimating];
         [_jsonRequest performJSONRequest:[NSURLRequest requestWithURL:url] completionHandler:^(id responseJSON, NSError *error) {
             if (error != nil) {
                 NSLog(@"Error requesting top-rated videos: %@", error);
             } else {
                 _providers = [responseJSON objectForKey:@"Providers"];
+                [_activityView stopAnimating];
+                [_activityView removeFromSuperview];
                 [self parseProviders];
                 [self showProviders];
             }

@@ -45,7 +45,6 @@
     CGSize stringSize = [label sizeWithFont:[UIFont systemFontOfSize:18]
                           constrainedToSize:CGSizeMake(160, 9999)
                               lineBreakMode:NSLineBreakByWordWrapping];
-    NSLog(@"%f, %f", stringSize.width, stringSize.height);
     return stringSize.height + 25;
 }
 

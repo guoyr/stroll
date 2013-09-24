@@ -168,20 +168,18 @@
     [_patientTextField becomeFirstResponder];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)viewWillAppear:(BOOL)animated
 {
-    if ([[segue identifier] isEqualToString:@"returnToBeginning"]) {
-        //clear all fields
-        [_insuranceTextField2 setText:@""];
-        [_insuranceTextField1 setText:@""];
-        [_patientTextField setText:@""];
-        [[_selectDoctorViewController tableView]  deselectRowAtIndexPath:[[_selectDoctorViewController tableView] indexPathForSelectedRow] animated:NO];
-        [[_selectInsuranceViewController tableView]  deselectRowAtIndexPath:[[_selectInsuranceViewController tableView] indexPathForSelectedRow] animated:NO];
-        [_selectDoctorButton setTitle:@"Select Doctor" forState:UIControlStateNormal];
-        [_selectInsuranceButton setTitle:@"Select Insurance" forState:UIControlStateNormal];
-
-    }
+    [_insuranceTextField2 setText:@""];
+    [_insuranceTextField1 setText:@""];
+    [_patientTextField setText:@""];
+    [[_selectDoctorViewController tableView]  deselectRowAtIndexPath:[[_selectDoctorViewController tableView] indexPathForSelectedRow] animated:NO];
+    [[_selectInsuranceViewController tableView]  deselectRowAtIndexPath:[[_selectInsuranceViewController tableView] indexPathForSelectedRow] animated:NO];
+    [_selectDoctorButton setTitle:@"Select Doctor" forState:UIControlStateNormal];
+    [_selectInsuranceButton setTitle:@"Select Insurance Type" forState:UIControlStateNormal];
+    [[self navigationItem] setHidesBackButton:YES animated:NO];
 }
+
 
 
 @end

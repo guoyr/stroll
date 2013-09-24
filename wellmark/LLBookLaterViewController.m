@@ -110,6 +110,7 @@
 
 -(void)finish:(id)sender
 {
+//    [self performSegueWithIdentifier:@"backToBeginning" sender:self];
     [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
