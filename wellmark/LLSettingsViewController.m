@@ -29,6 +29,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[_einLabel layer] setCornerRadius:5];
+    [[_idLabel layer] setCornerRadius:5];
+    [[_einField layer] setCornerRadius:5];
+    [[_idField layer] setCornerRadius:5];
+    [[_doctorLabel layer] setCornerRadius:5];
+    
     [_doctorScrollView setScrollEnabled:YES];
     [_doctorScrollView setContentSize:_doctorScrollView.frame.size];
 	// Do any additional setup after loading the view.
