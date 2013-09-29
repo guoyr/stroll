@@ -30,6 +30,7 @@
 {
     [super viewDidLoad];
     [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctors"] ];
+    [[self tableView] setScrollEnabled:NO];
 }
 
 -(void)defaultsChanged:(id)sender

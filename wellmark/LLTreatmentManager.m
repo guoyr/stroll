@@ -34,6 +34,8 @@
     NSDictionary *userInfoDict = [NSDictionary dictionaryWithContentsOfFile:path];
     if ([userInfoDict objectForKey:patientName]) {
         _patientInfo = [userInfoDict objectForKey:patientName];
+    } else if ([patientName rangeOfString:@"Mary"].location != NSNotFound) {
+        _patientInfo = @{@"email":@"mary@strollhealth.com"};
     }
   
 }

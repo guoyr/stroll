@@ -44,7 +44,6 @@
 		B065720417D2D65E005CB364 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720317D2D65E005CB364 /* libz.1.2.5.dylib */; };
 		B065720617D2D664005CB364 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720517D2D664005CB364 /* MobileCoreServices.framework */; };
 		B065720817D2D66F005CB364 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720717D2D66F005CB364 /* Security.framework */; };
-		B065720A17D2D674005CB364 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720917D2D674005CB364 /* StoreKit.framework */; };
 		B065720C17D2D679005CB364 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720B17D2D679005CB364 /* SystemConfiguration.framework */; };
 		B065721217D3DA90005CB364 /* LLSelectDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B065721117D3DA8F005CB364 /* LLSelectDoctorViewController.m */; };
 		B065721517D3DAA1005CB364 /* LLSelectInsuranceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B065721417D3DAA1005CB364 /* LLSelectInsuranceViewController.m */; };
@@ -140,7 +139,6 @@
 		B065720317D2D65E005CB364 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		B065720517D2D664005CB364 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		B065720717D2D66F005CB364 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		B065720917D2D674005CB364 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		B065720B17D2D679005CB364 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B065721017D3DA8F005CB364 /* LLSelectDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSelectDoctorViewController.h; sourceTree = "<group>"; };
 		B065721117D3DA8F005CB364 /* LLSelectDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSelectDoctorViewController.m; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B065720C17D2D679005CB364 /* SystemConfiguration.framework in Frameworks */,
-				B065720A17D2D674005CB364 /* StoreKit.framework in Frameworks */,
 				B065720817D2D66F005CB364 /* Security.framework in Frameworks */,
 				B06571F917D1817F005CB364 /* QuartzCore.framework in Frameworks */,
 				B065720617D2D664005CB364 /* MobileCoreServices.framework in Frameworks */,
@@ -276,7 +273,6 @@
 			isa = PBXGroup;
 			children = (
 				B065720B17D2D679005CB364 /* SystemConfiguration.framework */,
-				B065720917D2D674005CB364 /* StoreKit.framework */,
 				B065720717D2D66F005CB364 /* Security.framework */,
 				B065720517D2D664005CB364 /* MobileCoreServices.framework */,
 				B065720317D2D65E005CB364 /* libz.1.2.5.dylib */,
@@ -396,6 +392,11 @@
 				TargetAttributes = {
 					B0F88C9117CD3BEA005E4B0A = {
 						DevelopmentTeam = 7J555P3K78;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -569,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -578,6 +580,7 @@
 				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -586,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -595,6 +599,7 @@
 				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

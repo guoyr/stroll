@@ -33,7 +33,6 @@
     [super viewDidLoad];
     [[_selectDoctorButton layer] setCornerRadius:5];
     [[_selectInsuranceButton layer] setCornerRadius:5];
-    [[_insuranceTextField1 layer] setCornerRadius:5];
     [[_insuranceTextField2 layer] setCornerRadius:5];
     [[_patientTextField layer] setCornerRadius:5];
     
@@ -45,10 +44,9 @@
     _doctorPopoverController = [[UIPopoverController alloc] initWithContentViewController:_selectDoctorViewController];
     _insurancePopoverController = [[UIPopoverController alloc] initWithContentViewController:_selectInsuranceViewController];
 
-    [[self insuranceTextField1] setAlpha:0];
     [[self insuranceTextField2] setAlpha:0];
-    [[self insuranceTextField1] setEnabled:NO];
     [[self insuranceTextField2] setEnabled:NO];
+    [_nextButtonItem setEnabled:NO];
 	// Do any additional setup after loading the view.
     
     UITapGestureRecognizer *gr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedView:)];
@@ -57,9 +55,7 @@
 
 -(void)tappedView:(id)sender
 {
-    if ([_insuranceTextField1 isFirstResponder]) {
-        [_insuranceTextField1 resignFirstResponder];
-    } else if([_insuranceTextField2 isFirstResponder]) {
+    if([_insuranceTextField2 isFirstResponder]) {
         [_insuranceTextField2 resignFirstResponder];
     } else if ([_patientTextField isFirstResponder]) {
         [_patientTextField resignFirstResponder];
@@ -92,12 +88,16 @@
     [self tappedView:sender];
     int height = [[_selectInsuranceViewController  insurances] count] * CELL_HEIGHT > 320 ? 320 : [[_selectInsuranceViewController insurances] count] * CELL_HEIGHT;
     [_insurancePopoverController presentPopoverFromRect:CGRectMake(576, -150, 320, 320) inView:[self view] permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-    [_insurancePopoverController setPopoverContentSize:CGSizeMake(320, height) animated:NO];
+    [_insurancePopoverController setPopoverContentSize:CGSizeMake(320, height + CELL_HEIGHT) animated:NO];
 }
 
 -(void)nextButtonClicked:(id)sender
 {
-    [self tappedView:sender];
+    if (![_patientTextField isFirstResponder] && ![_insuranceTextField2 isFirstResponder]) {
+        [self performSegueWithIdentifier:@"showTreatment" sender:self];
+    } else {
+        
+    }
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -118,9 +118,7 @@
 {
     if (textField == _patientTextField) {
         [_selectInsuranceButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    } else if (textField == _insuranceTextField1) {
-        [_insuranceTextField2 becomeFirstResponder];
-    } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
+    } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length]) {
         [self performSegueWithIdentifier:@"showTreatment" sender:self];
     }
 }
@@ -130,32 +128,26 @@
 -(void)selectedInsurance:(NSString *)insurance
 {
     [_insurancePopoverController dismissPopoverAnimated:YES];
+    [_nextButtonItem setEnabled:YES];
     [_selectInsuranceButton setTitle:insurance forState:UIControlStateNormal];
     if ([insurance rangeOfString:WELLMARK].location != NSNotFound) {
         [[LLTreatmentManager sharedInstance] setInsuranceCompany:WELLMARK];
         [self addBackground:YES];
         [UIView animateWithDuration:0.25 animations:^{
-//            [_insuranceTextField1 setAlpha:1];
             [_insuranceTextField2 setAlpha:1];
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:YES];
-//            [_insuranceTextField1 setEnabled:YES];
-//            [_insuranceTextField1 becomeFirstResponder];
-            [_insuranceTextField2 becomeFirstResponder];
+//            [_insuranceTextField2 becomeFirstResponder];
         }];
         
-//    } else if ([_insuranceTextField1 isEnabled] || [_insuranceTextField2 isEnabled]) {
     } else if ([_insuranceTextField2 isEnabled]) {
         [[LLTreatmentManager sharedInstance] setInsuranceCompany:nil];
         [self addBackground:YES];
         [UIView animateWithDuration:0.25 animations:^{
-//            [_insuranceTextField1 setAlpha:0];
             [_insuranceTextField2 setAlpha:0];
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:NO];
-//            [_insuranceTextField1 setEnabled:NO];
-//            [_insuranceTextField1 becomeFirstResponder];
-            [_insuranceTextField2 becomeFirstResponder];
+//            [_insuranceTextField2 becomeFirstResponder];
 
         }];
     }
@@ -173,7 +165,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [_insuranceTextField2 setText:@""];
-    [_insuranceTextField1 setText:@""];
     [_patientTextField setText:@""];
     [[_selectDoctorViewController tableView]  deselectRowAtIndexPath:[[_selectDoctorViewController tableView] indexPathForSelectedRow] animated:NO];
     [[_selectInsuranceViewController tableView]  deselectRowAtIndexPath:[[_selectInsuranceViewController tableView] indexPathForSelectedRow] animated:NO];
