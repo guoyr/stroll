@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8FABFDDA1801CFF0001E9EAC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FABFDD91801CFF0001E9EAC /* libz.dylib */; };
+		8FE39D431801CDEB0028807A /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE39D3D1801CDEB0028807A /* libTestFlight.a */; };
+		8FE39D441801CDEB0028807A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FE39D3E1801CDEB0028807A /* README.md */; };
+		8FE39D451801CDEB0028807A /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FE39D3F1801CDEB0028807A /* release_notes.md */; };
 		B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */; };
 		B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */; };
 		B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02ABE4F17D66646005A5F5C /* LLViewController.m */; };
@@ -74,6 +78,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8FABFDD91801CFF0001E9EAC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		8FE39D3D1801CDEB0028807A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		8FE39D3E1801CDEB0028807A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		8FE39D3F1801CDEB0028807A /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		8FE39D401801CDEB0028807A /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		8FE39D411801CDEB0028807A /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		8FE39D421801CDEB0028807A /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wellmark_hq_data.json; sourceTree = "<group>"; };
 		B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dummyUserInfo.plist; sourceTree = "<group>"; };
 		B02ABE4E17D66646005A5F5C /* LLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLViewController.h; sourceTree = "<group>"; };
@@ -184,7 +195,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FABFDDA1801CFF0001E9EAC /* libz.dylib in Frameworks */,
 				B065720C17D2D679005CB364 /* SystemConfiguration.framework in Frameworks */,
+				8FE39D431801CDEB0028807A /* libTestFlight.a in Frameworks */,
 				B065720817D2D66F005CB364 /* Security.framework in Frameworks */,
 				B06571F917D1817F005CB364 /* QuartzCore.framework in Frameworks */,
 				B065720617D2D664005CB364 /* MobileCoreServices.framework in Frameworks */,
@@ -203,6 +216,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8FE39D3C1801CDEB0028807A /* TestFlightSDK2 */ = {
+			isa = PBXGroup;
+			children = (
+				8FE39D3D1801CDEB0028807A /* libTestFlight.a */,
+				8FE39D3E1801CDEB0028807A /* README.md */,
+				8FE39D3F1801CDEB0028807A /* release_notes.md */,
+				8FE39D401801CDEB0028807A /* TestFlight+AsyncLogging.h */,
+				8FE39D411801CDEB0028807A /* TestFlight+ManualSessions.h */,
+				8FE39D421801CDEB0028807A /* TestFlight.h */,
+			);
+			path = TestFlightSDK2;
+			sourceTree = "<group>";
+		};
 		B02F17C217CD9A79007EA8A7 /* MBRequest */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +280,7 @@
 		B0F88C8917CD3BEA005E4B0A = {
 			isa = PBXGroup;
 			children = (
+				8FE39D3C1801CDEB0028807A /* TestFlightSDK2 */,
 				B0F88C9B17CD3BEA005E4B0A /* wellmark */,
 				B0F88C9417CD3BEA005E4B0A /* Frameworks */,
 				B0F88C9317CD3BEA005E4B0A /* Products */,
@@ -272,6 +299,7 @@
 		B0F88C9417CD3BEA005E4B0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8FABFDD91801CFF0001E9EAC /* libz.dylib */,
 				B065720B17D2D679005CB364 /* SystemConfiguration.framework */,
 				B065720717D2D66F005CB364 /* Security.framework */,
 				B065720517D2D664005CB364 /* MobileCoreServices.framework */,
@@ -427,6 +455,8 @@
 				BC66AD2017DD47D100C5C1EE /* doctors.png in Resources */,
 				B0F88CA017CD3BEA005E4B0A /* InfoPlist.strings in Resources */,
 				B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */,
+				8FE39D441801CDEB0028807A /* README.md in Resources */,
+				8FE39D451801CDEB0028807A /* release_notes.md in Resources */,
 				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
 				B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */,
 				BC66AD2917DD6F8F00C5C1EE /* settings@2x.png in Resources */,
@@ -610,6 +640,10 @@
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
 				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/aziza/Documents/stroll/TestFlightSDK2,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -629,6 +663,10 @@
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
 				INFOPLIST_FILE = "wellmark/wellmark-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/aziza/Documents/stroll/TestFlightSDK2,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
