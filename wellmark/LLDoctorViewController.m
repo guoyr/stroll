@@ -96,7 +96,11 @@
     if (![_patientTextField isFirstResponder] && ![_insuranceTextField2 isFirstResponder]) {
         [self performSegueWithIdentifier:@"showTreatment" sender:self];
     } else {
-        
+        if ([_patientTextField isFirstResponder]) {
+            [_patientTextField resignFirstResponder];
+        } else if ([_insuranceTextField2 isFirstResponder]) {
+            [_insuranceTextField2 resignFirstResponder];
+        }
     }
 }
 

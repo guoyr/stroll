@@ -14,8 +14,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [Parse setApplicationId:@"A2dxJpqSX4cCaSkWWbLw4FXk1Wi328L6TnsbGBU3"
-                  clientKey:@"7yIszpNNJ9SKrhJbpCxEtIBOsHtKbUTLLvrgDhiF"];
+    [Parse setApplicationId:@"E7eDI2jYaywn9yPQJO3T4HVEU8ytknxvKXT9l8oU"
+                  clientKey:@"eCjQ2GvJLIIc5x8Jmo2UbvaNpbNQhpovyhgcsGY7"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"Doctors"]) {
