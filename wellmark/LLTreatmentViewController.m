@@ -41,7 +41,7 @@
 #warning testing code
 -(void)viewDidAppear:(BOOL)animated
 {
-//    [self performSegueWithIdentifier:@"showLocation" sender:self];
+    [self performSegueWithIdentifier:@"showLocation" sender:self];
 }
 
 - (void)didReceiveMemoryWarning

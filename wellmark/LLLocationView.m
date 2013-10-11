@@ -65,7 +65,7 @@
         
         _scheduleAppointmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(VMARGIN, PROVIDER_HEIGHT + DOCTOR_HEIGHT + DISTANCE_HEIGHT + IMAGE_HEIGHT + MARGIN * 6 + PRICE_HEIGHT, self.frame.size.width - VMARGIN * 2, SCHEDULE_HEIGHT)];
         [_scheduleAppointmentLabel setText:@"Schedule Appointment"];
-        [_scheduleAppointmentLabel setBackgroundColor:TORQUOISE];
+        [_scheduleAppointmentLabel setBackgroundColor:[UIColor colorWithRed:28.0f/255 green:188.0f/255 blue:156.0f/255 alpha:0.5]];
         [_scheduleAppointmentLabel setTextAlignment:NSTextAlignmentCenter];
         [_scheduleAppointmentLabel setTextColor:[UIColor whiteColor]];
         [[_scheduleAppointmentLabel layer] setCornerRadius:5.0];
@@ -110,12 +110,12 @@
         [_priceLabel setText:@"Free"];
         [_priceLabel setFont:[UIFont boldSystemFontOfSize:PRICE_LABEL_FONT_SIZE]];
         [_priceLabel setTextColor:[UIColor whiteColor]];
-        [_priceLabel setBackgroundColor:[UIColor redColor]];
+        [_priceLabel setBackgroundColor:TORQUOISE];
     } else {
         [_priceLabel setText:[NSString stringWithFormat:@"$%2.2f",price]];
         [_priceLabel setFont:[UIFont systemFontOfSize:PRICE_LABEL_FONT_SIZE]];
-        [_priceLabel setTextColor:[UIColor colorWithRed:236/255 green:240/255 blue:241/255 alpha:1.0]];
-        [_priceLabel setBackgroundColor:[UIColor colorWithRed:28.0f/255 green:188.0f/255 blue:156.0f/255 alpha:1.0]];
+        [_priceLabel setTextColor:[UIColor colorWithRed:236/255 green:240/255 blue:241/255 alpha:0.5]];
+        [_priceLabel setBackgroundColor:[UIColor colorWithRed:28.0f/255 green:188.0f/255 blue:156.0f/255 alpha:0.5]];
     }
     
 }

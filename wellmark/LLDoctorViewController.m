@@ -35,6 +35,7 @@
     [[_selectInsuranceButton layer] setCornerRadius:5];
     [[_insuranceTextField2 layer] setCornerRadius:5];
     [[_patientTextField layer] setCornerRadius:5];
+    [_insuranceTextField2 setBackgroundColor:[UIColor lightTextColor]];
     
     _selectDoctorViewController = [[LLSelectDoctorViewController alloc] initWithStyle:UITableViewStylePlain];
     _selectInsuranceViewController = [[LLSelectInsuranceViewController alloc] initWithStyle:UITableViewStylePlain];
@@ -66,7 +67,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     
-//    [self performSegueWithIdentifier:@"showTreatment" sender:self];
+    [self performSegueWithIdentifier:@"showTreatment" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -110,11 +111,18 @@
     return YES;
 }
 
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    [textField setBackgroundColor:[UIColor whiteColor]];
+    return YES;
+}
+
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
     if (textField == _patientTextField) {
         [[LLTreatmentManager sharedInstance] setPatientName:[textField text]];
     }
+    [textField setBackgroundColor:[UIColor lightTextColor]];
     return YES;
 }
 
