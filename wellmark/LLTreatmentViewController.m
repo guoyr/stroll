@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     [self setTitle:[NSString stringWithFormat:@"Select Treatment for %@",[[LLTreatmentManager sharedInstance] patientName]]];
-    [self setTreatments:[NSArray arrayWithObjects:@"CT Scan", @"MRI Scan", @"PET Scan", @"X-Ray", nil]];
+    [self setTreatments:[NSArray arrayWithObjects:@"CT Scan", @"MRI Scan", @"PET Scan", @"EKG", @"X-Ray", nil]];
     [[_treatmentLabel layer] setCornerRadius:5];
     _treatmentTableView = [[UITableView alloc] initWithFrame:CGRectMake(352,200,320,44*[_treatments count]) style:UITableViewStylePlain];
     [_treatmentTableView setDataSource:self];

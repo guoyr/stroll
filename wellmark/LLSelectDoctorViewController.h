@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LLSettingsViewController.h"
 @protocol LLSelectDoctorViewControllerDelegate <NSObject>
 
 -(void)selectedDoctor:(NSString *)doctor;

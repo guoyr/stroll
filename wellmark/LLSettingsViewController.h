@@ -18,5 +18,7 @@
 @property (nonatomic, weak) IBOutlet UIScrollView *doctorScrollView;
 @property (nonatomic, weak) IBOutlet UILabel *doctorLabel;
 
-
+@property (weak, nonatomic) IBOutlet UITextField *textfield;
+- (IBAction)buttonok:(id)sender;
+@property (nonatomic, strong) NSMutableArray *doctorSB;
 @end

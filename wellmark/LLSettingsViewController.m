@@ -15,7 +15,7 @@
 @end
 
 @implementation LLSettingsViewController
-
+@synthesize doctorSB;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -38,9 +38,11 @@
     [_doctorScrollView setScrollEnabled:YES];
     [_doctorScrollView setContentSize:_doctorScrollView.frame.size];
 	// Do any additional setup after loading the view.
-    NSMutableArray *doctors = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctors"]];
-    [doctors addObject:@""];
-    for (NSString *doctor in doctors) {
+    doctorSB = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctors"]];
+    //[doctorSB addObject:@""];
+    //for (NSString *doctor in doctorSB) { changed
+    for(int i = 0;i<[doctorSB count];i++){
+        NSString *doctor = [doctorSB objectAtIndex:i];
         UITextField *label = [[UITextField alloc] initWithFrame:CGRectMake(0, _curY, 320, 48)];
         [label setBackgroundColor:[UIColor lightTextColor]];
         [label setAlpha:0.8];
@@ -50,13 +52,14 @@
         _curY += 58;
         [label setText:doctor];
         [_doctorScrollView addSubview:label];
+        
+        
+
     }
     
 }
 
--(void)newDoctor
-{
-    
+-(void)newDoctor{
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,4 +68,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)buttonok:(id)sender {
+    NSString *newdoctor = self.textfield.text;
+    if ([newdoctor length] !=0) {
+        [doctorSB addObject:newdoctor];
+        [[NSUserDefaults standardUserDefaults] setObject:doctorSB forKey:@"Doctorsb"];
+    }
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == self.textfield) {
+        [theTextField resignFirstResponder];
+    }
+    return YES;
+}
 @end

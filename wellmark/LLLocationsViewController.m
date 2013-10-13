@@ -39,7 +39,6 @@
 @property (nonatomic, strong) UIImageView *logoView;
 @property (nonatomic, assign) int curLocation;
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
-@property (nonatomic, strong) UIView *mask;
 
 @end
 
@@ -123,10 +122,10 @@
     BOOL dataPreference = [[NSUserDefaults standardUserDefaults] boolForKey:@"data_preference"];
     if (dataPreference == USE_DUMMY_DATA) {
         NSError *jsonError = nil;
-        NSString *path;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"wellmark_hq_data" ofType:@"json"];
+
         switch (_curLocation) {
             case WELLMARK_HQ_INDEX:
-                path = [[NSBundle mainBundle] pathForResource:@"wellmark_hq_data" ofType:@"json"];
                 _providers = [[NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:0 error:&jsonError] objectForKey:@"Providers"];
                 break;
                 
@@ -141,12 +140,9 @@
         NSLog(@"%@",url);
         
         _jsonRequest = [[MBJSONRequest alloc] init];
-        _mask = [[UIView alloc] initWithFrame:[[self view] frame]];
-        [_mask setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.6]];
         _activityView = [[UIActivityIndicatorView alloc]  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [_activityView setCenter: CGPointMake(_scrollView.frame.size.width/2,_scrollView.frame.size.height/2)];
-        [[self view] addSubview:_mask];
-        [[self view] addSubview:_activityView];
+        [[self scrollView] addSubview:_activityView];
         [_activityView startAnimating];
         [_jsonRequest performJSONRequest:[NSURLRequest requestWithURL:url] completionHandler:^(id responseJSON, NSError *error) {
             if (error != nil) {
@@ -155,7 +151,6 @@
                 _providers = [responseJSON objectForKey:@"Providers"];
                 [_activityView stopAnimating];
                 [_activityView removeFromSuperview];
-                [_mask removeFromSuperview];
                 [self parseProviders];
                 [self showProviders];
             }
@@ -215,15 +210,13 @@
         } else {
             [curLocationView setDoctorName:[NSString stringWithFormat:@"%@ %@", [doctors lastObject], [provider objectForKey:@"ObtainedDegrees"]] isMultiple:NO];
         }
-        if (i == [_providers count] - 1) {
-            [_priceRangeLabel setText:[NSString stringWithFormat:@"Price Range: $%2.2f to $%2.2f", 0.0f, dummyPrice]];
-        }
         dummyPrice += rand() % 100;
         [curLocationView setIndex:i];
         [[self scrollView] addSubview:curLocationView];
         curX += LOCATION_CARD_H_MARGIN + LOCATION_CARD_WIDTH;
     }
     [[self scrollView] setContentSize:CGSizeMake(curX, LOCATION_CARD_HEIGHT + LOCATION_CARD_V_MARGIN * 2)];
+    [_priceRangeLabel setText:[NSString stringWithFormat:@"Price Range: $%2.2f to $%2.2f", 0.0f, dummyPrice]];
 }
 
 -(void)viewTapped:(id)sender

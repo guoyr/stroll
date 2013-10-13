@@ -7,7 +7,7 @@
 //
 
 #import "LLSelectDoctorViewController.h"
-
+#import "LLSettingsViewController.h"
 @interface LLSelectDoctorViewController ()
 
 @property (nonatomic, strong) NSIndexPath *selectedIndexPath;
@@ -30,12 +30,16 @@
 {
     [super viewDidLoad];
     [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctors"] ];
-    [[self tableView] setScrollEnabled:NO];
+
+}
+-(void)viewWillAppear:(BOOL)animated
+{if([[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctorsb"]){
+    [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctorsb"] ];}
 }
 
 -(void)defaultsChanged:(id)sender
 {
-    [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctors"] ];
+    [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctorsb"] ];
     [[self tableView] reloadData];
 }
 

@@ -9,15 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "LLSelectDoctorViewController.h"
 #import "LLSelectInsuranceViewController.h"
+#import "LLSettingsViewController.h"
 #import "LLViewController.h"
 
 @interface LLDoctorViewController : LLViewController <UITextFieldDelegate, LLSelectDoctorViewControllerDelegate, LLSelectInsuranceViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *insuranceTextField1;
 @property (weak, nonatomic) IBOutlet UITextField *insuranceTextField2;
 @property (weak, nonatomic) IBOutlet UITextField *patientTextField;
 @property (weak, nonatomic) IBOutlet UIButton *selectDoctorButton;
 @property (weak, nonatomic) IBOutlet UIButton *selectInsuranceButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButtonItem;
+
+@property (strong, nonatomic) LLSettingsViewController *settingViewController;
 
 -(IBAction)nextButtonClicked:(id)sender;
 -(IBAction)selectDoctorButtonClicked:(id)sender;

@@ -18,8 +18,9 @@
                   clientKey:@"7yIszpNNJ9SKrhJbpCxEtIBOsHtKbUTLLvrgDhiF"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"Doctors"]) {
-        [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon", nil] forKey:@"Doctors"];
+    if (1) {
+        NSArray *a =[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon", nil];
+        [[NSUserDefaults standardUserDefaults] setObject:a forKey:@"Doctors"];
     }
     return YES;
 }

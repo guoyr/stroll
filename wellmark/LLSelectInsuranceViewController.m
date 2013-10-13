@@ -16,11 +16,18 @@
 
 @implementation LLSelectInsuranceViewController
 
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        [self setInsurances:[NSArray arrayWithObjects:@"Wellmark Blue Cross Blue Shield", @"Medicare", @"No Insurance", nil]];
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setInsurances:[NSArray arrayWithObjects:@"Wellmark Blue Cross Blue Shield", @"Medicare", @"No Insurance", nil]];
-    [[self tableView] setScrollEnabled:NO];
 
 }
 
