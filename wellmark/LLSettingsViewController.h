@@ -8,7 +8,7 @@
 
 #import "LLViewController.h"
 
-@interface LLSettingsViewController : LLViewController
+@interface LLSettingsViewController : LLViewController<UITableViewDelegate, UITableViewDataSource>
 
 
 @property (nonatomic, weak) IBOutlet UILabel *einLabel;
