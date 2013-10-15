@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		086CBEE4180C8EA600383346 /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */; };
 		B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */; };
 		B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */; };
 		B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02ABE4F17D66646005A5F5C /* LLViewController.m */; };
@@ -75,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
 		B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = wellmark_hq_data.json; sourceTree = "<group>"; };
 		B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dummyUserInfo.plist; sourceTree = "<group>"; };
 		B02ABE4E17D66646005A5F5C /* LLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLViewController.h; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				B02F182F17CDAA4A007EA8A7 /* CoreLocation.framework in Frameworks */,
 				B0F88C9A17CD3BEA005E4B0A /* CoreGraphics.framework in Frameworks */,
 				B065720217D2D649005CB364 /* CFNetwork.framework in Frameworks */,
+				086CBEE4180C8EA600383346 /* WindowsAzureMobileServices.framework in Frameworks */,
 				B065720017D2D644005CB364 /* AudioToolbox.framework in Frameworks */,
 				B02F17BE17CD8094007EA8A7 /* MessageUI.framework in Frameworks */,
 				B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */,
@@ -275,6 +278,7 @@
 		B0F88C9417CD3BEA005E4B0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */,
 				B065720B17D2D679005CB364 /* SystemConfiguration.framework */,
 				B065720917D2D674005CB364 /* StoreKit.framework */,
 				B065720717D2D66F005CB364 /* Security.framework */,
@@ -571,7 +575,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/JIA/Documents/stroll,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
@@ -588,7 +593,8 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					/Users/JIA/Documents/stroll,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";

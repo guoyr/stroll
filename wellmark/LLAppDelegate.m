@@ -8,6 +8,7 @@
 
 #import "LLAppDelegate.h"
 #import <Parse/Parse.h>
+#import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 
 @implementation LLAppDelegate
 
@@ -20,6 +21,8 @@
     
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"Doctors"]) {
         [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon", nil] forKey:@"Doctors"];
+     MSClient *client = [MSClient clientWithApplicationURLString:@"https://todolist-stroll.azure-mobile.net/"
+                     withApplicationKey:@"zqSKTrwsxdwrfURFeEyFPSXOnCIuTz20"];
     }
     return YES;
 }
