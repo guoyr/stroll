@@ -19,7 +19,7 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     if (1) {
-        NSArray *a =[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon",nil];
+        NSMutableArray *a =[NSMutableArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon",nil];
         [[NSUserDefaults standardUserDefaults] setObject:a forKey:@"Doctors"];
     }
     return YES;
