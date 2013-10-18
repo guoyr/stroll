@@ -33,13 +33,13 @@
 
 }
 -(void)viewWillAppear:(BOOL)animated
-{if([[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctors"]){
-    [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctors"] ];}
+{if([[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctorsb"]){
+    [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctorsb"] ];}
 }
 
 -(void)defaultsChanged:(id)sender
 {
-    [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctors"] ];
+    [self setDoctors:[[NSUserDefaults standardUserDefaults] arrayForKey:@"Doctorsb"] ];
     [[self tableView] reloadData];
 }
 

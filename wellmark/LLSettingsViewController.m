@@ -17,6 +17,7 @@
 @implementation LLSettingsViewController
 {
     NSArray *tableData;
+    NSArray *thumbnails;
 }
 @synthesize doctorSB;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -75,7 +76,7 @@
     NSString *newdoctor = self.textfield.text;
     if ([newdoctor length] !=0) {
         [doctorSB addObject:newdoctor];
-        [[NSUserDefaults standardUserDefaults] setObject:doctorSB forKey:@"Doctors"];
+        [[NSUserDefaults standardUserDefaults] setObject:doctorSB forKey:@"Doctorsb"];
     }
 }
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
@@ -90,7 +91,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    static NSString *simpleTableIdentifier = @"DoctorCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
@@ -101,12 +102,5 @@
     cell.textLabel.text = [doctorSB objectAtIndex:indexPath.row];
     cell.imageView.image = [UIImage imageNamed:@"doctor.png"];
     return cell;
-}
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Remove the row from data model
-    [doctorSB removeObjectAtIndex:indexPath.row];
-    // Request table view to reload
-    [tableView reloadData];
 }
 @end

@@ -8,7 +8,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <CoreLocation/CoreLocation.h>
-#import "MBJSONRequest.h"
+#import "MBRequest.h"
 
 #import "LLLocationsViewController.h"
 #import "LLSchedulingViewController.h"
