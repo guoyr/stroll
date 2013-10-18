@@ -13,7 +13,9 @@
 @end
 
 @implementation DetailViewController
-@synthesize methodLabel,methodName;
+@synthesize methodName;
+@synthesize methodLabel;
+@synthesize webView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -27,7 +29,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    methodLabel.text = methodName;
+    //methodLabel.text = methodName;
+    NSURL *url;
+    if ([methodName  isEqual: @"CT Scan"]) {
+        url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"about.html" ofType:nil]];
+    }
+    if ([methodName  isEqual: @"MRI Scan"]) {
+        url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"about1.html" ofType:nil]];
+    }
+    //else {
+    //    url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"about.html" ofType:nil]];
+   // }
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning

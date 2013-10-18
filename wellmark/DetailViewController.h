@@ -10,5 +10,6 @@
 
 @interface DetailViewController : UIViewController
 @property (nonatomic, strong) IBOutlet UILabel *methodLabel;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) NSString *methodName;
 @end

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6458726E1811986B00D93C65 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 6458726C1811986B00D93C65 /* about.html */; };
+		64DBC6721811A66E00EA41CF /* ct scan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64DBC6711811A66E00EA41CF /* ct scan.jpg */; };
+		64DBC6741811A84B00EA41CF /* LLConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DBC6731811A84B00EA41CF /* LLConfirmViewController.m */; };
+		64DBC6771811AAB300EA41CF /* about1.html in Resources */ = {isa = PBXBuildFile; fileRef = 64DBC6751811AAB300EA41CF /* about1.html */; };
+		64DBC6781811AAB300EA41CF /* mri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64DBC6761811AAB300EA41CF /* mri.jpg */; };
 		64EFFF3B1811802D0012DE00 /* Andrew.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EFFF361811802D0012DE00 /* Andrew.png */; };
 		64EFFF3C1811802D0012DE00 /* Jordan.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EFFF371811802D0012DE00 /* Jordan.png */; };
 		64EFFF3D1811802D0012DE00 /* matt.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EFFF381811802D0012DE00 /* matt.png */; };
@@ -22,7 +27,6 @@
 		B02F17B017CD757C007EA8A7 /* LLLocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17AF17CD757C007EA8A7 /* LLLocationsViewController.m */; };
 		B02F17B317CD7607007EA8A7 /* LLLocationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17B217CD7607007EA8A7 /* LLLocationView.m */; };
 		B02F17B617CD7BC6007EA8A7 /* LLSchedulingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17B517CD7BC6007EA8A7 /* LLSchedulingViewController.m */; };
-		B02F17B917CD7CD5007EA8A7 /* LLConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17B817CD7CD5007EA8A7 /* LLConfirmViewController.m */; };
 		B02F17BC17CD7CDC007EA8A7 /* LLConfirmedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17BB17CD7CDC007EA8A7 /* LLConfirmedViewController.m */; };
 		B02F17BE17CD8094007EA8A7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02F17BD17CD8094007EA8A7 /* MessageUI.framework */; };
 		B02F17C117CD90E5007EA8A7 /* LLBookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17C017CD90E5007EA8A7 /* LLBookingViewController.m */; };
@@ -82,6 +86,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6458726C1811986B00D93C65 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		64DBC6711811A66E00EA41CF /* ct scan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ct scan.jpg"; sourceTree = "<group>"; };
+		64DBC6731811A84B00EA41CF /* LLConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLConfirmViewController.m; sourceTree = "<group>"; };
+		64DBC6751811AAB300EA41CF /* about1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about1.html; sourceTree = "<group>"; };
+		64DBC6761811AAB300EA41CF /* mri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mri.jpg; sourceTree = "<group>"; };
 		64EFFF361811802D0012DE00 /* Andrew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Andrew.png; sourceTree = "<group>"; };
 		64EFFF371811802D0012DE00 /* Jordan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jordan.png; sourceTree = "<group>"; };
 		64EFFF381811802D0012DE00 /* matt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matt.png; sourceTree = "<group>"; };
@@ -105,7 +114,6 @@
 		B02F17B417CD7BC6007EA8A7 /* LLSchedulingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSchedulingViewController.h; sourceTree = "<group>"; };
 		B02F17B517CD7BC6007EA8A7 /* LLSchedulingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSchedulingViewController.m; sourceTree = "<group>"; };
 		B02F17B717CD7CD4007EA8A7 /* LLConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLConfirmViewController.h; sourceTree = "<group>"; };
-		B02F17B817CD7CD5007EA8A7 /* LLConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLConfirmViewController.m; sourceTree = "<group>"; };
 		B02F17BA17CD7CDC007EA8A7 /* LLConfirmedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLConfirmedViewController.h; sourceTree = "<group>"; };
 		B02F17BB17CD7CDC007EA8A7 /* LLConfirmedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLConfirmedViewController.m; sourceTree = "<group>"; };
 		B02F17BD17CD8094007EA8A7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -343,7 +351,7 @@
 				B0F0E52E17CEEC6D003EF566 /* LLBookLaterViewController.m */,
 				B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */,
 				B02F17B717CD7CD4007EA8A7 /* LLConfirmViewController.h */,
-				B02F17B817CD7CD5007EA8A7 /* LLConfirmViewController.m */,
+				64DBC6731811A84B00EA41CF /* LLConfirmViewController.m */,
 				B02F17BA17CD7CDC007EA8A7 /* LLConfirmedViewController.h */,
 				B02F17BB17CD7CDC007EA8A7 /* LLConfirmedViewController.m */,
 				B065722017D41757005CB364 /* LLColors.h */,
@@ -355,6 +363,10 @@
 		B0F88C9C17CD3BEA005E4B0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				64DBC6751811AAB300EA41CF /* about1.html */,
+				64DBC6761811AAB300EA41CF /* mri.jpg */,
+				64DBC6711811A66E00EA41CF /* ct scan.jpg */,
+				6458726C1811986B00D93C65 /* about.html */,
 				64EFFF42181187CE0012DE00 /* DetailViewController.h */,
 				64EFFF43181187CE0012DE00 /* DetailViewController.m */,
 				64EFFF40181184C30012DE00 /* what.png */,
@@ -448,6 +460,7 @@
 				B0F88CA017CD3BEA005E4B0A /* InfoPlist.strings in Resources */,
 				B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */,
 				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
+				6458726E1811986B00D93C65 /* about.html in Resources */,
 				B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */,
 				64EFFF41181184C30012DE00 /* what.png in Resources */,
 				BC66AD2917DD6F8F00C5C1EE /* settings@2x.png in Resources */,
@@ -455,14 +468,17 @@
 				BC25779517DC27980087C6DB /* wellmark_bg@2x.png in Resources */,
 				BC66AD2817DD6F8F00C5C1EE /* settings.png in Resources */,
 				B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */,
+				64DBC6781811AAB300EA41CF /* mri.jpg in Resources */,
 				64EFFF3E1811802D0012DE00 /* Sameer.png in Resources */,
 				B02F182617CD9A79007EA8A7 /* LICENSE in Resources */,
 				64EFFF3B1811802D0012DE00 /* Andrew.png in Resources */,
+				64DBC6721811A66E00EA41CF /* ct scan.jpg in Resources */,
 				B02F182717CD9A79007EA8A7 /* README.md in Resources */,
 				B06571F717D17FAD005CB364 /* background.png in Resources */,
 				B065721717D3F0D8005CB364 /* Settings.bundle in Resources */,
 				64EFFF3F1811802D0012DE00 /* Tim.png in Resources */,
 				BC25779417DC27980087C6DB /* wellmark_bg.png in Resources */,
+				64DBC6771811AAB300EA41CF /* about1.html in Resources */,
 				64EFFF3C1811802D0012DE00 /* Jordan.png in Resources */,
 				B065721E17D41285005CB364 /* wellmark_logo.png in Resources */,
 				BC66AD2217DD480000C5C1EE /* doctor.png in Resources */,
@@ -488,7 +504,6 @@
 				B02F17B017CD757C007EA8A7 /* LLLocationsViewController.m in Sources */,
 				B02F17B317CD7607007EA8A7 /* LLLocationView.m in Sources */,
 				B02F17B617CD7BC6007EA8A7 /* LLSchedulingViewController.m in Sources */,
-				B02F17B917CD7CD5007EA8A7 /* LLConfirmViewController.m in Sources */,
 				B02F17BC17CD7CDC007EA8A7 /* LLConfirmedViewController.m in Sources */,
 				BC7A565F17DF9C4900863499 /* LLSettingsViewController.m in Sources */,
 				B02F17C117CD90E5007EA8A7 /* LLBookingViewController.m in Sources */,
@@ -506,6 +521,7 @@
 				B02F181417CD9A79007EA8A7 /* NSString+MBRequest.m in Sources */,
 				B02F181517CD9A79007EA8A7 /* NSURL+MBRequest.m in Sources */,
 				B0F0E52C17CEEC4C003EF566 /* LLBookUpfrontViewController.m in Sources */,
+				64DBC6741811A84B00EA41CF /* LLConfirmViewController.m in Sources */,
 				B0F0E52F17CEEC6D003EF566 /* LLBookLaterViewController.m in Sources */,
 				B06571FC17D18AD5005CB364 /* LLTreatmentManager.m in Sources */,
 				B065721217D3DA90005CB364 /* LLSelectDoctorViewController.m in Sources */,
