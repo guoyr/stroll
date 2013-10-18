@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #define WELLMARK @"Wellmark"
+#define MEDICARE @"Medicare"
 
 @interface LLTreatmentManager : NSObject
 

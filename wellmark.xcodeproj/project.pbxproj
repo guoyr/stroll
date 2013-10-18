@@ -12,6 +12,7 @@
 		64DBC6741811A84B00EA41CF /* LLConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DBC6731811A84B00EA41CF /* LLConfirmViewController.m */; };
 		64DBC6771811AAB300EA41CF /* about1.html in Resources */ = {isa = PBXBuildFile; fileRef = 64DBC6751811AAB300EA41CF /* about1.html */; };
 		64DBC6781811AAB300EA41CF /* mri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 64DBC6761811AAB300EA41CF /* mri.jpg */; };
+		64DBC67A1811AE9800EA41CF /* hospital.png in Resources */ = {isa = PBXBuildFile; fileRef = 64DBC6791811AE9800EA41CF /* hospital.png */; };
 		64EFFF3B1811802D0012DE00 /* Andrew.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EFFF361811802D0012DE00 /* Andrew.png */; };
 		64EFFF3C1811802D0012DE00 /* Jordan.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EFFF371811802D0012DE00 /* Jordan.png */; };
 		64EFFF3D1811802D0012DE00 /* matt.png in Resources */ = {isa = PBXBuildFile; fileRef = 64EFFF381811802D0012DE00 /* matt.png */; };
@@ -91,6 +92,7 @@
 		64DBC6731811A84B00EA41CF /* LLConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLConfirmViewController.m; sourceTree = "<group>"; };
 		64DBC6751811AAB300EA41CF /* about1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about1.html; sourceTree = "<group>"; };
 		64DBC6761811AAB300EA41CF /* mri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mri.jpg; sourceTree = "<group>"; };
+		64DBC6791811AE9800EA41CF /* hospital.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital.png; sourceTree = "<group>"; };
 		64EFFF361811802D0012DE00 /* Andrew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Andrew.png; sourceTree = "<group>"; };
 		64EFFF371811802D0012DE00 /* Jordan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jordan.png; sourceTree = "<group>"; };
 		64EFFF381811802D0012DE00 /* matt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matt.png; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 		B0F88C9C17CD3BEA005E4B0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				64DBC6791811AE9800EA41CF /* hospital.png */,
 				64DBC6751811AAB300EA41CF /* about1.html */,
 				64DBC6761811AAB300EA41CF /* mri.jpg */,
 				64DBC6711811A66E00EA41CF /* ct scan.jpg */,
@@ -484,6 +487,7 @@
 				BC66AD2217DD480000C5C1EE /* doctor.png in Resources */,
 				B065721F17D41285005CB364 /* wellmark_logo@2x.png in Resources */,
 				B065722417D4398A005CB364 /* dummy_data.json in Resources */,
+				64DBC67A1811AE9800EA41CF /* hospital.png in Resources */,
 				B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */,
 				B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */,
 			);

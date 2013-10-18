@@ -145,7 +145,19 @@
 
         }];
         
-    } else if ([_insuranceTextField1 isEnabled] || [_insuranceTextField2 isEnabled]) {
+    } else if([insurance rangeOfString:MEDICARE].location != NSNotFound){
+        [[LLTreatmentManager sharedInstance] setInsuranceCompany:MEDICARE];
+        [self addBackground:YES];
+        [UIView animateWithDuration:0.25 animations:^{
+            [_insuranceTextField1 setAlpha:1];
+            [_insuranceTextField2 setAlpha:1];
+        } completion:^(BOOL finished){
+            [_insuranceTextField2 setEnabled:YES];
+            [_insuranceTextField1 setEnabled:YES];
+            [_insuranceTextField1 becomeFirstResponder];
+            
+        }];
+    }else if ([_insuranceTextField1 isEnabled] || [_insuranceTextField2 isEnabled]) {
         [[LLTreatmentManager sharedInstance] setInsuranceCompany:nil];
         [self addBackground:YES];
         [UIView animateWithDuration:0.25 animations:^{

@@ -32,10 +32,11 @@
 
     if ([[[LLTreatmentManager sharedInstance] insuranceCompany] isEqualToString:WELLMARK]) {
         backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wellmark_bg.png"]];
-
-    } else {
+    } else if([[[LLTreatmentManager sharedInstance] insuranceCompany] isEqualToString:MEDICARE]){
         backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
 
+    }else{
+        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital.png"]];
     }
     
     void (^completion)(BOOL) = ^(BOOL finished) {
