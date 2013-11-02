@@ -10,6 +10,5 @@
 #import "LLViewController.h"
 
 @interface LLDeductableInfoViewController : LLViewController
-
 @end
 

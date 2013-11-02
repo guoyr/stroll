@@ -36,19 +36,19 @@
     [self setTitle:[NSString stringWithFormat:@"Deductable Status for %@", [[LLTreatmentManager sharedInstance] patientName]]];
     
     _background = [[UIView alloc] initWithFrame:CGRectMake(412, 500, 200, 0)];
-    [_background setBackgroundColor:[UIColor purpleColor]];
+    [_background setBackgroundColor:[UIColor darkGrayColor]];
     [[_background layer] setCornerRadius:5];
     
     _deductable = [[UIView alloc] initWithFrame:CGRectMake(412, 500, 200, 0)];
-    [_deductable setBackgroundColor:[UIColor blackColor]];
+    [_deductable setBackgroundColor:[UIColor whiteColor]];
     [[_deductable layer] setCornerRadius:5];
     
     _coinsurance = [[UIView alloc] initWithFrame:CGRectMake(412, 500, 200, 0)];
-    [_coinsurance setBackgroundColor:[UIColor greenColor]];
+    [_coinsurance setBackgroundColor:[UIColor grayColor]];
     [[_coinsurance layer] setCornerRadius:5];
     
     _spent = [[UIView alloc] initWithFrame:CGRectMake(412, 500, 200, 0)];
-    [_spent setBackgroundColor:[UIColor blueColor]];
+    [_spent setBackgroundColor:[UIColor lightGrayColor]];
     [[_spent layer] setCornerRadius:5];
     
     _deductableLabel = [[UILabel alloc] initWithFrame:CGRectMake(312, 500, 100, 50)];
@@ -61,18 +61,25 @@
 
 
 	// Do any additional setup after loading the view.
+    
 }
 
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 -(void)viewDidAppear:(BOOL)animated
 {
     [UIView animateWithDuration:0.5 animations:^{
-        [_background setFrame:CGRectMake(412, 500 - BG_HEIGHT, 200, BG_HEIGHT)];
-        [_deductable setFrame:CGRectMake(412, 500 - D_HEIGHT, 200, D_HEIGHT)];
-        [_coinsurance setFrame:CGRectMake(412, 500 - CO_HEIGHT, 200, CO_HEIGHT)];
-        [_spent setFrame:CGRectMake(412, 500 - SPENT_HEIGHT, 200, SPENT_HEIGHT)];
-
+        [_background setFrame:CGRectMake(412, 500 - BG_HEIGHT, 200, 400)];
+        [_deductable setFrame:CGRectMake(412, 500 - D_HEIGHT, 200, 60)];
+        [_coinsurance setFrame:CGRectMake(412, 500 - CO_HEIGHT, 200, 350)];
+        [_spent setFrame:CGRectMake(412, 500 - SPENT_HEIGHT, 200, 300)];
+        
     } completion:^(BOOL finished){
-        _deductableLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - D_HEIGHT - 20, 150, 50)];
+        /*_deductableLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - D_HEIGHT - 20, 150, 50)];
         [_deductableLabel setText:@"Deductable\n $1000"];
         [_deductableLabel setNumberOfLines:2];
         [_deductableLabel setAlpha:0];
@@ -88,21 +95,55 @@
         [_spentLabel setText:@"You Spent\n $5000"];
         [_spentLabel setNumberOfLines:2];
         [_spentLabel setAlpha:0];
-        [[self view] addSubview:_spentLabel];
-        [UIView animateWithDuration:0.5 animations:^{
+        [[self view] addSubview:_spentLabel];*/
+        /*[UIView animateWithDuration:0.5 animations:^{
             [_deductableLabel setAlpha:1];
             [_coinsuranceLabel setAlpha:1];
             [_spentLabel setAlpha:1];
-
-
+            
+            
+        }];*/
+        [UIView animateWithDuration:0.5 animations:^{
+            [_background setFrame:CGRectMake(412, 500 - 300, 200, 300)];
+            [_deductable setFrame:CGRectMake(412, 500 - 40, 200, 40)];
+            [_coinsurance setFrame:CGRectMake(412, 500 - 250, 200, 250)];
+            [_spent setFrame:CGRectMake(412, 500 - 200, 200, 200)];
+         
+         
+        }completion:^(BOOL finished){
+            _deductableLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - D_HEIGHT - 20, 150, 50)];
+             [_deductableLabel setText:@"Deductable\n $1000"];
+             [_deductableLabel setNumberOfLines:2];
+             [_deductableLabel setAlpha:0];
+             [[self view] addSubview:_deductableLabel];
+             
+             _coinsuranceLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - CO_HEIGHT - 20, 150, 50)];
+             [_coinsuranceLabel setText:@"Fully Covered\n $8000"];
+             [_coinsuranceLabel setNumberOfLines:2];
+             [_coinsuranceLabel setAlpha:0];
+             [[self view] addSubview:_coinsuranceLabel];
+             
+             _spentLabel = [[UILabel alloc] initWithFrame:CGRectMake(412 - 100, 500 - SPENT_HEIGHT - 20, 100, 50)];
+             [_spentLabel setText:@"You Spent\n $5000"];
+             [_spentLabel setNumberOfLines:2];
+             [_spentLabel setAlpha:0];
+             [[self view] addSubview:_spentLabel];
+             [UIView animateWithDuration:0.5 animations:^{
+             [_deductableLabel setAlpha:1];
+             [_coinsuranceLabel setAlpha:1];
+             [_spentLabel setAlpha:1];
+             
+             
+             }];
+            [UIView animateWithDuration:0.5 animations:^{
+                [_background setFrame:CGRectMake(412, 500 - 400, 200, 400)];
+                [_deductable setFrame:CGRectMake(412, 500 - 60, 200, 60)];
+                [_coinsurance setFrame:CGRectMake(412, 500 - 350, 200, 350)];
+                [_spent setFrame:CGRectMake(412, 500 - 300, 200, 300)];
+                
+                
+            }];
         }];
     }];
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 @end
