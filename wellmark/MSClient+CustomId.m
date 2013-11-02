@@ -4,7 +4,7 @@
 
 - (void)registerUsername:(NSString *)username withPassword:(NSString *)password withCompletion:(MSItemBlock)completion
 {
-    MSTable *accounts = [self getTable:@"UserData"];
+    MSTable *accounts = [self getTable:@"Users"];
     NSDictionary *account = @{
     @"username" : username,
     @"password" : password
@@ -16,7 +16,7 @@
 - (void)loginUsername:(NSString *)username withPassword:(NSString *)password completion:(MSClientLoginBlock)completion
 {
     MSClient *loginClient = [self clientwithFilter:self];
-    MSTable *accounts = [loginClient getTable:@"UserData"];
+    MSTable *accounts = [loginClient getTable:@"Users"];
     NSDictionary *credentials = @{
     @"username" : username,
     @"password" : password

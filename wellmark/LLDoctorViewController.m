@@ -108,9 +108,10 @@
                                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                         [alert show];
                                         return;
+                                    } else {
+                                        [self performSegueWithIdentifier:@"showTreatment" sender:self];
                                     }
                                     
-                                    [self tappedView:sender];
                                 }];
 }
 
@@ -127,6 +128,8 @@
                                                                              otherButtonTitles:nil, nil];
                                        [alert show];
                                        return;
+                                   } else {
+                                       
                                    }
                                }];
 }
@@ -152,7 +155,7 @@
     } else if (textField == _insuranceTextField1) {
         [_insuranceTextField2 becomeFirstResponder];
     } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
-        [self performSegueWithIdentifier:@"showTreatment" sender:self];
+//        [self performSegueWithIdentifier:@"showTreatment" sender:self];
     }
 }
 

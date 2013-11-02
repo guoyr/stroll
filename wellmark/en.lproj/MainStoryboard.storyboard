@@ -131,7 +131,7 @@
                     <navigationItem key="navigationItem" title="Select Doctor and Insurance Provider" id="0jn-7s-kZU">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="Phx-g1-b84">
                             <connections>
-                                <action selector="nextButtonClicked:" destination="TNW-bx-Nh4" id="90j-Mv-BjK"/>
+                                <action selector="nextButtonClicked:" destination="TNW-bx-Nh4" id="2Sv-tR-tJv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

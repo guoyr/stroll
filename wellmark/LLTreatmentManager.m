@@ -49,14 +49,14 @@
         [self setSelectedTreatment:@"Test Treatment"];
         
         // Initialize the Mobile Service client with your URL and key
-        MSClient *newClient = [MSClient clientWithApplicationURLString:@"https://todolistaaa.azure-mobile.net/"
-                                                    withApplicationKey:@"MObSdiKBsHJVUNTGwCmtLpeHIwCWBR84"];
+        MSClient *newClient = [MSClient clientWithApplicationURLString:@"https://strollmobile.azure-mobile.net/"
+                                                    withApplicationKey:@"VWHKZcntaIYDRsbZWEowEyvKiLfTWi91"];
         
         // Add a Mobile Service filter to enable the busy indicator
         self.client = [newClient clientwithFilter:self];
         
         // Create an MSTable instance to allow us to work with the TodoItem table
-        self.table = [_client getTable:@"TestAccount"];
+        self.table = [_client getTable:@"Users"];
         
         self.items = [[NSMutableArray alloc] init];
         self.busyCount = 0;
