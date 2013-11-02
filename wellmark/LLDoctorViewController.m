@@ -67,7 +67,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     
-    [self performSegueWithIdentifier:@"showTreatment" sender:self];
+//    [self performSegueWithIdentifier:@"showTreatment" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -183,6 +183,8 @@
     [_selectDoctorButton setTitle:@"Select Doctor" forState:UIControlStateNormal];
     [_selectInsuranceButton setTitle:@"Select Insurance Type" forState:UIControlStateNormal];
     [[self navigationItem] setHidesBackButton:YES animated:NO];
+    [[LLTreatmentManager sharedInstance] setInsuranceCompany:nil];
+    [self addBackground:NO];
 }
 
 

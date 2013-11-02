@@ -21,10 +21,10 @@
 #define WEST_LOCATION [[CLLocation alloc] initWithLatitude:41.577058 longitude:-93.710289]
 #define WELLMARK_HQ_LOCATION [[CLLocation alloc] initWithLatitude:41.592337 longitude:-93.632698]
 
-#define CURRENT_LOCATION_INDEX 0
-#define CITY_HALL_INDEX 1
-#define WEST_INDEX 2
-#define WELLMARK_HQ_INDEX 3
+#define CURRENT_LOCATION_INDEX 1
+#define CITY_HALL_INDEX 2
+#define WEST_INDEX 3
+#define WELLMARK_HQ_INDEX 0
 
 #define USE_DUMMY_DATA 1
 #define USE_REAL_DATA 0
@@ -218,7 +218,7 @@
         if (i == [_providers count] - 1) {
             [_priceRangeLabel setText:[NSString stringWithFormat:@"Price Range: $%2.2f to $%2.2f", 0.0f, dummyPrice]];
         }
-        dummyPrice += rand() % 100;
+        dummyPrice += rand() % 1000;
         [curLocationView setIndex:i];
         [[self scrollView] addSubview:curLocationView];
         curX += LOCATION_CARD_H_MARGIN + LOCATION_CARD_WIDTH;
