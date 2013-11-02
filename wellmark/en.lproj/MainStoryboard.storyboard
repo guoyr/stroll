@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="3yk-fG-qCF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="13A598" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="3yk-fG-qCF">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--Doctor View Controller - Select Doctor and Insurance Provider-->
@@ -58,8 +58,8 @@
                                 <rect key="frame" x="576" y="119" width="320" height="48"/>
                                 <color key="backgroundColor" red="0.1098039299" green="0.73725491759999995" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="Cpu-pH-4HQ"/>
                                     <constraint firstAttribute="height" constant="48" id="Pyh-8e-EAA"/>
-                                    <constraint firstAttribute="width" constant="320" id="xsv-MT-21w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Select Insurance Type">
@@ -71,6 +71,25 @@
                                 </state>
                                 <connections>
                                     <action selector="selectInsuranceButtonClicked:" destination="TNW-bx-Nh4" eventType="touchUpInside" id="UeZ-Cu-rgZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ss6-t4-KVe">
+                                <rect key="frame" x="921" y="190" width="83" height="48"/>
+                                <color key="backgroundColor" red="0.1098039299" green="0.73725491759999995" blue="0.61176472900000001" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="p7S-0Z-oDQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonClicked:" destination="TNW-bx-Nh4" eventType="touchUpInside" id="KOC-1c-gQF"/>
+                                    <action selector="selectInsuranceButtonClicked:" destination="TNW-bx-Nh4" eventType="touchUpInside" id="gHq-Z5-doQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OtY-Bk-Y3M">
@@ -90,9 +109,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="D8D-LW-RaS" secondAttribute="trailing" constant="128" id="7qd-br-PZD"/>
                             <constraint firstItem="D8D-LW-RaS" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="119" id="8bJ-rm-DWe"/>
+                            <constraint firstItem="Ss6-t4-KVe" firstAttribute="bottom" secondItem="wsL-0k-jOm" secondAttribute="bottom" type="default" id="9Ng-bM-dh6"/>
                             <constraint firstItem="QlY-ol-bNt" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="117" id="AH2-yi-W7w"/>
+                            <constraint firstItem="Ss6-t4-KVe" firstAttribute="top" secondItem="wsL-0k-jOm" secondAttribute="top" type="default" id="Has-IM-ONI"/>
                             <constraint firstItem="cal-Ul-UUh" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="190" id="Jc0-Uz-YoS"/>
                             <constraint firstItem="wsL-0k-jOm" firstAttribute="bottom" secondItem="cal-Ul-UUh" secondAttribute="bottom" type="default" id="KvZ-ox-Tt2"/>
                             <constraint firstItem="wsL-0k-jOm" firstAttribute="baseline" secondItem="cal-Ul-UUh" secondAttribute="baseline" type="default" id="LWx-Sg-tIj"/>
@@ -100,7 +120,9 @@
                             <constraint firstAttribute="bottom" secondItem="OtY-Bk-Y3M" secondAttribute="bottom" constant="83" id="TuH-dq-91O"/>
                             <constraint firstItem="QlY-ol-bNt" firstAttribute="trailing" secondItem="cal-Ul-UUh" secondAttribute="trailing" type="default" id="hRT-Xg-dbV"/>
                             <constraint firstItem="QlY-ol-bNt" firstAttribute="leading" secondItem="pqx-zx-aGR" secondAttribute="leading" constant="128" id="j5p-9y-PBc"/>
+                            <constraint firstAttribute="trailing" secondItem="Ss6-t4-KVe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lop-6V-mXN"/>
                             <constraint firstItem="wsL-0k-jOm" firstAttribute="trailing" secondItem="D8D-LW-RaS" secondAttribute="trailing" type="default" id="o32-Zd-O45"/>
+                            <constraint firstAttribute="trailing" secondItem="D8D-LW-RaS" secondAttribute="trailing" constant="128" id="oQi-Kj-XCl"/>
                             <constraint firstItem="QlY-ol-bNt" firstAttribute="leading" secondItem="cal-Ul-UUh" secondAttribute="leading" type="default" id="rWg-qV-o1K"/>
                             <constraint firstItem="wsL-0k-jOm" firstAttribute="leading" secondItem="D8D-LW-RaS" secondAttribute="leading" type="default" id="t9x-ua-eFV"/>
                         </constraints>
@@ -117,6 +139,7 @@
                         <outlet property="insuranceTextField2" destination="wsL-0k-jOm" id="84o-Q5-psA"/>
                         <outlet property="nextButtonItem" destination="Phx-g1-b84" id="B12-Bc-6nh"/>
                         <outlet property="patientTextField" destination="cal-Ul-UUh" id="E2J-tc-h4E"/>
+                        <outlet property="registerButton" destination="Ss6-t4-KVe" id="Wcy-v7-3zf"/>
                         <outlet property="selectDoctorButton" destination="QlY-ol-bNt" id="YSh-KQ-LHd"/>
                         <outlet property="selectInsuranceButton" destination="D8D-LW-RaS" id="jd3-Kh-vkH"/>
                         <outlet property="view" destination="pqx-zx-aGR" id="wch-WR-XL6"/>

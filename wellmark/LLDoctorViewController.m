@@ -12,6 +12,7 @@
 #import "LLDoctorViewController.h"
 #import "LLTreatmentViewController.h"
 #import "LLTreatmentManager.h"
+#import "MSClient+CustomId.h"
 
 #define CELL_HEIGHT 44
 
@@ -47,6 +48,8 @@
 
     [[self insuranceTextField1] setAlpha:0];
     [[self insuranceTextField2] setAlpha:0];
+    [[self registerButton] setAlpha:0];
+    [[self registerButton] setEnabled:NO];
     [[self insuranceTextField1] setEnabled:NO];
     [[self insuranceTextField2] setEnabled:NO];
 	// Do any additional setup after loading the view.
@@ -97,7 +100,35 @@
 
 -(void)nextButtonClicked:(id)sender
 {
-    [self tappedView:sender];
+    
+    [[LLTreatmentManager sharedInstance].client loginUsername:self.patientTextField.text
+                              withPassword:self.insuranceTextField2.text
+                                completion:^(MSUser *user, NSError *error) {
+                                    if (error) {
+                                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                        [alert show];
+                                        return;
+                                    }
+                                    
+                                    [self tappedView:sender];
+                                }];
+}
+
+-(void)registerButtonClicked:(id)sender
+{
+    [[LLTreatmentManager sharedInstance].client registerUsername:self.patientTextField.text
+                                 withPassword:self.insuranceTextField2.text
+                               withCompletion:^(NSDictionary *item, NSError *error) {
+                                   if (error) {
+                                       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login failed"
+                                                                                       message:error.localizedDescription
+                                                                                      delegate:nil
+                                                                             cancelButtonTitle:@"OK"
+                                                                             otherButtonTitles:nil, nil];
+                                       [alert show];
+                                       return;
+                                   }
+                               }];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -137,8 +168,10 @@
         [UIView animateWithDuration:0.25 animations:^{
 //            [_insuranceTextField1 setAlpha:1];
             [_insuranceTextField2 setAlpha:1];
+            [_registerButton setAlpha:1];
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:YES];
+            [_registerButton setEnabled:YES];
 //            [_insuranceTextField1 setEnabled:YES];
 //            [_insuranceTextField1 becomeFirstResponder];
             [_insuranceTextField2 becomeFirstResponder];
@@ -151,8 +184,10 @@
         [UIView animateWithDuration:0.25 animations:^{
 //            [_insuranceTextField1 setAlpha:0];
             [_insuranceTextField2 setAlpha:0];
+            [_registerButton setAlpha:0];
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:NO];
+            [_registerButton setEnabled:NO];
 //            [_insuranceTextField1 setEnabled:NO];
 //            [_insuranceTextField1 becomeFirstResponder];
             [_insuranceTextField2 becomeFirstResponder];
