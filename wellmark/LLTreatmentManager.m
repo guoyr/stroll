@@ -61,20 +61,22 @@
         self.items = [[NSMutableArray alloc] init];
         self.busyCount = 0;
         
-        MSTable *testTable = [_client getTable:@"patientsdata"];
+        MSTable *DeductableStatusTable = [_client getTable:@"patientsdata"];
         
-        [testTable readWithCompletion:^(NSArray *items, NSInteger totalCount, NSError *error) {
-            for (NSDictionary *dict in items) {
-                NSLog(@"%@",dict);
-            }
+//        _memberID = @"1035814";
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"memberID == %@",_memberID];
+        [DeductableStatusTable readWhere:predicate completion:^(NSArray *items, NSInteger totalCount, NSError *error) {
+            NSDictionary *dict = [items lastObject];
+            NSInteger deductbalevalue = [[dict objectForKey:@"Deductable"] intValue];
+            NSInteger coveragevalue = [[dict objectForKey:@"Coverage"] intValue];
+            NSLog(@"%d,%d,%d",deductbalevalue, coveragevalue, 5*deductbalevalue);
+
         }];
-        
     }
-    
     return self;
 }
 
--(NSString *)getEmail
+-(NSString *) getEmail
 {
     return [_patientInfo objectForKey:@"email"];
 }
