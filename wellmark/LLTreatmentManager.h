@@ -21,6 +21,8 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 @property (nonatomic, strong) NSString *patientName;
 @property (nonatomic, strong) NSDictionary *providerInformation;
 @property (nonatomic, strong) NSString *insuranceCompany;
+@property (nonatomic, strong) NSString *memberID;
+
 @property (nonatomic, strong)   NSArray *items;
 @property (nonatomic, strong)   MSClient *client;
 @property (nonatomic, copy) BusyUpdateBlock busyUpdate;

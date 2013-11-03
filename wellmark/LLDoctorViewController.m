@@ -154,6 +154,8 @@
         [_selectInsuranceButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     } else if (textField == _insuranceTextField1) {
         [_insuranceTextField2 becomeFirstResponder];
+    } else if (textField == _insuranceTextField2) {
+        [[LLTreatmentManager sharedInstance] setMemberID:textField.text];
     } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
 //        [self performSegueWithIdentifier:@"showTreatment" sender:self];
     }

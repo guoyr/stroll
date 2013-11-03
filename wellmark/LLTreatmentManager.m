@@ -60,6 +60,15 @@
         
         self.items = [[NSMutableArray alloc] init];
         self.busyCount = 0;
+        
+        MSTable *testTable = [_client getTable:@"patientsdata"];
+        
+        [testTable readWithCompletion:^(NSArray *items, NSInteger totalCount, NSError *error) {
+            for (NSDictionary *dict in items) {
+                NSLog(@"%@",dict);
+            }
+        }];
+        
     }
     
     return self;
@@ -110,6 +119,7 @@
         
         // Let the caller know that we finished
         completion(index);
+
     }];
 }
 
