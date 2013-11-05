@@ -151,9 +151,9 @@
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     if (textField == _patientTextField) {
-        [_selectInsuranceButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+//        [_selectInsuranceButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     } else if (textField == _insuranceTextField1) {
-        [_insuranceTextField2 becomeFirstResponder];
+//        [_insuranceTextField2 becomeFirstResponder];
     } else if (textField == _insuranceTextField2) {
         [[LLTreatmentManager sharedInstance] setMemberID:textField.text];
     } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
@@ -179,7 +179,7 @@
             [_registerButton setEnabled:YES];
 //            [_insuranceTextField1 setEnabled:YES];
 //            [_insuranceTextField1 becomeFirstResponder];
-            [_insuranceTextField2 becomeFirstResponder];
+//            [_insuranceTextField2 becomeFirstResponder];
         }];
         
 //    } else if ([_insuranceTextField1 isEnabled] || [_insuranceTextField2 isEnabled]) {
@@ -195,7 +195,7 @@
             [_registerButton setEnabled:NO];
 //            [_insuranceTextField1 setEnabled:NO];
 //            [_insuranceTextField1 becomeFirstResponder];
-            [_insuranceTextField2 becomeFirstResponder];
+//            [_insuranceTextField2 becomeFirstResponder];
 
         }];
     }
