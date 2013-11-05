@@ -120,6 +120,7 @@
 -(void)finish:(id)sender
 {
 //    [self performSegueWithIdentifier:@"backToBeginning" sender:self];
+    [[LLTreatmentManager sharedInstance].client logout];
     [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
