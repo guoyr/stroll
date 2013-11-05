@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSArray *treatments;
 @property (nonatomic, strong) NSString *selectedTreatment;
 @property (strong, nonatomic) UITableView *treatmentTableView;
-
+@property (nonatomic, strong) UIImageView *backgroundView;
 @end
 
 @implementation LLTreatmentViewController{
@@ -77,7 +77,7 @@
             cell2 = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdetify2];
         }
         [[cell2 textLabel] setText:[treatments objectAtIndex:[indexPath row]]];
-        cell2.imageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
+        //cell2.imageView.image = [UIImage imageNamed:[thumbnails objectAtIndex:indexPath.row]];
         return cell2;
         
     }
@@ -114,5 +114,40 @@
         DetailViewController *destViewController = segue.destinationViewController;
         destViewController.methodName = [treatments objectAtIndex:indexPath.row];
     }
+}
+-(void)addBackground:(BOOL)animated
+{
+    
+    UIImageView *backgroundView;
+    
+    
+    backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital.png"]];
+    [[self view] addSubview:backgroundView];
+    [[self view] sendSubviewToBack:backgroundView];
+    
+    /*void (^completion)(BOOL) = ^(BOOL finished) {
+        if ([_backgroundView superview]) {
+            [_backgroundView removeFromSuperview];
+        }
+        _backgroundView = backgroundView;
+    };*/
+   /* if (animated) {
+        [backgroundView setAlpha:0.0];
+        [[self view] addSubview:backgroundView];
+        [[self view] sendSubviewToBack:backgroundView];
+        
+        [UIView animateWithDuration:1.0 animations:^{
+            [_backgroundView setAlpha:0.0];
+            [backgroundView setAlpha:1.0];
+            
+        } completion:^(BOOL finished){
+            completion(finished);
+        }];
+    } else {
+        [[self view] addSubview:backgroundView];
+        [[self view] sendSubviewToBack:backgroundView];
+        completion(YES);
+    }*/
+    
 }
 @end

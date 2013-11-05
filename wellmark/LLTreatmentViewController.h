@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *treatmentLabel;
 @property (strong, nonatomic) IBOutlet UITableView *tableView2;
+-(void)addBackground:(BOOL)animated;
 
 
 @end

@@ -36,7 +36,7 @@
         backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
 
     }else{
-        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital.png"]];
+        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     }
     
     void (^completion)(BOOL) = ^(BOOL finished) {
