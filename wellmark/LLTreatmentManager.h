@@ -33,7 +33,7 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 - (NSString *)getEmail;
 - (NSString *)getProviderName;
 - (NSString *)getProviderPhone;
-
+-(void) sendEmailTo:(NSString *)recipient;
 - (void) refreshDataOnSuccess:(CompletionBlock) completion;
 
 - (void) addItem:(NSDictionary *) item
