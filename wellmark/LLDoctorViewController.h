@@ -13,16 +13,7 @@
 
 @interface LLDoctorViewController : LLViewController <UITextFieldDelegate, LLSelectDoctorViewControllerDelegate, LLSelectInsuranceViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *insuranceTextField2;
-@property (weak, nonatomic) IBOutlet UITextField *patientTextField;
-@property (weak, nonatomic) IBOutlet UIButton *selectDoctorButton;
-@property (weak, nonatomic) IBOutlet UIButton *selectInsuranceButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButtonItem;
-@property (weak, nonatomic) IBOutlet UIButton *registerButton;
 
--(IBAction)nextButtonClicked:(id)sender;
--(IBAction)selectDoctorButtonClicked:(id)sender;
--(IBAction)selectInsuranceButtonClicked:(id)sender;
--(IBAction)registerButtonClicked:(id)sender;
+
 
 @end

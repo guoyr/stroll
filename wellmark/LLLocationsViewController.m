@@ -41,6 +41,10 @@
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
 @property (nonatomic, strong) UIView *mask;
 
+@property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) UILabel *treatmentLabel;
+@property (strong, nonatomic) UILabel *priceRangeLabel;
+
 @end
 
 @implementation LLLocationsViewController
@@ -49,6 +53,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 92, 968, 644)];
+    [[self view] addSubview:_scrollView];
+    
+    _treatmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 320, 48)];
+    [[self view] addSubview:_treatmentLabel];
+    
+    _priceRangeLabel = _treatmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(352, 20, 320, 48)];
+    [[self view] addSubview:_priceRangeLabel];
     
     [self setTitle:[NSString stringWithFormat:@"Select Location for %@", [[LLTreatmentManager sharedInstance] patientName]]];
     [[_treatmentLabel layer] setCornerRadius:5];
@@ -230,7 +244,8 @@
 {
     NSDictionary *providerInfo = [_providers objectAtIndex:[(LLLocationView *)[sender view] index]];
     [[LLTreatmentManager sharedInstance] setProviderInformation:providerInfo];
-    [self performSegueWithIdentifier:@"ShowSchedulingOptions" sender:self];
+    LLSchedulingViewController *vc = [[LLSchedulingViewController alloc] init];
+    [[self navigationController] pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

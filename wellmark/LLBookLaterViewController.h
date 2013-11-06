@@ -11,11 +11,5 @@
 
 @interface LLBookLaterViewController : LLViewController <UITextFieldDelegate>
 
-@property (nonatomic, weak) IBOutlet UILabel *enterEmailLabel;
-@property (nonatomic, weak) IBOutlet UITextField *emailField;
-@property (nonatomic, weak) IBOutlet UIButton *sendEmailButton;
-@property (nonatomic, weak) IBOutlet UIBarButtonItem *finishButtonItem;
 
--(IBAction)sendEmail:(id)sender;
--(IBAction)finish:(id)sender;
 @end

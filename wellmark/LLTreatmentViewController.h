@@ -11,6 +11,4 @@
 
 @interface LLTreatmentViewController : LLViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *treatmentLabel;
-
 @end

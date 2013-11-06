@@ -13,9 +13,9 @@
 
 @interface LLLocationsViewController : LLViewController <CLLocationManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong) NSString *treatment;
-@property (nonatomic, weak) IBOutlet UILabel *treatmentLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priceRangeLabel;
+
+
+
 
 @end

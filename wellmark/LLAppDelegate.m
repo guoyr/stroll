@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "TestFlight.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
-
+#import "LLDoctorViewController.h";
 @implementation LLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -24,9 +24,15 @@
     
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"Doctors"]) {
         [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon", nil] forKey:@"Doctors"];
-     MSClient *client = [MSClient clientWithApplicationURLString:@"https://strollmobile.azure-mobile.net/"
-                     withApplicationKey:@"VWHKZcntaIYDRsbZWEowEyvKiLfTWi91"];
     }
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    LLDoctorViewController *vc = [[LLDoctorViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    [[nvc navigationBar] setTranslucent:NO];
+    [self.window setRootViewController:nvc];
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 							

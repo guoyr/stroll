@@ -10,10 +10,12 @@
 #import "LLTreatmentViewController.h"
 #import "LLLocationsViewController.h"
 #import "LLTreatmentManager.h"
-
+#import "LLColors.h"
 #define CELL_HEIGHT 44
 
 @interface LLTreatmentViewController ()
+
+@property (strong, nonatomic) UILabel *treatmentLabel;
 
 @property (nonatomic, strong) NSArray *treatments;
 @property (nonatomic, strong) NSString *selectedTreatment;
@@ -26,6 +28,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _treatmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(352, 92, 320, 48)];
+    [_treatmentLabel setBackgroundColor:TORQUOISE];
+    [self.view addSubview:_treatmentLabel];
+    
 	// Do any additional setup after loading the view.
     [self setTitle:[NSString stringWithFormat:@"Select Treatment for %@",[[LLTreatmentManager sharedInstance] patientName]]];
     [self setTreatments:[NSArray arrayWithObjects:@"CT Scan", @"MRI Scan", @"PET Scan", @"X-Ray", nil]];
@@ -72,7 +79,8 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     _selectedTreatment = [[cell textLabel] text];
     [[LLTreatmentManager sharedInstance] setSelectedTreatment:_selectedTreatment];
-    [self performSegueWithIdentifier:@"showLocation" sender:self];
+    LLLocationsViewController *vc = [[LLLocationsViewController alloc] init];
+    [[self navigationController] pushViewController:vc animated:YES];
 }
 
 @end
