@@ -25,6 +25,10 @@
 @property (nonatomic, strong) UILabel *coinsuranceLabel;
 @property (nonatomic, strong) UILabel *spentLabel;
 
+@property (nonatomic, strong)   MSTable *table;
+
+@property (nonatomic) int deductiblevalue;
+@property (nonatomic) int currentamount;
 
 @end
 
@@ -64,12 +68,23 @@
     
 }
 
-
-- (void)didReceiveMemoryWarning
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    MSClient *newClient = [MSClient clientWithApplicationURLString:@"https://strollmobile.azure-mobile.net/"
+                                                withApplicationKey:@"VWHKZcntaIYDRsbZWEowEyvKiLfTWi91"];
+    MSTable *deductibleStatusTable = [newClient getTable:@"patientsdata"];
+    //_memberID = @"1035369";
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"memberID == %@",_memberID];
+    [deductibleStatusTable readWhere:predicate completion:^(NSArray *items, NSInteger totalCount, NSError *error) {
+        NSDictionary *dict = [items lastObject];
+        _deductiblevalue = [[dict objectForKey:@"Deductable"] intValue];
+        _currentamount = [[dict objectForKey:@"Coverage"] intValue];
+        NSLog(@"%d,%d,%d",_deductiblevalue, _currentamount, 5*_deductiblevalue);
+        
+    }];
+    
 }
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [UIView animateWithDuration:0.5 animations:^{
@@ -77,64 +92,35 @@
         [_deductable setFrame:CGRectMake(412, 500 - D_HEIGHT, 200, 60)];
         [_coinsurance setFrame:CGRectMake(412, 500 - CO_HEIGHT, 200, 350)];
         [_spent setFrame:CGRectMake(412, 500 - SPENT_HEIGHT, 200, 300)];
-        
-    } completion:^(BOOL finished){
-        /*_deductableLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - D_HEIGHT - 20, 150, 50)];
-        [_deductableLabel setText:@"Deductable\n $1000"];
+            
+    }completion:^(BOOL finished){
+        _deductableLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - D_HEIGHT - 20, 150, 50)];
+        [_deductableLabel setText:[NSString stringWithFormat:@"Deductable: %d", self.deductiblevalue]];
         [_deductableLabel setNumberOfLines:2];
         [_deductableLabel setAlpha:0];
         [[self view] addSubview:_deductableLabel];
         
+        
+        
         _coinsuranceLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - CO_HEIGHT - 20, 150, 50)];
-        [_coinsuranceLabel setText:@"Fully Covered\n $8000"];
+        // [_coinsuranceLabel setText:@"Fully Covered\n $8000"];
+        [_coinsuranceLabel setText:[NSString stringWithFormat:@"Current Amount: %d", self.currentamount]];
         [_coinsuranceLabel setNumberOfLines:2];
         [_coinsuranceLabel setAlpha:0];
         [[self view] addSubview:_coinsuranceLabel];
         
         _spentLabel = [[UILabel alloc] initWithFrame:CGRectMake(412 - 100, 500 - SPENT_HEIGHT - 20, 100, 50)];
-        [_spentLabel setText:@"You Spent\n $5000"];
+        [_spentLabel setText:[NSString stringWithFormat:@"Max out of pocket: %d", 5*self.deductiblevalue]];
         [_spentLabel setNumberOfLines:2];
         [_spentLabel setAlpha:0];
-        [[self view] addSubview:_spentLabel];*/
-        /*[UIView animateWithDuration:0.5 animations:^{
+        [[self view] addSubview:_spentLabel];
+        [UIView animateWithDuration:0.5 animations:^{
             [_deductableLabel setAlpha:1];
             [_coinsuranceLabel setAlpha:1];
             [_spentLabel setAlpha:1];
             
             
-        }];*/
-        [UIView animateWithDuration:0.5 animations:^{
-            [_background setFrame:CGRectMake(412, 500 - 300, 200, 300)];
-            [_deductable setFrame:CGRectMake(412, 500 - 40, 200, 40)];
-            [_coinsurance setFrame:CGRectMake(412, 500 - 250, 200, 250)];
-            [_spent setFrame:CGRectMake(412, 500 - 200, 200, 200)];
-         
-         
-        }completion:^(BOOL finished){
-            _deductableLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - D_HEIGHT - 20, 150, 50)];
-             [_deductableLabel setText:@"Deductable\n $1000"];
-             [_deductableLabel setNumberOfLines:2];
-             [_deductableLabel setAlpha:0];
-             [[self view] addSubview:_deductableLabel];
-             
-             _coinsuranceLabel = [[UILabel alloc] initWithFrame:CGRectMake(632, 500 - CO_HEIGHT - 20, 150, 50)];
-             [_coinsuranceLabel setText:@"Fully Covered\n $8000"];
-             [_coinsuranceLabel setNumberOfLines:2];
-             [_coinsuranceLabel setAlpha:0];
-             [[self view] addSubview:_coinsuranceLabel];
-             
-             _spentLabel = [[UILabel alloc] initWithFrame:CGRectMake(412 - 100, 500 - SPENT_HEIGHT - 20, 100, 50)];
-             [_spentLabel setText:@"You Spent\n $5000"];
-             [_spentLabel setNumberOfLines:2];
-             [_spentLabel setAlpha:0];
-             [[self view] addSubview:_spentLabel];
-             [UIView animateWithDuration:0.5 animations:^{
-             [_deductableLabel setAlpha:1];
-             [_coinsuranceLabel setAlpha:1];
-             [_spentLabel setAlpha:1];
-             
-             
-             }];
+        } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.5 animations:^{
                 [_background setFrame:CGRectMake(412, 500 - 400, 200, 400)];
                 [_deductable setFrame:CGRectMake(412, 500 - 60, 200, 60)];
@@ -146,4 +132,5 @@
         }];
     }];
 }
+
 @end

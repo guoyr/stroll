@@ -13,6 +13,7 @@
 #import "LLTreatmentViewController.h"
 #import "LLTreatmentManager.h"
 #import "LLSettingsViewController.h"
+#import "MSClient+CustomId.h"
 
 #define CELL_HEIGHT 44
 
@@ -46,9 +47,9 @@
     _doctorPopoverController = [[UIPopoverController alloc] initWithContentViewController:_selectDoctorViewController];
     _insurancePopoverController = [[UIPopoverController alloc] initWithContentViewController:_selectInsuranceViewController];
 
-    [[self insuranceTextField1] setAlpha:0];
     [[self insuranceTextField2] setAlpha:0];
-    [[self insuranceTextField1] setEnabled:NO];
+    [[self registerButton] setAlpha:0];
+    [[self registerButton] setEnabled:NO];
     [[self insuranceTextField2] setEnabled:NO];
 	// Do any additional setup after loading the view.
     
@@ -98,7 +99,43 @@
 
 -(void)nextButtonClicked:(id)sender
 {
-    [self tappedView:sender];
+    if (![_patientTextField isFirstResponder] && ![_insuranceTextField2 isFirstResponder]) {
+        [self performSegueWithIdentifier:@"showTreatment" sender:self];
+    } else {
+        
+    }
+    
+    [[LLTreatmentManager sharedInstance].client loginUsername:self.patientTextField.text
+                              withPassword:self.insuranceTextField2.text
+                                completion:^(MSUser *user, NSError *error) {
+                                    if (error) {
+                                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                                        [alert show];
+                                        return;
+                                    } else {
+                                        [self performSegueWithIdentifier:@"showTreatment" sender:self];
+                                    }
+                                    
+                                }];
+}
+
+-(void)registerButtonClicked:(id)sender
+{
+    [[LLTreatmentManager sharedInstance].client registerUsername:self.patientTextField.text
+                                 withPassword:self.insuranceTextField2.text
+                               withCompletion:^(NSDictionary *item, NSError *error) {
+                                   if (error) {
+                                       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login failed"
+                                                                                       message:error.localizedDescription
+                                                                                      delegate:nil
+                                                                             cancelButtonTitle:@"OK"
+                                                                             otherButtonTitles:nil, nil];
+                                       [alert show];
+                                       return;
+                                   } else {
+                                       
+                                   }
+                               }];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -123,6 +160,11 @@
         [_insuranceTextField2 becomeFirstResponder];
     } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
         [self performSegueWithIdentifier:@"showTreatment" sender:self];
+//        [_selectInsuranceButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+    } else if (textField == _insuranceTextField2) {
+        [[LLTreatmentManager sharedInstance] setMemberID:textField.text];
+    } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
+//        [self performSegueWithIdentifier:@"showTreatment" sender:self];
     }
 }
 
@@ -138,11 +180,13 @@
         [UIView animateWithDuration:0.25 animations:^{
             [_insuranceTextField1 setAlpha:1];
             [_insuranceTextField2 setAlpha:1];
+            [_registerButton setAlpha:1];
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:YES];
-            [_insuranceTextField1 setEnabled:YES];
-            [_insuranceTextField1 becomeFirstResponder];
-
+            [_registerButton setEnabled:YES];
+//            [_insuranceTextField1 setEnabled:YES];
+//            [_insuranceTextField1 becomeFirstResponder];
+//            [_insuranceTextField2 becomeFirstResponder];
         }];
         
     } else if([insurance rangeOfString:MEDICARE].location != NSNotFound){
@@ -163,10 +207,14 @@
         [UIView animateWithDuration:0.25 animations:^{
             [_insuranceTextField1 setAlpha:0];
             [_insuranceTextField2 setAlpha:0];
+            [_registerButton setAlpha:0];
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:NO];
-            [_insuranceTextField1 setEnabled:NO];
-            [_insuranceTextField1 becomeFirstResponder];
+            [_registerButton setEnabled:NO];
+//            [_insuranceTextField1 setEnabled:NO];
+//            [_insuranceTextField1 becomeFirstResponder];
+
+//            [_insuranceTextField2 becomeFirstResponder];
 
         }];
     }

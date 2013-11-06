@@ -8,19 +8,24 @@
 
 #import "LLAppDelegate.h"
 #import <Parse/Parse.h>
+#import "TestFlight.h"
+#import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 
 @implementation LLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //[TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+    [TestFlight takeOff:@"3aa250b7-9551-47ab-a2a3-b5eab7ad21ef"];
     [Parse setApplicationId:@"A2dxJpqSX4cCaSkWWbLw4FXk1Wi328L6TnsbGBU3"
                   clientKey:@"7yIszpNNJ9SKrhJbpCxEtIBOsHtKbUTLLvrgDhiF"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
-    if (1) {
-        NSArray *a =[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon",nil];
-        [[NSUserDefaults standardUserDefaults] setObject:a forKey:@"Doctors"];
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"Doctors"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon", nil] forKey:@"Doctors"];
+     MSClient *client = [MSClient clientWithApplicationURLString:@"https://strollmobile.azure-mobile.net/"
+                     withApplicationKey:@"VWHKZcntaIYDRsbZWEowEyvKiLfTWi91"];
     }
     return YES;
 }
