@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8FABFDDA1801CFF0001E9EAC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FABFDD91801CFF0001E9EAC /* libz.dylib */; };
-		8FE39D431801CDEB0028807A /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE39D3D1801CDEB0028807A /* libTestFlight.a */; };
-		8FE39D441801CDEB0028807A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FE39D3E1801CDEB0028807A /* README.md */; };
-		8FE39D451801CDEB0028807A /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 8FE39D3F1801CDEB0028807A /* release_notes.md */; };
+		086CBEE4180C8EA600383346 /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */; };
 		B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */; };
 		B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */; };
 		B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02ABE4F17D66646005A5F5C /* LLViewController.m */; };
@@ -37,7 +34,6 @@
 		B02F181417CD9A79007EA8A7 /* NSString+MBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17E017CD9A79007EA8A7 /* NSString+MBRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		B02F181517CD9A79007EA8A7 /* NSURL+MBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B02F17E217CD9A79007EA8A7 /* NSURL+MBRequest.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		B02F182617CD9A79007EA8A7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B02F180717CD9A79007EA8A7 /* LICENSE */; };
-		B02F182717CD9A79007EA8A7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B02F180817CD9A79007EA8A7 /* README.md */; };
 		B02F182F17CDAA4A007EA8A7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02F182E17CDAA4A007EA8A7 /* CoreLocation.framework */; };
 		B06571F717D17FAD005CB364 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = B06571F617D17FAD005CB364 /* background.png */; };
 		B06571F917D1817F005CB364 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06571F817D1817F005CB364 /* QuartzCore.framework */; };
@@ -45,7 +41,6 @@
 		B06571FE17D2D616005CB364 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06571FD17D2D616005CB364 /* Parse.framework */; };
 		B065720017D2D644005CB364 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06571FF17D2D644005CB364 /* AudioToolbox.framework */; };
 		B065720217D2D649005CB364 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720117D2D649005CB364 /* CFNetwork.framework */; };
-		B065720417D2D65E005CB364 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720317D2D65E005CB364 /* libz.1.2.5.dylib */; };
 		B065720617D2D664005CB364 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720517D2D664005CB364 /* MobileCoreServices.framework */; };
 		B065720817D2D66F005CB364 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720717D2D66F005CB364 /* Security.framework */; };
 		B065720C17D2D679005CB364 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720B17D2D679005CB364 /* SystemConfiguration.framework */; };
@@ -75,9 +70,13 @@
 		BC66AD2817DD6F8F00C5C1EE /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2617DD6F8F00C5C1EE /* settings.png */; };
 		BC66AD2917DD6F8F00C5C1EE /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2717DD6F8F00C5C1EE /* settings@2x.png */; };
 		BC7A565F17DF9C4900863499 /* LLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7A565E17DF9C4900863499 /* LLSettingsViewController.m */; };
+		BCAC85861824B9A8006264F8 /* MSClient+CustomId.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC85851824B9A8006264F8 /* MSClient+CustomId.m */; };
+		BCEC23E2182A0AAE009919E9 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE39D3D1801CDEB0028807A /* libTestFlight.a */; };
+		BCEC23E3182A0AB3009919E9 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720317D2D65E005CB364 /* libz.1.2.5.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
 		8FABFDD91801CFF0001E9EAC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8FE39D3D1801CDEB0028807A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		8FE39D3E1801CDEB0028807A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -188,6 +187,8 @@
 		BC66AD2717DD6F8F00C5C1EE /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		BC7A565D17DF9C4900863499 /* LLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLSettingsViewController.h; sourceTree = "<group>"; };
 		BC7A565E17DF9C4900863499 /* LLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLSettingsViewController.m; sourceTree = "<group>"; };
+		BCAC85841824B9A8006264F8 /* MSClient+CustomId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MSClient+CustomId.h"; sourceTree = "<group>"; };
+		BCAC85851824B9A8006264F8 /* MSClient+CustomId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MSClient+CustomId.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,16 +196,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FABFDDA1801CFF0001E9EAC /* libz.dylib in Frameworks */,
+				BCEC23E3182A0AB3009919E9 /* libz.1.2.5.dylib in Frameworks */,
+				BCEC23E2182A0AAE009919E9 /* libTestFlight.a in Frameworks */,
 				B065720C17D2D679005CB364 /* SystemConfiguration.framework in Frameworks */,
-				8FE39D431801CDEB0028807A /* libTestFlight.a in Frameworks */,
 				B065720817D2D66F005CB364 /* Security.framework in Frameworks */,
 				B06571F917D1817F005CB364 /* QuartzCore.framework in Frameworks */,
 				B065720617D2D664005CB364 /* MobileCoreServices.framework in Frameworks */,
-				B065720417D2D65E005CB364 /* libz.1.2.5.dylib in Frameworks */,
 				B02F182F17CDAA4A007EA8A7 /* CoreLocation.framework in Frameworks */,
 				B0F88C9A17CD3BEA005E4B0A /* CoreGraphics.framework in Frameworks */,
 				B065720217D2D649005CB364 /* CFNetwork.framework in Frameworks */,
+				086CBEE4180C8EA600383346 /* WindowsAzureMobileServices.framework in Frameworks */,
 				B065720017D2D644005CB364 /* AudioToolbox.framework in Frameworks */,
 				B02F17BE17CD8094007EA8A7 /* MessageUI.framework in Frameworks */,
 				B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */,
@@ -300,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				8FABFDD91801CFF0001E9EAC /* libz.dylib */,
+				086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */,
 				B065720B17D2D679005CB364 /* SystemConfiguration.framework */,
 				B065720717D2D66F005CB364 /* Security.framework */,
 				B065720517D2D664005CB364 /* MobileCoreServices.framework */,
@@ -320,6 +322,7 @@
 		B0F88C9B17CD3BEA005E4B0A /* wellmark */ = {
 			isa = PBXGroup;
 			children = (
+				BCAC85831824B9A0006264F8 /* MS */,
 				B02ABE4E17D66646005A5F5C /* LLViewController.h */,
 				B02ABE4F17D66646005A5F5C /* LLViewController.m */,
 				B06571FA17D18AD5005CB364 /* LLTreatmentManager.h */,
@@ -386,6 +389,15 @@
 				B0F88CAB17CD3BEA005E4B0A /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCAC85831824B9A0006264F8 /* MS */ = {
+			isa = PBXGroup;
+			children = (
+				BCAC85841824B9A8006264F8 /* MSClient+CustomId.h */,
+				BCAC85851824B9A8006264F8 /* MSClient+CustomId.m */,
+			);
+			name = MS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -455,8 +467,6 @@
 				BC66AD2017DD47D100C5C1EE /* doctors.png in Resources */,
 				B0F88CA017CD3BEA005E4B0A /* InfoPlist.strings in Resources */,
 				B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */,
-				8FE39D441801CDEB0028807A /* README.md in Resources */,
-				8FE39D451801CDEB0028807A /* release_notes.md in Resources */,
 				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
 				B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */,
 				BC66AD2917DD6F8F00C5C1EE /* settings@2x.png in Resources */,
@@ -464,7 +474,6 @@
 				BC66AD2817DD6F8F00C5C1EE /* settings.png in Resources */,
 				B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */,
 				B02F182617CD9A79007EA8A7 /* LICENSE in Resources */,
-				B02F182717CD9A79007EA8A7 /* README.md in Resources */,
 				B06571F717D17FAD005CB364 /* background.png in Resources */,
 				B065721717D3F0D8005CB364 /* Settings.bundle in Resources */,
 				BC25779417DC27980087C6DB /* wellmark_bg.png in Resources */,
@@ -513,6 +522,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCAC85861824B9A8006264F8 /* MSClient+CustomId.m in Sources */,
 				BC66AD2517DD60DA00C5C1EE /* LLDeductableInfoViewController.m in Sources */,
 				B0F88CA217CD3BEA005E4B0A /* main.m in Sources */,
 				B0F88CA617CD3BEA005E4B0A /* LLAppDelegate.m in Sources */,
@@ -634,7 +644,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
@@ -642,7 +652,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/aziza/Documents/stroll/TestFlightSDK2,
+					/Users/guo/apps/stroll/TestFlightSDK2,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -657,7 +667,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "wellmark/wellmark-Prefix.pch";
@@ -665,7 +675,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/aziza/Documents/stroll/TestFlightSDK2,
+					/Users/guo/apps/stroll/TestFlightSDK2,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

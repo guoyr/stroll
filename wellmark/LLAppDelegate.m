@@ -9,6 +9,7 @@
 #import "LLAppDelegate.h"
 #import <Parse/Parse.h>
 #import "TestFlight.h"
+#import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 
 @implementation LLAppDelegate
 
@@ -23,6 +24,8 @@
     
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"Doctors"]) {
         [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon", nil] forKey:@"Doctors"];
+     MSClient *client = [MSClient clientWithApplicationURLString:@"https://strollmobile.azure-mobile.net/"
+                     withApplicationKey:@"VWHKZcntaIYDRsbZWEowEyvKiLfTWi91"];
     }
     return YES;
 }
