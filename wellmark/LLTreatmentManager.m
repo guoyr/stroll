@@ -63,13 +63,13 @@
         
         MSTable *DeductableStatusTable = [_client getTable:@"patientsdata"];
         
-        _memberID = @"1721497";
+        _memberID = @"1035369";
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"memberID == %@",_memberID];
         [DeductableStatusTable readWhere:predicate completion:^(NSArray *items, NSInteger totalCount, NSError *error) {
             NSDictionary *dict = [items lastObject];
-            int deductbalevalue = [[dict objectForKey:@"Deductable"] intValue];
-            int coveragevalue = [[dict objectForKey:@"Coverage"] intValue];
-            NSLog(@"%d,%d,%d",deductbalevalue, coveragevalue, 5*deductbalevalue);
+            int deductiblevalue = [[dict objectForKey:@"Deductable"] intValue];
+            int currentamount = [[dict objectForKey:@"Coverage"] intValue];
+            NSLog(@"%d,%d,%d",deductiblevalue, currentamount, 5*deductiblevalue);
 
         }];
     }

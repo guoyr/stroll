@@ -28,6 +28,7 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 @property (nonatomic, copy) BusyUpdateBlock busyUpdate;
 
 
+
 + (LLTreatmentManager*)sharedInstance;
 - (NSString *)getEmail;
 - (NSString *)getProviderName;
