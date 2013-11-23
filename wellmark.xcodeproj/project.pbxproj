@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		086CBEE4180C8EA600383346 /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */; };
+		641D5B211841532600428697 /* LLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641D5B201841532600428697 /* LLWebViewController.m */; };
+		6441A9ED18403C7B006F4F21 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE39D3D1801CDEB0028807A /* libTestFlight.a */; };
 		B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */; };
 		B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */; };
 		B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02ABE4F17D66646005A5F5C /* LLViewController.m */; };
@@ -71,12 +73,13 @@
 		BC66AD2917DD6F8F00C5C1EE /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2717DD6F8F00C5C1EE /* settings@2x.png */; };
 		BC7A565F17DF9C4900863499 /* LLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC7A565E17DF9C4900863499 /* LLSettingsViewController.m */; };
 		BCAC85861824B9A8006264F8 /* MSClient+CustomId.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAC85851824B9A8006264F8 /* MSClient+CustomId.m */; };
-		BCEC23E2182A0AAE009919E9 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE39D3D1801CDEB0028807A /* libTestFlight.a */; };
 		BCEC23E3182A0AB3009919E9 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B065720317D2D65E005CB364 /* libz.1.2.5.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
+		641D5B1F1841532600428697 /* LLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLWebViewController.h; sourceTree = "<group>"; };
+		641D5B201841532600428697 /* LLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLWebViewController.m; sourceTree = "<group>"; };
 		8FABFDD91801CFF0001E9EAC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8FE39D3D1801CDEB0028807A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		8FE39D3E1801CDEB0028807A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -196,8 +199,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6441A9ED18403C7B006F4F21 /* libTestFlight.a in Frameworks */,
 				BCEC23E3182A0AB3009919E9 /* libz.1.2.5.dylib in Frameworks */,
-				BCEC23E2182A0AAE009919E9 /* libTestFlight.a in Frameworks */,
 				B065720C17D2D679005CB364 /* SystemConfiguration.framework in Frameworks */,
 				B065720817D2D66F005CB364 /* Security.framework in Frameworks */,
 				B06571F917D1817F005CB364 /* QuartzCore.framework in Frameworks */,
@@ -354,6 +357,8 @@
 				B0F0E52D17CEEC6D003EF566 /* LLBookLaterViewController.h */,
 				B0F0E52E17CEEC6D003EF566 /* LLBookLaterViewController.m */,
 				B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */,
+				641D5B1F1841532600428697 /* LLWebViewController.h */,
+				641D5B201841532600428697 /* LLWebViewController.m */,
 				B02F17B717CD7CD4007EA8A7 /* LLConfirmViewController.h */,
 				B02F17B817CD7CD5007EA8A7 /* LLConfirmViewController.m */,
 				B02F17BA17CD7CDC007EA8A7 /* LLConfirmedViewController.h */,
@@ -525,6 +530,7 @@
 				BCAC85861824B9A8006264F8 /* MSClient+CustomId.m in Sources */,
 				BC66AD2517DD60DA00C5C1EE /* LLDeductableInfoViewController.m in Sources */,
 				B0F88CA217CD3BEA005E4B0A /* main.m in Sources */,
+				641D5B211841532600428697 /* LLWebViewController.m in Sources */,
 				B0F88CA617CD3BEA005E4B0A /* LLAppDelegate.m in Sources */,
 				B02F17A717CD6B5C007EA8A7 /* LLDoctorViewController.m in Sources */,
 				B02F17AA17CD6CE7007EA8A7 /* LLTreatmentViewController.m in Sources */,
@@ -653,6 +659,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/guo/apps/stroll/TestFlightSDK2,
+					"/Users/sundu/Desktop/stroll-master/stroll/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -676,6 +683,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/guo/apps/stroll/TestFlightSDK2,
+					"/Users/sundu/Desktop/stroll-master/stroll/TestFlightSDK2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

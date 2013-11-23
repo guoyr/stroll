@@ -9,7 +9,8 @@
 #import "LLSchedulingViewController.h"
 #import "LLBookingViewController.h"
 #import "LLTreatmentManager.h"
-#import "LLBookLaterViewController.h";
+#import "LLBookLaterViewController.h"
+#import "LLWebViewController.h"
 #import "LLColors.h"
 
 @interface LLSchedulingViewController ()
@@ -39,6 +40,8 @@
     [self.view addSubview:_bookNow];
     [_bookNow setTitle:@"Book Now" forState:UIControlStateNormal];
     [_bookNow setBackgroundColor:TORQUOISE];
+    
+    [_bookNow addTarget:self action:@selector(bookNowClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     _bookUpFront = [[UIButton alloc] initWithFrame:CGRectMake(429, 267, 160, 100)];
     [self.view addSubview:_bookUpFront];
@@ -73,7 +76,8 @@
 
 - (IBAction)bookNowClicked:(id)sender
 {
-    [self performSegueWithIdentifier:@"showBookingInformation" sender:self];
+    LLWebViewController *vc = [[LLWebViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (IBAction)bookLaterClicked:(id)sender
