@@ -664,6 +664,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					/Users/JIA/Documents/stroll/TestFlightSDK2,
 					/Users/guo/apps/stroll/TestFlightSDK2,
 					"/Users/sundu/Desktop/stroll-master/stroll/TestFlightSDK2",
 				);
@@ -688,6 +689,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					/Users/JIA/Documents/stroll/TestFlightSDK2,
 					/Users/guo/apps/stroll/TestFlightSDK2,
 					"/Users/sundu/Desktop/stroll-master/stroll/TestFlightSDK2",
 				);

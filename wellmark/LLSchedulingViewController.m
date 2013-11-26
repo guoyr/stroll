@@ -35,17 +35,18 @@
     [self.view addSubview:_schedulingOptionsLabel];
     [_schedulingOptionsLabel setText:@"Scheduling Options"];
     [_schedulingOptionsLabel setBackgroundColor:[UIColor blueColor]];
+    _schedulingOptionsLabel.textAlignment = NSTextAlignmentCenter;
     
     _bookNow = [[UIButton alloc] initWithFrame:CGRectMake(261, 267, 160, 100)];
     [self.view addSubview:_bookNow];
-    [_bookNow setTitle:@"Book Now" forState:UIControlStateNormal];
+    [_bookNow setTitle:@"Book on my own" forState:UIControlStateNormal];
     [_bookNow setBackgroundColor:TORQUOISE];
     
     [_bookNow addTarget:self action:@selector(bookNowClicked:) forControlEvents:UIControlEventTouchUpInside];
     
     _bookUpFront = [[UIButton alloc] initWithFrame:CGRectMake(429, 267, 160, 100)];
     [self.view addSubview:_bookUpFront];
-    [_bookUpFront setTitle:@"Book Upfront" forState:UIControlStateNormal];
+    [_bookUpFront setTitle:@"Book in office" forState:UIControlStateNormal];
     [_bookUpFront setBackgroundColor:TORQUOISE];
     
     _bookLater = [[UIButton alloc] initWithFrame:CGRectMake(597, 267, 160, 100)];
