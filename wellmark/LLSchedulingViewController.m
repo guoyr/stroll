@@ -75,13 +75,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)bookNowClicked:(id)sender
+- (void)bookNowClicked:(id)sender
 {
     LLWebViewController *vc = [[LLWebViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)bookLaterClicked:(id)sender
+- (void)bookLaterClicked:(id)sender
 {
     LLBookLaterViewController *vc = [[LLBookLaterViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
