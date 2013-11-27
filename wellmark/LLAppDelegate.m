@@ -8,22 +8,32 @@
 
 #import "LLAppDelegate.h"
 #import <Parse/Parse.h>
+#import "TestFlight.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
-
+#import "LLDoctorViewController.h"
 @implementation LLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [Parse setApplicationId:@"E7eDI2jYaywn9yPQJO3T4HVEU8ytknxvKXT9l8oU"
-                  clientKey:@"eCjQ2GvJLIIc5x8Jmo2UbvaNpbNQhpovyhgcsGY7"];
+
+    //[TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+    [TestFlight takeOff:@"3aa250b7-9551-47ab-a2a3-b5eab7ad21ef"];
+    [Parse setApplicationId:@"A2dxJpqSX4cCaSkWWbLw4FXk1Wi328L6TnsbGBU3"
+                  clientKey:@"7yIszpNNJ9SKrhJbpCxEtIBOsHtKbUTLLvrgDhiF"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"Doctors"]) {
         [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon", nil] forKey:@"Doctors"];
-     MSClient *client = [MSClient clientWithApplicationURLString:@"https://strollmobile.azure-mobile.net/"
-                     withApplicationKey:@"VWHKZcntaIYDRsbZWEowEyvKiLfTWi91"];
     }
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    LLDoctorViewController *vc = [[LLDoctorViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    [[nvc navigationBar] setTranslucent:NO];
+    [self.window setRootViewController:nvc];
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 							

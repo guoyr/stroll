@@ -62,18 +62,7 @@
         
         self.items = [[NSMutableArray alloc] init];
         self.busyCount = 0;
-        
-        MSTable *DeductableStatusTable = [_client getTable:@"patientsdata"];
-        
-        _memberID = @"1721497";
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"memberID == %@",_memberID];
-        [DeductableStatusTable readWhere:predicate completion:^(NSArray *items, NSInteger totalCount, NSError *error) {
-            NSDictionary *dict = [items lastObject];
-            int deductbalevalue = [[dict objectForKey:@"Deductable"] intValue];
-            int coveragevalue = [[dict objectForKey:@"Coverage"] intValue];
-            NSLog(@"%d,%d,%d",deductbalevalue, coveragevalue, 5*deductbalevalue);
 
-        }];
     }
     return self;
 }
@@ -125,6 +114,11 @@
         completion(index);
 
     }];
+}
+
+-(void) sendEmailTo:(NSString *)recipient
+{
+
 }
 
 -(void) completeItem:(NSDictionary *)item completion:(CompletionWithIndexBlock)completion

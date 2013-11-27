@@ -13,6 +13,7 @@
 #import "LLLocationsViewController.h"
 #import "LLSchedulingViewController.h"
 #import "LLTreatmentManager.h"
+#include <stdlib.h>
 
 #define LOCATION_CARD_H_MARGIN 10
 #define LOCATION_CARD_V_MARGIN 10
@@ -41,6 +42,10 @@
 @property (nonatomic, strong) UIActivityIndicatorView *activityView;
 @property (nonatomic, strong) UIView *mask;
 
+@property (strong, nonatomic) UIScrollView *scrollView;
+@property (strong, nonatomic) UILabel *treatmentLabel;
+@property (strong, nonatomic) UILabel *priceRangeLabel;
+
 @end
 
 @implementation LLLocationsViewController
@@ -49,6 +54,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(20, 92, 968, 644)];
+    [[self view] addSubview:_scrollView];
+    
+    _treatmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 320, 48)];
+    [[self view] addSubview:_treatmentLabel];
+    
+    _priceRangeLabel = _treatmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(352, 20, 320, 48)];
+    [[self view] addSubview:_priceRangeLabel];
     
     [self setTitle:[NSString stringWithFormat:@"Select Location for %@", [[LLTreatmentManager sharedInstance] patientName]]];
     [[_treatmentLabel layer] setCornerRadius:5];
@@ -200,14 +215,17 @@
     [[_scrollView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     int curX = LOCATION_CARD_H_MARGIN, curY = LOCATION_CARD_V_MARGIN;
     float dummyPrice = 0.0;
+    int pictureNo = 0;
     for (int i = 0; i < [_providers count]; i++) {
         NSDictionary *provider = [_providers objectAtIndex:i];
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
         LLLocationView *curLocationView = [[LLLocationView alloc] initWithFrame:CGRectMake(curX, curY, LOCATION_CARD_WIDTH, 550)];
+        pictureNo = i;
         [curLocationView addGestureRecognizer:tapGestureRecognizer];
         [curLocationView setProviderAltName:[provider objectForKey:@"AltName"]];
         [curLocationView setProviderDistance:[provider objectForKey:@"Distance"]];
         [curLocationView setPrice:dummyPrice];
+        [curLocationView setProviderPicture: pictureNo%4];
         
         NSArray *doctors = [provider objectForKey:@"Name"];
         if ([doctors count] > 1) {
@@ -230,7 +248,8 @@
 {
     NSDictionary *providerInfo = [_providers objectAtIndex:[(LLLocationView *)[sender view] index]];
     [[LLTreatmentManager sharedInstance] setProviderInformation:providerInfo];
-    [self performSegueWithIdentifier:@"ShowSchedulingOptions" sender:self];
+    LLSchedulingViewController *vc = [[LLSchedulingViewController alloc] init];
+    [[self navigationController] pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
