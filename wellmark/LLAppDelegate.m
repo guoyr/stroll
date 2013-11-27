@@ -11,6 +11,7 @@
 #import "TestFlight.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 #import "LLDoctorViewController.h"
+#import "LLSchedulingViewController.h"
 @implementation LLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

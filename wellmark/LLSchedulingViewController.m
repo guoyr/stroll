@@ -15,12 +15,12 @@
 
 @interface LLSchedulingViewController ()
 
-@property (strong, nonatomic)  UIButton *bookNow;
+//@property (strong, nonatomic)  UIButton *bookNow;
 @property (strong, nonatomic)  UIButton *bookUpFront;
 @property (strong, nonatomic)  UIButton *bookLater;
 @property (strong, nonatomic)  UILabel *schedulingOptionsLabel;
 
-- (void)bookNowClicked:(id)sender;
+//- (void)bookNowClicked:(id)sender;
 - (void)bookLaterClicked:(id)sender;
 
 @end
@@ -37,21 +37,21 @@
     [_schedulingOptionsLabel setBackgroundColor:[UIColor blueColor]];
     _schedulingOptionsLabel.textAlignment = NSTextAlignmentCenter;
     
-    _bookNow = [[UIButton alloc] initWithFrame:CGRectMake(261, 267, 160, 100)];
-    [self.view addSubview:_bookNow];
-    [_bookNow setTitle:@"Book on my own" forState:UIControlStateNormal];
-    [_bookNow setBackgroundColor:TORQUOISE];
+  //  _bookNow = [[UIButton alloc] initWithFrame:CGRectMake(261, 267, 160, 100)];
+  //  [self.view addSubview:_bookNow];
+  //  [_bookNow setTitle:@"Book now" forState:UIControlStateNormal];
+  //  [_bookNow setBackgroundColor:TORQUOISE];
     
-    [_bookNow addTarget:self action:@selector(bookNowClicked:) forControlEvents:UIControlEventTouchUpInside];
+ //   [_bookNow addTarget:self action:@selector(bookNowClicked:) forControlEvents:UIControlEventTouchUpInside];
     
-    _bookUpFront = [[UIButton alloc] initWithFrame:CGRectMake(429, 267, 160, 100)];
+    _bookUpFront = [[UIButton alloc] initWithFrame:CGRectMake(300, 267, 200, 100)];
     [self.view addSubview:_bookUpFront];
     [_bookUpFront setTitle:@"Book in office" forState:UIControlStateNormal];
     [_bookUpFront setBackgroundColor:TORQUOISE];
     
-    _bookLater = [[UIButton alloc] initWithFrame:CGRectMake(597, 267, 160, 100)];
+    _bookLater = [[UIButton alloc] initWithFrame:CGRectMake(520, 267, 200, 100)];
     [self.view addSubview:_bookLater];
-    [_bookLater setTitle:@"Book Later" forState:UIControlStateNormal];
+    [_bookLater setTitle:@"Book on my own" forState:UIControlStateNormal];
     [_bookLater setBackgroundColor:TORQUOISE];
     
     [_bookLater addTarget:self action:@selector(bookLaterClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -60,7 +60,7 @@
     
 	// Do any additional setup after loading the view.
     [self setTitle:[NSString stringWithFormat:@"Select Scheduling Options for %@", [[LLTreatmentManager sharedInstance] patientName]]];
-    [[_bookNow layer] setCornerRadius:5];
+//    [[_bookNow layer] setCornerRadius:5];
     [[_bookLater layer] setCornerRadius:5];
     [[_bookUpFront layer] setCornerRadius:5];
     [[_schedulingOptionsLabel layer] setCornerRadius:5];
@@ -75,11 +75,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)bookNowClicked:(id)sender
-{
-    LLWebViewController *vc = [[LLWebViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
-}
+//- (void)bookNowClicked:(id)sender
+//{
+//    LLWebViewController *vc = [[LLWebViewController alloc] init];
+//    [self.navigationController pushViewController:vc animated:YES];
+//}
 
 - (void)bookLaterClicked:(id)sender
 {

@@ -92,7 +92,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OtY-Bk-Y3M">
-                                <rect key="frame" x="96" y="610" width="40" height="40"/>
+                                <rect key="frame" x="96" y="-81" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" scoringType="23.5" id="QWM-VC-PrU"/>
@@ -115,6 +115,7 @@
                             <constraint firstItem="cal-Ul-UUh" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="190" id="Jc0-Uz-YoS"/>
                             <constraint firstItem="wsL-0k-jOm" firstAttribute="bottom" secondItem="cal-Ul-UUh" secondAttribute="bottom" type="default" id="KvZ-ox-Tt2"/>
                             <constraint firstItem="wsL-0k-jOm" firstAttribute="baseline" secondItem="cal-Ul-UUh" secondAttribute="baseline" type="default" id="LWx-Sg-tIj"/>
+                            <constraint firstItem="OtY-Bk-Y3M" firstAttribute="top" secondItem="pqx-zx-aGR" secondAttribute="top" constant="-81" id="bnr-tz-kV7"/>
                             <constraint firstItem="QlY-ol-bNt" firstAttribute="trailing" secondItem="cal-Ul-UUh" secondAttribute="trailing" type="default" id="hRT-Xg-dbV"/>
                             <constraint firstItem="QlY-ol-bNt" firstAttribute="leading" secondItem="pqx-zx-aGR" secondAttribute="leading" constant="128" id="j5p-9y-PBc"/>
                             <constraint firstAttribute="trailing" secondItem="Ss6-t4-KVe" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="lop-6V-mXN"/>
