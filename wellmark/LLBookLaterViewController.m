@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) UILabel *enterEmailLabel;
 @property (nonatomic, strong) UITextField *emailField;
+
 @property (nonatomic, strong) UIButton *sendEmailButton;
 @property (nonatomic, strong) UIBarButtonItem *finishButtonItem;
 
@@ -43,7 +44,8 @@
     [_emailField setBackgroundColor:[UIColor lightTextColor]];
     [[self view] addSubview:_emailField];
     [_emailField setDelegate:self];
-    
+ 
+     _emailField.autocorrectionType = UITextAutocorrectionTypeNo;
 
     _sendEmailButton = [[UIButton alloc] initWithFrame:CGRectMake(640, 223, 160, 48)];
     [_sendEmailButton setBackgroundColor:TORQUOISE];

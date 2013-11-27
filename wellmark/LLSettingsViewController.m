@@ -32,7 +32,9 @@
     [[_einLabel layer] setCornerRadius:5];
     [[_idLabel layer] setCornerRadius:5];
     [[_einField layer] setCornerRadius:5];
+    _einField.autocorrectionType = UITextAutocorrectionTypeNo;
     [[_idField layer] setCornerRadius:5];
+    _idField.autocorrectionType = UITextAutocorrectionTypeNo;
     [[_doctorLabel layer] setCornerRadius:5];
     
     [_doctorScrollView setScrollEnabled:YES];

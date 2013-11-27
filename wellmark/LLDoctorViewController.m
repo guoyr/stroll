@@ -52,6 +52,8 @@
     [_insuranceTextField2 setDelegate:self];
     [_insuranceTextField2 setBackgroundColor:[UIColor lightTextColor]];
     
+    _insuranceTextField2.autocorrectionType = UITextAutocorrectionTypeNo;
+    
     _selectDoctorButton = [[UIButton alloc] initWithFrame:CGRectMake(128, 117, 320, 48)];
     [_selectDoctorButton setBackgroundColor:TORQUOISE];
     [[self view] addSubview:_selectDoctorButton];
@@ -64,6 +66,8 @@
     [[self view] addSubview:_patientTextField];
     [_patientTextField setBackgroundColor:[UIColor lightTextColor]];
     [_patientTextField setDelegate:self];
+    
+     _patientTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     
     _registerButton = [[UIButton alloc] initWithFrame:CGRectMake(921, 190, 84, 48)];
     [_registerButton setTitle:@"Register" forState:UIControlStateNormal];
