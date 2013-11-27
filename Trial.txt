@@ -4,9 +4,6 @@ Hello Jia
 hello WANGYaolin!£¡
 hello Du!
 
-asdofij;
-<<<<<<< HEAD
 
 hello aziza...
-=======
->>>>>>> 375500fef0d6c8886490e584ffc94b5908b41408
+

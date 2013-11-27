@@ -51,6 +51,7 @@
     [[self view] addSubview:_insuranceTextField2];
     [_insuranceTextField2 setDelegate:self];
     [_insuranceTextField2 setBackgroundColor:[UIColor lightTextColor]];
+    _insuranceTextField2.secureTextEntry = YES;
     
     _insuranceTextField2.autocorrectionType = UITextAutocorrectionTypeNo;
     
@@ -87,6 +88,7 @@
     [[_selectInsuranceButton layer] setCornerRadius:5];
     [[_insuranceTextField2 layer] setCornerRadius:5];
     [[_patientTextField layer] setCornerRadius:5];
+    [_insuranceTextField2 setBackgroundColor:[UIColor lightTextColor]];
     
     _selectDoctorViewController = [[LLSelectDoctorViewController alloc] initWithStyle:UITableViewStylePlain];
     _selectInsuranceViewController = [[LLSelectInsuranceViewController alloc] initWithStyle:UITableViewStylePlain];
@@ -99,6 +101,8 @@
     [[self insuranceTextField2] setAlpha:0];
     [[self registerButton] setAlpha:0];
     [[self registerButton] setEnabled:NO];
+
+//    [[self insuranceTextField1] setEnabled:NO];
     [[self insuranceTextField2] setEnabled:NO];
     [_nextButtonItem setEnabled:NO];
 	// Do any additional setup after loading the view.
@@ -147,11 +151,6 @@
 
 -(void)nextButtonClicked:(id)sender
 {
-//    if (![_patientTextField isFirstResponder] && ![_insuranceTextField2 isFirstResponder]) {
-////        [self performSegueWithIdentifier:@"showTreatment" sender:self];
-//    } else {
-//        
-//    }
     
     [[LLTreatmentManager sharedInstance].client loginUsername:self.patientTextField.text
                               withPassword:self.insuranceTextField2.text
@@ -193,11 +192,18 @@
     return YES;
 }
 
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    [textField setBackgroundColor:[UIColor whiteColor]];
+    return YES;
+}
+
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
     if (textField == _patientTextField) {
         [[LLTreatmentManager sharedInstance] setPatientName:[textField text]];
     }
+    [textField setBackgroundColor:[UIColor lightTextColor]];
     return YES;
 }
 
@@ -206,8 +212,7 @@
     if (textField == _patientTextField) {
         [_selectInsuranceButton sendActionsForControlEvents:UIControlEventTouchUpInside];
     } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length]) {
-//        [self performSegueWithIdentifier:@"showTreatment" sender:self];
-//        [_selectInsuranceButton sendActionsForControlEvents:UIControlEventTouchUpInside];
+        
     } else if (textField == _insuranceTextField2) {
         [[LLTreatmentManager sharedInstance] setMemberID:textField.text];
     } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
@@ -231,6 +236,7 @@
             [_registerButton setAlpha:1];
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:YES];
+
             [_registerButton setEnabled:YES];
 //            [_insuranceTextField1 setEnabled:YES];
 //            [_insuranceTextField1 becomeFirstResponder];
@@ -273,7 +279,9 @@
     [_selectDoctorButton setTitle:@"Select Doctor" forState:UIControlStateNormal];
     [_selectInsuranceButton setTitle:@"Select Insurance Type" forState:UIControlStateNormal];
     [[self navigationItem] setHidesBackButton:YES animated:NO];
+
     [[LLTreatmentManager sharedInstance].client logout];
+
 }
 
 @end

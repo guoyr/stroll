@@ -28,6 +28,7 @@
 @property (nonatomic, strong) UILabel *scheduleAppointmentLabel;
 @property (nonatomic, strong) UILabel *providerDoctorNameLabel;
 @property (nonatomic, strong) UIImageView *doctorImageView;
+@property (nonatomic,strong) UIImageView *hospitalImageView;
 
 @end
 
@@ -65,7 +66,7 @@
         
         _scheduleAppointmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(VMARGIN, PROVIDER_HEIGHT + DOCTOR_HEIGHT + DISTANCE_HEIGHT + IMAGE_HEIGHT + MARGIN * 6 + PRICE_HEIGHT, self.frame.size.width - VMARGIN * 2, SCHEDULE_HEIGHT)];
         [_scheduleAppointmentLabel setText:@"Schedule Appointment"];
-        [_scheduleAppointmentLabel setBackgroundColor:TORQUOISE];
+        [_scheduleAppointmentLabel setBackgroundColor:[UIColor colorWithRed:28.0f/255 green:188.0f/255 blue:156.0f/255 alpha:0.5]];
         [_scheduleAppointmentLabel setTextAlignment:NSTextAlignmentCenter];
         [_scheduleAppointmentLabel setTextColor:[UIColor whiteColor]];
         [[_scheduleAppointmentLabel layer] setCornerRadius:5.0];
@@ -91,17 +92,41 @@
 
 }
 
+-(void)setProviderPicture:(int)pictureNo
+{
+    switch (pictureNo) {
+        case 1:
+            _hospitalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_1.png"]];
+            break;
+        case 2:
+            _hospitalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_2.png"]];
+            break;
+        case 3:
+            _hospitalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_3.png"]];
+            break;
+        case 0:
+            _hospitalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_4.png"]];
+            break;
+        default:
+            _hospitalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_1.png"]];
+            break;
+    }
+    [_hospitalImageView setCenter:CGPointMake(LOCATION_CARD_WIDTH / 2, IMAGE_HEIGHT / 2 + PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3)];
+    [self addSubview:_hospitalImageView];
+    
+}
+
 -(void)setDoctorName:(NSString *)name isMultiple:(BOOL)multiple
 {
     [_providerDoctorNameLabel setText:name];
-    
-    if (multiple) {
-        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctors.png"]];
-    } else {
-        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctor.png"]];
-    }
-    [_doctorImageView setCenter:CGPointMake(LOCATION_CARD_WIDTH / 2, IMAGE_HEIGHT / 2 + PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3)];
-    [self addSubview:_doctorImageView];
+//
+//    if (multiple) {
+//        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_4.png"]];
+//    } else {
+//        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctor.png"]];
+//    }
+//    [_doctorImageView setCenter:CGPointMake(LOCATION_CARD_WIDTH / 2, IMAGE_HEIGHT / 2 + PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3)];
+//    [self addSubview:_doctorImageView];
 }
 
 -(void)setPrice:(float)price
@@ -110,12 +135,12 @@
         [_priceLabel setText:@"Free"];
         [_priceLabel setFont:[UIFont boldSystemFontOfSize:PRICE_LABEL_FONT_SIZE]];
         [_priceLabel setTextColor:[UIColor whiteColor]];
-        [_priceLabel setBackgroundColor:[UIColor redColor]];
+        [_priceLabel setBackgroundColor:TORQUOISE];
     } else {
         [_priceLabel setText:[NSString stringWithFormat:@"$%2.2f",price]];
         [_priceLabel setFont:[UIFont systemFontOfSize:PRICE_LABEL_FONT_SIZE]];
-        [_priceLabel setTextColor:[UIColor colorWithRed:236/255 green:240/255 blue:241/255 alpha:1.0]];
-        [_priceLabel setBackgroundColor:[UIColor colorWithRed:28.0f/255 green:188.0f/255 blue:156.0f/255 alpha:1.0]];
+        [_priceLabel setTextColor:[UIColor colorWithRed:236/255 green:240/255 blue:241/255 alpha:0.5]];
+        [_priceLabel setBackgroundColor:[UIColor colorWithRed:28.0f/255 green:188.0f/255 blue:156.0f/255 alpha:0.5]];
     }
     
 }

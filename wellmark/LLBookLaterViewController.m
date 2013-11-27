@@ -65,6 +65,11 @@
         [_enterEmailLabel setText:@"Please confirm your email address"];
         [_emailField setText:_emailAddress];
     }
+#warning testing code
+    _emailAddress = @"gyrccc@gmail.com";
+    [_sendEmailButton setHidden:NO];
+    [_sendEmailButton setEnabled:YES];
+
     
     [[_enterEmailLabel layer] setCornerRadius:5];
     [[_emailField layer] setCornerRadius:5];

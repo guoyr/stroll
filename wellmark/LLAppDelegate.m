@@ -16,6 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+
     //[TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     [TestFlight takeOff:@"3aa250b7-9551-47ab-a2a3-b5eab7ad21ef"];
     [Parse setApplicationId:@"A2dxJpqSX4cCaSkWWbLw4FXk1Wi328L6TnsbGBU3"
