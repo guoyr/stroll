@@ -15,6 +15,7 @@
 		8FA9F2EB184583B60073E0FD /* hospital_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E7184583B60073E0FD /* hospital_3.png */; };
 		8FA9F2EC184583B60073E0FD /* hospital_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E8184583B60073E0FD /* hospital_2.png */; };
 		8FA9F2ED184583B60073E0FD /* hospital_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E9184583B60073E0FD /* hospital_1.png */; };
+		8FE390371845A61800EA8DA8 /* LLBookLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE390361845A61800EA8DA8 /* LLBookLaterViewController.m */; };
 		B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */; };
 		B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */; };
 		B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02ABE4F17D66646005A5F5C /* LLViewController.m */; };
@@ -58,7 +59,6 @@
 		B065721F17D41285005CB364 /* wellmark_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B065721D17D41285005CB364 /* wellmark_logo@2x.png */; };
 		B065722417D4398A005CB364 /* dummy_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B065722317D4398A005CB364 /* dummy_data.json */; };
 		B0F0E52C17CEEC4C003EF566 /* LLBookUpfrontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */; };
-		B0F0E52F17CEEC6D003EF566 /* LLBookLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F0E52E17CEEC6D003EF566 /* LLBookLaterViewController.m */; };
 		B0F88C9617CD3BEA005E4B0A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9517CD3BEA005E4B0A /* UIKit.framework */; };
 		B0F88C9817CD3BEA005E4B0A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9717CD3BEA005E4B0A /* Foundation.framework */; };
 		B0F88C9A17CD3BEA005E4B0A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F88C9917CD3BEA005E4B0A /* CoreGraphics.framework */; };
@@ -91,6 +91,8 @@
 		8FA9F2E8184583B60073E0FD /* hospital_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_2.png; path = ../hospital_2.png; sourceTree = "<group>"; };
 		8FA9F2E9184583B60073E0FD /* hospital_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_1.png; path = ../hospital_1.png; sourceTree = "<group>"; };
 		8FABFDD91801CFF0001E9EAC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		8FE390361845A61800EA8DA8 /* LLBookLaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLBookLaterViewController.m; path = ../LLBookLaterViewController.m; sourceTree = "<group>"; };
+		8FE390381845A69900EA8DA8 /* LLBookLaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLBookLaterViewController.h; path = ../LLBookLaterViewController.h; sourceTree = "<group>"; };
 		8FE39D3D1801CDEB0028807A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		8FE39D3E1801CDEB0028807A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8FE39D3F1801CDEB0028807A /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -174,8 +176,6 @@
 		B065722317D4398A005CB364 /* dummy_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dummy_data.json; sourceTree = "<group>"; };
 		B0F0E52A17CEEC4C003EF566 /* LLBookUpfrontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookUpfrontViewController.h; sourceTree = "<group>"; };
 		B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBookUpfrontViewController.m; sourceTree = "<group>"; };
-		B0F0E52D17CEEC6D003EF566 /* LLBookLaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookLaterViewController.h; sourceTree = "<group>"; };
-		B0F0E52E17CEEC6D003EF566 /* LLBookLaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBookLaterViewController.m; sourceTree = "<group>"; };
 		B0F88C9217CD3BEA005E4B0A /* wellmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wellmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F88C9517CD3BEA005E4B0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0F88C9717CD3BEA005E4B0A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -365,8 +365,8 @@
 				B02F17C017CD90E5007EA8A7 /* LLBookingViewController.m */,
 				B0F0E52A17CEEC4C003EF566 /* LLBookUpfrontViewController.h */,
 				B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */,
-				B0F0E52D17CEEC6D003EF566 /* LLBookLaterViewController.h */,
-				B0F0E52E17CEEC6D003EF566 /* LLBookLaterViewController.m */,
+				8FE390381845A69900EA8DA8 /* LLBookLaterViewController.h */,
+				8FE390361845A61800EA8DA8 /* LLBookLaterViewController.m */,
 				B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */,
 				641D5B1F1841532600428697 /* LLWebViewController.h */,
 				641D5B201841532600428697 /* LLWebViewController.m */,
@@ -559,6 +559,7 @@
 				B02F17BC17CD7CDC007EA8A7 /* LLConfirmedViewController.m in Sources */,
 				BC7A565F17DF9C4900863499 /* LLSettingsViewController.m in Sources */,
 				6421895F1843A30D001E4CA2 /* LLMriViewController.m in Sources */,
+				8FE390371845A61800EA8DA8 /* LLBookLaterViewController.m in Sources */,
 				B02F17C117CD90E5007EA8A7 /* LLBookingViewController.m in Sources */,
 				B02F180917CD9A79007EA8A7 /* MBBaseRequest.m in Sources */,
 				B02F180A17CD9A79007EA8A7 /* MBHTTPConnectionOperation.m in Sources */,
@@ -574,7 +575,6 @@
 				B02F181417CD9A79007EA8A7 /* NSString+MBRequest.m in Sources */,
 				B02F181517CD9A79007EA8A7 /* NSURL+MBRequest.m in Sources */,
 				B0F0E52C17CEEC4C003EF566 /* LLBookUpfrontViewController.m in Sources */,
-				B0F0E52F17CEEC6D003EF566 /* LLBookLaterViewController.m in Sources */,
 				B06571FC17D18AD5005CB364 /* LLTreatmentManager.m in Sources */,
 				B065721217D3DA90005CB364 /* LLSelectDoctorViewController.m in Sources */,
 				B065721517D3DAA1005CB364 /* LLSelectInsuranceViewController.m in Sources */,
