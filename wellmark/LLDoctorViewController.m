@@ -51,6 +51,7 @@
     [[self view] addSubview:_insuranceTextField2];
     [_insuranceTextField2 setDelegate:self];
     [_insuranceTextField2 setBackgroundColor:[UIColor lightTextColor]];
+    _insuranceTextField2.secureTextEntry = YES;
     
     _selectDoctorButton = [[UIButton alloc] initWithFrame:CGRectMake(128, 117, 320, 48)];
     [_selectDoctorButton setBackgroundColor:TORQUOISE];

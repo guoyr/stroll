@@ -28,6 +28,7 @@
 @property (nonatomic, strong) UILabel *scheduleAppointmentLabel;
 @property (nonatomic, strong) UILabel *providerDoctorNameLabel;
 @property (nonatomic, strong) UIImageView *doctorImageView;
+@property (nonatomic,strong) UIImageView *hospitalImageView;
 
 @end
 
@@ -91,17 +92,41 @@
 
 }
 
+-(void)setProviderPicture:(int)pictureNo
+{
+    switch (pictureNo) {
+        case 1:
+            _hospitalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_1.png"]];
+            break;
+        case 2:
+            _hospitalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_2.png"]];
+            break;
+        case 3:
+            _hospitalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_3.png"]];
+            break;
+        case 0:
+            _hospitalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_4.png"]];
+            break;
+        default:
+            _hospitalImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_1.png"]];
+            break;
+    }
+    [_hospitalImageView setCenter:CGPointMake(LOCATION_CARD_WIDTH / 2, IMAGE_HEIGHT / 2 + PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3)];
+    [self addSubview:_hospitalImageView];
+    
+}
+
 -(void)setDoctorName:(NSString *)name isMultiple:(BOOL)multiple
 {
     [_providerDoctorNameLabel setText:name];
-    
-    if (multiple) {
-        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctors.png"]];
-    } else {
-        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctor.png"]];
-    }
-    [_doctorImageView setCenter:CGPointMake(LOCATION_CARD_WIDTH / 2, IMAGE_HEIGHT / 2 + PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3)];
-    [self addSubview:_doctorImageView];
+//
+//    if (multiple) {
+//        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hospital_4.png"]];
+//    } else {
+//        _doctorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"doctor.png"]];
+//    }
+//    [_doctorImageView setCenter:CGPointMake(LOCATION_CARD_WIDTH / 2, IMAGE_HEIGHT / 2 + PROVIDER_HEIGHT + DISTANCE_HEIGHT + DOCTOR_HEIGHT + MARGIN * 3)];
+//    [self addSubview:_doctorImageView];
 }
 
 -(void)setPrice:(float)price

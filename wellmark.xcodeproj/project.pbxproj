@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		086CBEE4180C8EA600383346 /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */; };
 		641D5B211841532600428697 /* LLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641D5B201841532600428697 /* LLWebViewController.m */; };
-		6441A9ED18403C7B006F4F21 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE39D3D1801CDEB0028807A /* libTestFlight.a */; };
+		8F6D2E861842E953002B0A30 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE39D3D1801CDEB0028807A /* libTestFlight.a */; };
+		8FA9F2EA184583B60073E0FD /* hospital_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E6184583B60073E0FD /* hospital_4.png */; };
+		8FA9F2EB184583B60073E0FD /* hospital_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E7184583B60073E0FD /* hospital_3.png */; };
+		8FA9F2EC184583B60073E0FD /* hospital_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E8184583B60073E0FD /* hospital_2.png */; };
+		8FA9F2ED184583B60073E0FD /* hospital_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E9184583B60073E0FD /* hospital_1.png */; };
 		B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */; };
 		B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */; };
 		B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02ABE4F17D66646005A5F5C /* LLViewController.m */; };
@@ -80,6 +84,10 @@
 		086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
 		641D5B1F1841532600428697 /* LLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLWebViewController.h; sourceTree = "<group>"; };
 		641D5B201841532600428697 /* LLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLWebViewController.m; sourceTree = "<group>"; };
+		8FA9F2E6184583B60073E0FD /* hospital_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_4.png; path = ../hospital_4.png; sourceTree = "<group>"; };
+		8FA9F2E7184583B60073E0FD /* hospital_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_3.png; path = ../hospital_3.png; sourceTree = "<group>"; };
+		8FA9F2E8184583B60073E0FD /* hospital_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_2.png; path = ../hospital_2.png; sourceTree = "<group>"; };
+		8FA9F2E9184583B60073E0FD /* hospital_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_1.png; path = ../hospital_1.png; sourceTree = "<group>"; };
 		8FABFDD91801CFF0001E9EAC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8FE39D3D1801CDEB0028807A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		8FE39D3E1801CDEB0028807A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -199,7 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6441A9ED18403C7B006F4F21 /* libTestFlight.a in Frameworks */,
+				8F6D2E861842E953002B0A30 /* libTestFlight.a in Frameworks */,
 				BCEC23E3182A0AB3009919E9 /* libz.1.2.5.dylib in Frameworks */,
 				B065720C17D2D679005CB364 /* SystemConfiguration.framework in Frameworks */,
 				B065720817D2D66F005CB364 /* Security.framework in Frameworks */,
@@ -372,6 +380,10 @@
 		B0F88C9C17CD3BEA005E4B0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8FA9F2E6184583B60073E0FD /* hospital_4.png */,
+				8FA9F2E7184583B60073E0FD /* hospital_3.png */,
+				8FA9F2E8184583B60073E0FD /* hospital_2.png */,
+				8FA9F2E9184583B60073E0FD /* hospital_1.png */,
 				BC66AD2617DD6F8F00C5C1EE /* settings.png */,
 				BC66AD2717DD6F8F00C5C1EE /* settings@2x.png */,
 				BC25779217DC27980087C6DB /* wellmark_bg.png */,
@@ -470,13 +482,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC66AD2017DD47D100C5C1EE /* doctors.png in Resources */,
+				8FA9F2EB184583B60073E0FD /* hospital_3.png in Resources */,
 				B0F88CA017CD3BEA005E4B0A /* InfoPlist.strings in Resources */,
 				B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */,
 				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
 				B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */,
+				8FA9F2EC184583B60073E0FD /* hospital_2.png in Resources */,
 				BC66AD2917DD6F8F00C5C1EE /* settings@2x.png in Resources */,
 				BC25779517DC27980087C6DB /* wellmark_bg@2x.png in Resources */,
 				BC66AD2817DD6F8F00C5C1EE /* settings.png in Resources */,
+				8FA9F2EA184583B60073E0FD /* hospital_4.png in Resources */,
 				B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */,
 				B02F182617CD9A79007EA8A7 /* LICENSE in Resources */,
 				B06571F717D17FAD005CB364 /* background.png in Resources */,
@@ -486,6 +501,7 @@
 				BC66AD2217DD480000C5C1EE /* doctor.png in Resources */,
 				B065721F17D41285005CB364 /* wellmark_logo@2x.png in Resources */,
 				B065722417D4398A005CB364 /* dummy_data.json in Resources */,
+				8FA9F2ED184583B60073E0FD /* hospital_1.png in Resources */,
 				B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */,
 				B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */,
 			);
@@ -660,6 +676,7 @@
 					"$(inherited)",
 					/Users/guo/apps/stroll/TestFlightSDK2,
 					"/Users/sundu/Desktop/stroll-master/stroll/TestFlightSDK2",
+					/Users/aziza/Documents/stroll/TestFlightSDK2,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -684,6 +701,7 @@
 					"$(inherited)",
 					/Users/guo/apps/stroll/TestFlightSDK2,
 					"/Users/sundu/Desktop/stroll-master/stroll/TestFlightSDK2",
+					/Users/aziza/Documents/stroll/TestFlightSDK2,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

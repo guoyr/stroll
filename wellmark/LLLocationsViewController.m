@@ -13,6 +13,7 @@
 #import "LLLocationsViewController.h"
 #import "LLSchedulingViewController.h"
 #import "LLTreatmentManager.h"
+#include <stdlib.h>
 
 #define LOCATION_CARD_H_MARGIN 10
 #define LOCATION_CARD_V_MARGIN 10
@@ -214,14 +215,17 @@
     [[_scrollView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     int curX = LOCATION_CARD_H_MARGIN, curY = LOCATION_CARD_V_MARGIN;
     float dummyPrice = 0.0;
+    int pictureNo = 0;
     for (int i = 0; i < [_providers count]; i++) {
         NSDictionary *provider = [_providers objectAtIndex:i];
         UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];
         LLLocationView *curLocationView = [[LLLocationView alloc] initWithFrame:CGRectMake(curX, curY, LOCATION_CARD_WIDTH, 550)];
+        pictureNo = i;
         [curLocationView addGestureRecognizer:tapGestureRecognizer];
         [curLocationView setProviderAltName:[provider objectForKey:@"AltName"]];
         [curLocationView setProviderDistance:[provider objectForKey:@"Distance"]];
         [curLocationView setPrice:dummyPrice];
+        [curLocationView setProviderPicture: pictureNo%4];
         
         NSArray *doctors = [provider objectForKey:@"Name"];
         if ([doctors count] > 1) {
