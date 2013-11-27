@@ -14,6 +14,8 @@
 		8FA9F2EB184583B60073E0FD /* hospital_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E7184583B60073E0FD /* hospital_3.png */; };
 		8FA9F2EC184583B60073E0FD /* hospital_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E8184583B60073E0FD /* hospital_2.png */; };
 		8FA9F2ED184583B60073E0FD /* hospital_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E9184583B60073E0FD /* hospital_1.png */; };
+		6421895F1843A30D001E4CA2 /* LLMriViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6421895E1843A30D001E4CA2 /* LLMriViewController.m */; };
+		6441A9ED18403C7B006F4F21 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE39D3D1801CDEB0028807A /* libTestFlight.a */; };
 		B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */; };
 		B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */; };
 		B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02ABE4F17D66646005A5F5C /* LLViewController.m */; };
@@ -88,6 +90,8 @@
 		8FA9F2E7184583B60073E0FD /* hospital_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_3.png; path = ../hospital_3.png; sourceTree = "<group>"; };
 		8FA9F2E8184583B60073E0FD /* hospital_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_2.png; path = ../hospital_2.png; sourceTree = "<group>"; };
 		8FA9F2E9184583B60073E0FD /* hospital_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_1.png; path = ../hospital_1.png; sourceTree = "<group>"; };
+		6421895D1843A30D001E4CA2 /* LLMriViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMriViewController.h; sourceTree = "<group>"; };
+		6421895E1843A30D001E4CA2 /* LLMriViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMriViewController.m; sourceTree = "<group>"; };
 		8FABFDD91801CFF0001E9EAC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		8FE39D3D1801CDEB0028807A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		8FE39D3E1801CDEB0028807A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 				BC7A565E17DF9C4900863499 /* LLSettingsViewController.m */,
 				B02F17A817CD6CE7007EA8A7 /* LLTreatmentViewController.h */,
 				B02F17A917CD6CE7007EA8A7 /* LLTreatmentViewController.m */,
+				6421895D1843A30D001E4CA2 /* LLMriViewController.h */,
+				6421895E1843A30D001E4CA2 /* LLMriViewController.m */,
 				BC66AD2317DD60DA00C5C1EE /* LLDeductableInfoViewController.h */,
 				BC66AD2417DD60DA00C5C1EE /* LLDeductableInfoViewController.m */,
 				B02F17B117CD7607007EA8A7 /* LLLocationView.h */,
@@ -556,6 +562,7 @@
 				B02F17B917CD7CD5007EA8A7 /* LLConfirmViewController.m in Sources */,
 				B02F17BC17CD7CDC007EA8A7 /* LLConfirmedViewController.m in Sources */,
 				BC7A565F17DF9C4900863499 /* LLSettingsViewController.m in Sources */,
+				6421895F1843A30D001E4CA2 /* LLMriViewController.m in Sources */,
 				B02F17C117CD90E5007EA8A7 /* LLBookingViewController.m in Sources */,
 				B02F180917CD9A79007EA8A7 /* MBBaseRequest.m in Sources */,
 				B02F180A17CD9A79007EA8A7 /* MBHTTPConnectionOperation.m in Sources */,
@@ -674,6 +681,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					/Users/JIA/Documents/stroll/TestFlightSDK2,
 					/Users/guo/apps/stroll/TestFlightSDK2,
 					"/Users/sundu/Desktop/stroll-master/stroll/TestFlightSDK2",
 					/Users/aziza/Documents/stroll/TestFlightSDK2,
@@ -699,6 +707,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					/Users/JIA/Documents/stroll/TestFlightSDK2,
 					/Users/guo/apps/stroll/TestFlightSDK2,
 					"/Users/sundu/Desktop/stroll-master/stroll/TestFlightSDK2",
 					/Users/aziza/Documents/stroll/TestFlightSDK2,
