@@ -11,11 +11,6 @@
 		641D5B211841532600428697 /* LLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 641D5B201841532600428697 /* LLWebViewController.m */; };
 		6421895F1843A30D001E4CA2 /* LLMriViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6421895E1843A30D001E4CA2 /* LLMriViewController.m */; };
 		8F6D2E861842E953002B0A30 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE39D3D1801CDEB0028807A /* libTestFlight.a */; };
-		8FA9F2EA184583B60073E0FD /* hospital_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E6184583B60073E0FD /* hospital_4.png */; };
-		8FA9F2EB184583B60073E0FD /* hospital_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E7184583B60073E0FD /* hospital_3.png */; };
-		8FA9F2EC184583B60073E0FD /* hospital_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E8184583B60073E0FD /* hospital_2.png */; };
-		8FA9F2ED184583B60073E0FD /* hospital_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FA9F2E9184583B60073E0FD /* hospital_1.png */; };
-		8FE390371845A61800EA8DA8 /* LLBookLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE390361845A61800EA8DA8 /* LLBookLaterViewController.m */; };
 		B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */; };
 		B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */; };
 		B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02ABE4F17D66646005A5F5C /* LLViewController.m */; };
@@ -70,7 +65,11 @@
 		B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CAB17CD3BEA005E4B0A /* Default-568h@2x.png */; };
 		B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */; };
 		BC25779417DC27980087C6DB /* wellmark_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BC25779217DC27980087C6DB /* wellmark_bg.png */; };
-		BC25779517DC27980087C6DB /* wellmark_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC25779317DC27980087C6DB /* wellmark_bg@2x.png */; };
+		BC402FB1184D2E8B00240AD2 /* LLBookLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC402FB0184D2E8B00240AD2 /* LLBookLaterViewController.m */; };
+		BC402FB6184D2F4200240AD2 /* hospital_1.png in Resources */ = {isa = PBXBuildFile; fileRef = BC402FB2184D2F4200240AD2 /* hospital_1.png */; };
+		BC402FB7184D2F4200240AD2 /* hospital_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC402FB3184D2F4200240AD2 /* hospital_2.png */; };
+		BC402FB8184D2F4200240AD2 /* hospital_3.png in Resources */ = {isa = PBXBuildFile; fileRef = BC402FB4184D2F4200240AD2 /* hospital_3.png */; };
+		BC402FB9184D2F4200240AD2 /* hospital_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BC402FB5184D2F4200240AD2 /* hospital_4.png */; };
 		BC4F776518459DE600C59AD7 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BC4F776418459DE600C59AD7 /* settings.png */; };
 		BC66AD2017DD47D100C5C1EE /* doctors.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD1F17DD47D100C5C1EE /* doctors.png */; };
 		BC66AD2217DD480000C5C1EE /* doctor.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2117DD480000C5C1EE /* doctor.png */; };
@@ -86,13 +85,7 @@
 		641D5B201841532600428697 /* LLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLWebViewController.m; sourceTree = "<group>"; };
 		6421895D1843A30D001E4CA2 /* LLMriViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLMriViewController.h; sourceTree = "<group>"; };
 		6421895E1843A30D001E4CA2 /* LLMriViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLMriViewController.m; sourceTree = "<group>"; };
-		8FA9F2E6184583B60073E0FD /* hospital_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_4.png; path = ../hospital_4.png; sourceTree = "<group>"; };
-		8FA9F2E7184583B60073E0FD /* hospital_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_3.png; path = ../hospital_3.png; sourceTree = "<group>"; };
-		8FA9F2E8184583B60073E0FD /* hospital_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_2.png; path = ../hospital_2.png; sourceTree = "<group>"; };
-		8FA9F2E9184583B60073E0FD /* hospital_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hospital_1.png; path = ../hospital_1.png; sourceTree = "<group>"; };
 		8FABFDD91801CFF0001E9EAC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		8FE390361845A61800EA8DA8 /* LLBookLaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LLBookLaterViewController.m; path = ../LLBookLaterViewController.m; sourceTree = "<group>"; };
-		8FE390381845A69900EA8DA8 /* LLBookLaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LLBookLaterViewController.h; path = ../LLBookLaterViewController.h; sourceTree = "<group>"; };
 		8FE39D3D1801CDEB0028807A /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		8FE39D3E1801CDEB0028807A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		8FE39D3F1801CDEB0028807A /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -192,6 +185,12 @@
 		B0F88CAE17CD3BEA005E4B0A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		BC25779217DC27980087C6DB /* wellmark_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wellmark_bg.png; sourceTree = "<group>"; };
 		BC25779317DC27980087C6DB /* wellmark_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wellmark_bg@2x.png"; sourceTree = "<group>"; };
+		BC402FAF184D2E8B00240AD2 /* LLBookLaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLBookLaterViewController.h; sourceTree = "<group>"; };
+		BC402FB0184D2E8B00240AD2 /* LLBookLaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLBookLaterViewController.m; sourceTree = "<group>"; };
+		BC402FB2184D2F4200240AD2 /* hospital_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_1.png; sourceTree = "<group>"; };
+		BC402FB3184D2F4200240AD2 /* hospital_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_2.png; sourceTree = "<group>"; };
+		BC402FB4184D2F4200240AD2 /* hospital_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_3.png; sourceTree = "<group>"; };
+		BC402FB5184D2F4200240AD2 /* hospital_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_4.png; sourceTree = "<group>"; };
 		BC4F776418459DE600C59AD7 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		BC66AD1F17DD47D100C5C1EE /* doctors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doctors.png; sourceTree = "<group>"; };
 		BC66AD2117DD480000C5C1EE /* doctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doctor.png; sourceTree = "<group>"; };
@@ -365,8 +364,8 @@
 				B02F17C017CD90E5007EA8A7 /* LLBookingViewController.m */,
 				B0F0E52A17CEEC4C003EF566 /* LLBookUpfrontViewController.h */,
 				B0F0E52B17CEEC4C003EF566 /* LLBookUpfrontViewController.m */,
-				8FE390381845A69900EA8DA8 /* LLBookLaterViewController.h */,
-				8FE390361845A61800EA8DA8 /* LLBookLaterViewController.m */,
+				BC402FAF184D2E8B00240AD2 /* LLBookLaterViewController.h */,
+				BC402FB0184D2E8B00240AD2 /* LLBookLaterViewController.m */,
 				B0F88CAD17CD3BEA005E4B0A /* MainStoryboard.storyboard */,
 				641D5B1F1841532600428697 /* LLWebViewController.h */,
 				641D5B201841532600428697 /* LLWebViewController.m */,
@@ -383,10 +382,10 @@
 		B0F88C9C17CD3BEA005E4B0A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8FA9F2E6184583B60073E0FD /* hospital_4.png */,
-				8FA9F2E7184583B60073E0FD /* hospital_3.png */,
-				8FA9F2E8184583B60073E0FD /* hospital_2.png */,
-				8FA9F2E9184583B60073E0FD /* hospital_1.png */,
+				BC402FB2184D2F4200240AD2 /* hospital_1.png */,
+				BC402FB3184D2F4200240AD2 /* hospital_2.png */,
+				BC402FB4184D2F4200240AD2 /* hospital_3.png */,
+				BC402FB5184D2F4200240AD2 /* hospital_4.png */,
 				BC25779217DC27980087C6DB /* wellmark_bg.png */,
 				BC25779317DC27980087C6DB /* wellmark_bg@2x.png */,
 				B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */,
@@ -484,18 +483,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4F776518459DE600C59AD7 /* settings.png in Resources */,
+				BC402FB7184D2F4200240AD2 /* hospital_2.png in Resources */,
 				BC66AD2017DD47D100C5C1EE /* doctors.png in Resources */,
-				8FA9F2EB184583B60073E0FD /* hospital_3.png in Resources */,
 				B0F88CA017CD3BEA005E4B0A /* InfoPlist.strings in Resources */,
 				B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */,
 				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
+				BC402FB8184D2F4200240AD2 /* hospital_3.png in Resources */,
 				B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */,
-				BC25779517DC27980087C6DB /* wellmark_bg@2x.png in Resources */,
-				8FA9F2EC184583B60073E0FD /* hospital_2.png in Resources */,
-				BC25779517DC27980087C6DB /* wellmark_bg@2x.png in Resources */,
-				8FA9F2EA184583B60073E0FD /* hospital_4.png in Resources */,
 				B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */,
 				B02F182617CD9A79007EA8A7 /* LICENSE in Resources */,
+				BC402FB9184D2F4200240AD2 /* hospital_4.png in Resources */,
 				B06571F717D17FAD005CB364 /* background.png in Resources */,
 				B065721717D3F0D8005CB364 /* Settings.bundle in Resources */,
 				BC25779417DC27980087C6DB /* wellmark_bg.png in Resources */,
@@ -503,9 +500,9 @@
 				BC66AD2217DD480000C5C1EE /* doctor.png in Resources */,
 				B065721F17D41285005CB364 /* wellmark_logo@2x.png in Resources */,
 				B065722417D4398A005CB364 /* dummy_data.json in Resources */,
-				8FA9F2ED184583B60073E0FD /* hospital_1.png in Resources */,
 				B02ABE4B17D6586C005A5F5C /* wellmark_hq_data.json in Resources */,
 				B02ABE4D17D65F22005A5F5C /* dummyUserInfo.plist in Resources */,
+				BC402FB6184D2F4200240AD2 /* hospital_1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,7 +556,6 @@
 				B02F17BC17CD7CDC007EA8A7 /* LLConfirmedViewController.m in Sources */,
 				BC7A565F17DF9C4900863499 /* LLSettingsViewController.m in Sources */,
 				6421895F1843A30D001E4CA2 /* LLMriViewController.m in Sources */,
-				8FE390371845A61800EA8DA8 /* LLBookLaterViewController.m in Sources */,
 				B02F17C117CD90E5007EA8A7 /* LLBookingViewController.m in Sources */,
 				B02F180917CD9A79007EA8A7 /* MBBaseRequest.m in Sources */,
 				B02F180A17CD9A79007EA8A7 /* MBHTTPConnectionOperation.m in Sources */,
@@ -578,6 +574,7 @@
 				B06571FC17D18AD5005CB364 /* LLTreatmentManager.m in Sources */,
 				B065721217D3DA90005CB364 /* LLSelectDoctorViewController.m in Sources */,
 				B065721517D3DAA1005CB364 /* LLSelectInsuranceViewController.m in Sources */,
+				BC402FB1184D2E8B00240AD2 /* LLBookLaterViewController.m in Sources */,
 				B02ABE5017D66647005A5F5C /* LLViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
