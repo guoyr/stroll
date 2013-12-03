@@ -42,6 +42,11 @@
   
 }
 
+-(NSArray *)getInsuranceNames
+{
+    return [NSArray arrayWithObjects:WELLMARK, MEDICARE, NO_INSURANCE, nil];
+}
+
 -(id)init
 {
     self = [super init];
@@ -118,7 +123,7 @@
 
 -(void) sendEmailTo:(NSString *)recipient
 {
-
+    
 }
 
 -(void) completeItem:(NSDictionary *)item completion:(CompletionWithIndexBlock)completion

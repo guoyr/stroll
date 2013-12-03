@@ -12,10 +12,13 @@
 @interface LLViewController ()
 
 @property (nonatomic, strong) UIImageView *backgroundView;
+@property (nonatomic, strong) NSString *insuranceName;
 
 @end
 
 @implementation LLViewController
+
+
 
 - (void)viewDidLoad
 {
@@ -29,13 +32,23 @@
 {
     
     UIImageView *backgroundView;
-
-    if ([[[LLTreatmentManager sharedInstance] insuranceCompany] isEqualToString:WELLMARK]) {
-        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wellmark_bg.png"]];
-
-    } else {
+    
+    NSString *insuranceName = [[LLTreatmentManager sharedInstance] insuranceCompany];
+    if ([insuranceName isEqualToString:WELLMARK]) {
+        UIImageView *bg1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wellmark_bg.png"]];
+        UIImageView *bg2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wellmark_logo.png"]];
+        [bg2 setCenter:CGPointMake(bg1.frame.size.width - bg2.frame.size.width/2, bg2.frame.size.height/2)];
+        backgroundView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        [backgroundView addSubview:bg1];
+        [backgroundView addSubview:bg2];
+        _insuranceName = WELLMARK;
+    } else if ([insuranceName isEqualToString:MEDICARE]) {
+        backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"medicare_bg.png"]];
+        _insuranceName = MEDICARE;
+    }
+    else {
         backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-
+        _insuranceName = NO_INSURANCE;
     }
     
     void (^completion)(BOOL) = ^(BOOL finished) {

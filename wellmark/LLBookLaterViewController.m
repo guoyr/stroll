@@ -45,6 +45,8 @@
     [_emailField setBackgroundColor:[UIColor lightTextColor]];
     [[self view] addSubview:_emailField];
     [_emailField setDelegate:self];
+    [_emailField setAutocorrectionType:UITextAutocorrectionTypeNo];
+    [_emailField setAutocapitalizationType:UITextAutocapitalizationTypeNone];
     
 
     _sendEmailButton = [[UIButton alloc] initWithFrame:CGRectMake(640, 223, 160, 48)];

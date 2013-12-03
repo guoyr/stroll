@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 
-#define WELLMARK @"Wellmark"
+#define WELLMARK @"Wellmark Blue Cross Blue Shield"
+#define MEDICARE @"Medicare"
+#define NO_INSURANCE @"No Insurance"
 
 typedef void (^CompletionBlock) ();
 typedef void (^CompletionWithIndexBlock) (NSUInteger index);
@@ -33,6 +35,7 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 - (NSString *)getEmail;
 - (NSString *)getProviderName;
 - (NSString *)getProviderPhone;
+- (NSArray *)getInsuranceNames;
 -(void) sendEmailTo:(NSString *)recipient;
 - (void) refreshDataOnSuccess:(CompletionBlock) completion;
 

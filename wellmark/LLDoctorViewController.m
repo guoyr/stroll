@@ -120,13 +120,6 @@
     }
 }
 
-#warning testing code
--(void)viewDidAppear:(BOOL)animated
-{
-    
-//    [self performSegueWithIdentifier:@"showTreatment" sender:self];
-}
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -224,39 +217,28 @@
 
 -(void)selectedInsurance:(NSString *)insurance
 {
-    
+    NSLog(@"%@", insurance);
     [_insurancePopoverController dismissPopoverAnimated:YES];
     [_nextButtonItem setEnabled:YES];
     [_selectInsuranceButton setTitle:insurance forState:UIControlStateNormal];
+    [[LLTreatmentManager sharedInstance] setInsuranceCompany:insurance];
+    [self addBackground:YES];
+
     if ([insurance rangeOfString:WELLMARK].location != NSNotFound) {
-        [[LLTreatmentManager sharedInstance] setInsuranceCompany:WELLMARK];
-        [self addBackground:YES];
         [UIView animateWithDuration:0.25 animations:^{
             [_insuranceTextField2 setAlpha:1];
             [_registerButton setAlpha:1];
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:YES];
-
             [_registerButton setEnabled:YES];
-//            [_insuranceTextField1 setEnabled:YES];
-//            [_insuranceTextField1 becomeFirstResponder];
-//            [_insuranceTextField2 becomeFirstResponder];
         }];
-        
-    } else if ([_insuranceTextField2 isEnabled]) {
-        [[LLTreatmentManager sharedInstance] setInsuranceCompany:nil];
-        [self addBackground:YES];
+    } else if ([_insuranceTextField2 isEnabled]) { // if we're switching from insurance to no insurance
         [UIView animateWithDuration:0.25 animations:^{
             [_insuranceTextField2 setAlpha:0];
             [_registerButton setAlpha:0];
         } completion:^(BOOL finished){
             [_insuranceTextField2 setEnabled:NO];
             [_registerButton setEnabled:NO];
-//            [_insuranceTextField1 setEnabled:NO];
-//            [_insuranceTextField1 becomeFirstResponder];
-
-//            [_insuranceTextField2 becomeFirstResponder];
-
         }];
     }
 }

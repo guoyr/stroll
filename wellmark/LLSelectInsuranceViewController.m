@@ -7,6 +7,7 @@
 //
 
 #import "LLSelectInsuranceViewController.h"
+#import "LLTreatmentManager.h"
 
 @interface LLSelectInsuranceViewController ()
 
@@ -19,7 +20,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setInsurances:[NSArray arrayWithObjects:@"Wellmark Blue Cross Blue Shield", @"Medicare", @"No Insurance", nil]];
+    _insurances = [[LLTreatmentManager sharedInstance] getInsuranceNames];
     [[self tableView] setScrollEnabled:NO];
 
 }

@@ -70,6 +70,8 @@
 		BC402FB7184D2F4200240AD2 /* hospital_2.png in Resources */ = {isa = PBXBuildFile; fileRef = BC402FB3184D2F4200240AD2 /* hospital_2.png */; };
 		BC402FB8184D2F4200240AD2 /* hospital_3.png in Resources */ = {isa = PBXBuildFile; fileRef = BC402FB4184D2F4200240AD2 /* hospital_3.png */; };
 		BC402FB9184D2F4200240AD2 /* hospital_4.png in Resources */ = {isa = PBXBuildFile; fileRef = BC402FB5184D2F4200240AD2 /* hospital_4.png */; };
+		BC402FBC184D3C3900240AD2 /* medicare_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = BC402FBA184D3C3900240AD2 /* medicare_bg.png */; };
+		BC402FBD184D3C3900240AD2 /* medicare_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC402FBB184D3C3900240AD2 /* medicare_bg@2x.png */; };
 		BC4F776518459DE600C59AD7 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BC4F776418459DE600C59AD7 /* settings.png */; };
 		BC66AD2017DD47D100C5C1EE /* doctors.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD1F17DD47D100C5C1EE /* doctors.png */; };
 		BC66AD2217DD480000C5C1EE /* doctor.png in Resources */ = {isa = PBXBuildFile; fileRef = BC66AD2117DD480000C5C1EE /* doctor.png */; };
@@ -191,6 +193,8 @@
 		BC402FB3184D2F4200240AD2 /* hospital_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_2.png; sourceTree = "<group>"; };
 		BC402FB4184D2F4200240AD2 /* hospital_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_3.png; sourceTree = "<group>"; };
 		BC402FB5184D2F4200240AD2 /* hospital_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hospital_4.png; sourceTree = "<group>"; };
+		BC402FBA184D3C3900240AD2 /* medicare_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = medicare_bg.png; sourceTree = "<group>"; };
+		BC402FBB184D3C3900240AD2 /* medicare_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medicare_bg@2x.png"; sourceTree = "<group>"; };
 		BC4F776418459DE600C59AD7 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		BC66AD1F17DD47D100C5C1EE /* doctors.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doctors.png; sourceTree = "<group>"; };
 		BC66AD2117DD480000C5C1EE /* doctor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doctor.png; sourceTree = "<group>"; };
@@ -292,11 +296,9 @@
 		B0F88C8917CD3BEA005E4B0A = {
 			isa = PBXGroup;
 			children = (
-				8FE39D3C1801CDEB0028807A /* TestFlightSDK2 */,
 				B0F88C9B17CD3BEA005E4B0A /* wellmark */,
 				B0F88C9417CD3BEA005E4B0A /* Frameworks */,
 				B0F88C9317CD3BEA005E4B0A /* Products */,
-				B02F17C217CD9A79007EA8A7 /* MBRequest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,12 +313,15 @@
 		B0F88C9417CD3BEA005E4B0A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B02F17C217CD9A79007EA8A7 /* MBRequest */,
+				8FE39D3C1801CDEB0028807A /* TestFlightSDK2 */,
+				BCAC85831824B9A0006264F8 /* MS */,
 				8FABFDD91801CFF0001E9EAC /* libz.dylib */,
+				B065720317D2D65E005CB364 /* libz.1.2.5.dylib */,
 				086CBEE3180C8EA600383346 /* WindowsAzureMobileServices.framework */,
 				B065720B17D2D679005CB364 /* SystemConfiguration.framework */,
 				B065720717D2D66F005CB364 /* Security.framework */,
 				B065720517D2D664005CB364 /* MobileCoreServices.framework */,
-				B065720317D2D65E005CB364 /* libz.1.2.5.dylib */,
 				B065720117D2D649005CB364 /* CFNetwork.framework */,
 				B06571FF17D2D644005CB364 /* AudioToolbox.framework */,
 				B06571F817D1817F005CB364 /* QuartzCore.framework */,
@@ -333,7 +338,6 @@
 		B0F88C9B17CD3BEA005E4B0A /* wellmark */ = {
 			isa = PBXGroup;
 			children = (
-				BCAC85831824B9A0006264F8 /* MS */,
 				B02ABE4E17D66646005A5F5C /* LLViewController.h */,
 				B02ABE4F17D66646005A5F5C /* LLViewController.m */,
 				B06571FA17D18AD5005CB364 /* LLTreatmentManager.h */,
@@ -389,6 +393,8 @@
 				BC25779217DC27980087C6DB /* wellmark_bg.png */,
 				BC25779317DC27980087C6DB /* wellmark_bg@2x.png */,
 				B02ABE4C17D65F21005A5F5C /* dummyUserInfo.plist */,
+				BC402FBA184D3C3900240AD2 /* medicare_bg.png */,
+				BC402FBB184D3C3900240AD2 /* medicare_bg@2x.png */,
 				B02ABE4A17D6586C005A5F5C /* wellmark_hq_data.json */,
 				B065722317D4398A005CB364 /* dummy_data.json */,
 				BC66AD2117DD480000C5C1EE /* doctor.png */,
@@ -416,6 +422,7 @@
 				BCAC85851824B9A8006264F8 /* MSClient+CustomId.m */,
 			);
 			name = MS;
+			path = wellmark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,11 +491,13 @@
 			files = (
 				BC4F776518459DE600C59AD7 /* settings.png in Resources */,
 				BC402FB7184D2F4200240AD2 /* hospital_2.png in Resources */,
+				BC402FBC184D3C3900240AD2 /* medicare_bg.png in Resources */,
 				BC66AD2017DD47D100C5C1EE /* doctors.png in Resources */,
 				B0F88CA017CD3BEA005E4B0A /* InfoPlist.strings in Resources */,
 				B0F88CA817CD3BEA005E4B0A /* Default.png in Resources */,
 				B0F88CAA17CD3BEA005E4B0A /* Default@2x.png in Resources */,
 				BC402FB8184D2F4200240AD2 /* hospital_3.png in Resources */,
+				BC402FBD184D3C3900240AD2 /* medicare_bg@2x.png in Resources */,
 				B0F88CAC17CD3BEA005E4B0A /* Default-568h@2x.png in Resources */,
 				B0F88CAF17CD3BEA005E4B0A /* MainStoryboard.storyboard in Resources */,
 				B02F182617CD9A79007EA8A7 /* LICENSE in Resources */,
@@ -680,7 +689,7 @@
 					/Users/aziza/Documents/stroll/TestFlightSDK2,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A554E26A-5E5E-4C72-BE6F-E8CCA72841F4";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -689,7 +698,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -706,7 +715,7 @@
 					/Users/aziza/Documents/stroll/TestFlightSDK2,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "67343925-05DF-45A7-89DB-08431F708B03";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
