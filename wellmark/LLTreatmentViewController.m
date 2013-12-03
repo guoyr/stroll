@@ -31,7 +31,11 @@
     [super viewDidLoad];
     
     _treatmentLabel = [[UILabel alloc] initWithFrame:CGRectMake(352, 92, 320, 48)];
-    [_treatmentLabel setBackgroundColor:TORQUOISE];
+    [_treatmentLabel setBackgroundColor:BLUE];
+    [_treatmentLabel setText:@"Select Treatment Type"];
+    [_treatmentLabel setTextColor:[UIColor whiteColor]];
+    [_treatmentLabel setTextAlignment:NSTextAlignmentCenter];
+    
     [self.view addSubview:_treatmentLabel];
     
 	// Do any additional setup after loading the view.
