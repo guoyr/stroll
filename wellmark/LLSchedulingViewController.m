@@ -15,12 +15,10 @@
 
 @interface LLSchedulingViewController ()
 
-//@property (strong, nonatomic)  UIButton *bookNow;
 @property (strong, nonatomic)  UIButton *bookUpFront;
 @property (strong, nonatomic)  UIButton *bookLater;
 @property (strong, nonatomic)  UILabel *schedulingOptionsLabel;
 
-//- (void)bookNowClicked:(id)sender;
 - (void)bookLaterClicked:(id)sender;
 
 @end

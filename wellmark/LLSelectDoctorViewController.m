@@ -21,7 +21,6 @@
     self = [super initWithStyle:style];
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(defaultsChanged:) name:NSUserDefaultsDidChangeNotification object:nil];
-
     }
     return self;
 }
@@ -57,9 +56,11 @@
 {
     static NSString *CellIdentifier = @"DoctorCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    
     [[cell textLabel] setNumberOfLines:1];
     [[cell textLabel] setLineBreakMode:NSLineBreakByWordWrapping];
     [[cell textLabel] setText:[[self doctors] objectAtIndex:[indexPath row]]];

@@ -15,6 +15,8 @@
 #import "MSClient+CustomId.h"
 #import "LLColors.h"
 #import "LLTreatmentViewController.h"
+#import "LLSettingsViewController.h"
+
 #define CELL_HEIGHT 44
 
 @interface LLDoctorViewController ()
@@ -25,6 +27,7 @@
 @property (strong, nonatomic) UIPopoverController *insurancePopoverController;
 @property (strong, nonatomic) LLSelectDoctorViewController *selectDoctorViewController;
 @property (strong, nonatomic) LLSelectInsuranceViewController *selectInsuranceViewController;
+@property (strong, nonatomic) LLSettingsViewController *settingsVC;
 
 @property (strong, nonatomic) UITextField *insuranceTextField2;
 @property (strong, nonatomic) UITextField *patientTextField;
@@ -32,6 +35,7 @@
 @property (strong, nonatomic) UIButton *selectInsuranceButton;
 @property (strong, nonatomic) UIBarButtonItem *nextButtonItem;
 @property (strong, nonatomic) UIButton *registerButton;
+@property (strong, nonatomic) UIButton *settingsButton;
 
 -(void)nextButtonClicked:(id)sender;
 -(void)selectDoctorButtonClicked:(id)sender;
@@ -42,6 +46,14 @@
 
 @implementation LLDoctorViewController
 
+-(LLSettingsViewController *)settingsVC
+{
+    if (!_settingsVC) {
+        _settingsVC = [[LLSettingsViewController alloc] init];
+        
+    }
+    return _settingsVC;
+}
 
 - (void)viewDidLoad
 {
@@ -75,8 +87,12 @@
     [[self view] addSubview:_registerButton];
     [_registerButton setBackgroundColor:TORQUOISE];
     
+    _settingsButton = [[UIButton alloc] initWithFrame:CGRectMake(128, 568, 48, 48)];
+    [_settingsButton setImage:[UIImage imageNamed:@"settings.png"] forState:UIControlStateNormal];
+    [self.view addSubview:_settingsButton];
+    
     [_selectInsuranceButton addTarget:self action:@selector(selectInsuranceButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-
+    [_settingsButton addTarget:self action:@selector(settingsButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [_selectDoctorButton addTarget:self action:@selector(selectDoctorButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [_registerButton addTarget:self action:@selector(registerButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -126,6 +142,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)settingsButtonClicked:(id)sender
+{
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:self.settingsVC];
+    [nc.navigationBar setTranslucent:NO];
+    [self.navigationController presentViewController:nc animated:YES completion:^{
+        ;
+    }];
+    
+}
+
 -(void)selectDoctorButtonClicked:(id)sender
 {
     [self tappedView:sender];
@@ -144,10 +170,11 @@
 
 -(void)nextButtonClicked:(id)sender
 {
-    
+    [self showLoadingScreen];
     [[LLTreatmentManager sharedInstance].client loginUsername:self.patientTextField.text
                               withPassword:self.insuranceTextField2.text
                                 completion:^(MSUser *user, NSError *error) {
+                                    [self hideLoadingScreen];
                                     if (error) {
                                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login failed" message:error.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                                         [alert show];
@@ -217,12 +244,11 @@
 
 -(void)selectedInsurance:(NSString *)insurance
 {
-    NSLog(@"%@", insurance);
     [_insurancePopoverController dismissPopoverAnimated:YES];
     [_nextButtonItem setEnabled:YES];
     [_selectInsuranceButton setTitle:insurance forState:UIControlStateNormal];
     [[LLTreatmentManager sharedInstance] setInsuranceCompany:insurance];
-    [self addBackground:YES];
+    [self addBackgroundAnimated:YES];
 
     if ([insurance rangeOfString:WELLMARK].location != NSNotFound) {
         [UIView animateWithDuration:0.25 animations:^{
@@ -261,9 +287,15 @@
     [_selectDoctorButton setTitle:@"Select Doctor" forState:UIControlStateNormal];
     [_selectInsuranceButton setTitle:@"Select Insurance Type" forState:UIControlStateNormal];
     [[self navigationItem] setHidesBackButton:YES animated:NO];
-
+    [[LLTreatmentManager sharedInstance] setInsuranceCompany:NO_INSURANCE];
+    [self addBackgroundAnimated:NO];
+    if ([_insuranceTextField2 isEnabled]) {
+        [_insuranceTextField2 setAlpha:0];
+        [_registerButton setAlpha:0];
+        [_insuranceTextField2 setEnabled:NO];
+        [_registerButton setEnabled:NO];
+    }
     [[LLTreatmentManager sharedInstance].client logout];
-
 }
 
 @end

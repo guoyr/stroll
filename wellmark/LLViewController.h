@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LLViewController : UIViewController
--(void)addBackground:(BOOL)animated;
-
+-(void)addBackgroundAnimated:(BOOL)animated;
+-(void)showLoadingScreen;
+-(void)hideLoadingScreen;
 @end

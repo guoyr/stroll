@@ -13,7 +13,8 @@
 
 @property (nonatomic, strong) UIImageView *backgroundView;
 @property (nonatomic, strong) NSString *insuranceName;
-
+@property (nonatomic, strong) UIActivityIndicatorView *acv;
+@property (nonatomic, strong) UIView *overlay;
 @end
 
 @implementation LLViewController
@@ -23,17 +24,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self addBackground:NO];
+    [self addBackgroundAnimated:NO];
 
 	// Do any additional setup after loading the view.
 }
 
--(void)addBackground:(BOOL)animated
+-(void)addBackgroundAnimated:(BOOL)animated
 {
     
     UIImageView *backgroundView;
     
     NSString *insuranceName = [[LLTreatmentManager sharedInstance] insuranceCompany];
+    
+    if ([insuranceName isEqualToString:_insuranceName]) {
+        return;
+    }
     if ([insuranceName isEqualToString:WELLMARK]) {
         UIImageView *bg1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wellmark_bg.png"]];
         UIImageView *bg2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wellmark_logo.png"]];
@@ -73,6 +78,32 @@
         [[self view] addSubview:backgroundView];
         [[self view] sendSubviewToBack:backgroundView];
         completion(YES);
+    }
+}
+
+-(void)showLoadingScreen
+{
+    if (!_overlay) {
+        _acv = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        _overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        [_acv setCenter:_overlay.center];
+        [_overlay setBackgroundColor:[UIColor blackColor]];
+        [_overlay setAlpha:0.8];
+    }
+    
+    if (![_overlay superview]) {
+        [self.view addSubview:_overlay];
+        [self.view addSubview:_acv];
+        [_acv startAnimating];
+    }
+}
+
+-(void)hideLoadingScreen
+{
+    if ([_overlay superview]) {
+        [_overlay removeFromSuperview];
+        [_acv stopAnimating];
+        [_acv removeFromSuperview];
     }
     
 }

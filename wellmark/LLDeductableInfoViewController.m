@@ -73,7 +73,7 @@
                                                 withApplicationKey:@"VWHKZcntaIYDRsbZWEowEyvKiLfTWi91"];
     MSTable *deductibleStatusTable = [newClient getTable:@"patientsdata"];
     //_memberID = @"1035369";
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"memberID == %@",_memberID];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"memberID == %@",[NSString stringWithFormat:@"%@:%@",_memberID, _memberID]];
     [deductibleStatusTable readWhere:predicate completion:^(NSArray *items, NSInteger totalCount, NSError *error) {
         NSDictionary *dict = [items lastObject];
         _deductiblevalue = [[dict objectForKey:@"Deductable"] intValue];

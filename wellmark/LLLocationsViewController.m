@@ -156,11 +156,11 @@
         NSLog(@"%@",url);
         
         _jsonRequest = [[MBJSONRequest alloc] init];
-        _mask = [[UIView alloc] initWithFrame:[[self view] frame]];
-        [_mask setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.6]];
+//        _mask = [[UIView alloc] initWithFrame:[[self view] frame]];
+//        [_mask setBackgroundColor:[UIColor colorWithWhite:0.0 alpha:0.6]];
         _activityView = [[UIActivityIndicatorView alloc]  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [_activityView setCenter: CGPointMake(_scrollView.frame.size.width/2,_scrollView.frame.size.height/2)];
-        [[self view] addSubview:_mask];
+//        [[self view] addSubview:_mask];
         [[self view] addSubview:_activityView];
         [_activityView startAnimating];
         [_jsonRequest performJSONRequest:[NSURLRequest requestWithURL:url] completionHandler:^(id responseJSON, NSError *error) {
@@ -170,7 +170,7 @@
                 _providers = [responseJSON objectForKey:@"Providers"];
                 [_activityView stopAnimating];
                 [_activityView removeFromSuperview];
-                [_mask removeFromSuperview];
+//                [_mask removeFromSuperview];
                 [self parseProviders];
                 [self showProviders];
             }

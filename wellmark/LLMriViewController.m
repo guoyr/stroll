@@ -48,11 +48,7 @@
     [_treatmentTableView setBackgroundColor:[UIColor colorWithWhite:0.9 alpha:0.4]];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"TreatmentCell";

@@ -33,6 +33,7 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 
 + (LLTreatmentManager*)sharedInstance;
 - (NSString *)getEmail;
+-(NSString *)getEmailContent;
 - (NSString *)getProviderName;
 - (NSString *)getProviderPhone;
 - (NSArray *)getInsuranceNames;
