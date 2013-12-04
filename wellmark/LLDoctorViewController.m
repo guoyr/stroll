@@ -7,7 +7,6 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import <Parse/Parse.h>
 
 #import "LLDoctorViewController.h"
 #import "LLTreatmentViewController.h"

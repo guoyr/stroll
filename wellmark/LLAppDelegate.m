@@ -7,7 +7,6 @@
 //
 
 #import "LLAppDelegate.h"
-#import <Parse/Parse.h>
 #import "TestFlight.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 #import "LLDoctorViewController.h"
@@ -20,9 +19,6 @@
 
     //[TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
     [TestFlight takeOff:@"3aa250b7-9551-47ab-a2a3-b5eab7ad21ef"];
-    [Parse setApplicationId:@"A2dxJpqSX4cCaSkWWbLw4FXk1Wi328L6TnsbGBU3"
-                  clientKey:@"7yIszpNNJ9SKrhJbpCxEtIBOsHtKbUTLLvrgDhiF"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     if (![[NSUserDefaults standardUserDefaults] objectForKey:@"Doctors"]) {
         [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithObjects:@"Dr. Tim Peterson", @"Dr. Sameer Sonalkar", @"Dr. Jordan Epstein", @"Dr. Matthew Mauer", @"Dr. Andrew Moxon", nil] forKey:@"Doctors"];

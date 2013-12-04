@@ -5,7 +5,6 @@
 //  Created by Robert Guo on 8/28/13.
 //  Copyright (c) 2013 Stroll. All rights reserved.
 //
-#import <Parse/Parse.h>
 #import <QuartzCore/QuartzCore.h>
 #import "LLBookLaterViewController.h"
 #import "LLTreatmentManager.h"
