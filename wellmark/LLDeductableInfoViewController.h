@@ -10,7 +10,7 @@
 #import "LLViewController.h"
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 
-@interface LLDeductableInfoViewController : LLViewController
+@interface LLDeductableInfoViewController : UIViewController
 
 @property (nonatomic, strong) NSString *memberID;
 

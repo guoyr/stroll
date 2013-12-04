@@ -46,14 +46,6 @@
 
 @implementation LLDoctorViewController
 
--(LLSettingsViewController *)settingsVC
-{
-    if (!_settingsVC) {
-        _settingsVC = [[LLSettingsViewController alloc] init];
-        
-    }
-    return _settingsVC;
-}
 
 - (void)viewDidLoad
 {
@@ -170,6 +162,9 @@
 
 -(void)nextButtonClicked:(id)sender
 {
+    if ([_insuranceTextField2 isFirstResponder]) {
+        [_insuranceTextField2 resignFirstResponder];
+    }
     [self showLoadingScreen];
     [[LLTreatmentManager sharedInstance].client loginUsername:self.patientTextField.text
                               withPassword:self.insuranceTextField2.text
@@ -223,6 +218,9 @@
     if (textField == _patientTextField) {
         [[LLTreatmentManager sharedInstance] setPatientName:[textField text]];
     }
+    if (textField == _insuranceTextField2) {
+        [[LLTreatmentManager sharedInstance] setMemberID:textField.text];
+    }
     [textField setBackgroundColor:[UIColor lightTextColor]];
     return YES;
 }
@@ -231,12 +229,6 @@
 {
     if (textField == _patientTextField) {
         [_selectInsuranceButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-    } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length]) {
-        
-    } else if (textField == _insuranceTextField2) {
-        [[LLTreatmentManager sharedInstance] setMemberID:textField.text];
-    } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
-//        [self performSegueWithIdentifier:@"showTreatment" sender:self];
     }
 }
 

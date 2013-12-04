@@ -88,7 +88,7 @@
         _overlay = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         [_acv setCenter:_overlay.center];
         [_overlay setBackgroundColor:[UIColor blackColor]];
-        [_overlay setAlpha:0.8];
+        [_overlay setAlpha:0.6];
     }
     
     if (![_overlay superview]) {

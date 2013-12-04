@@ -10,12 +10,15 @@
 #import <CoreLocation/CoreLocation.h>
 #import "LLLocationView.h"
 #import "LLViewController.h"
+#import "LLDeductableInfoViewController.h"
+#import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 
 @interface LLLocationsViewController : LLViewController <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) NSString *treatment;
-
-
+@property (nonatomic, strong) NSString *memberID;
+@property (nonatomic, strong)   NSArray *items;
+@property (nonatomic, strong)   MSClient *client;
 
 
 @end

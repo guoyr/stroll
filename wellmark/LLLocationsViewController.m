@@ -30,6 +30,12 @@
 #define USE_DUMMY_DATA 1
 #define USE_REAL_DATA 0
 
+#define HEIGHT 30
+#define WIDTH 80
+#define VMARGIN 30
+#define START 644
+#define LENGTH 312
+
 #define PROVIDER_NAME_KEY @"AltName"
 
 @interface LLLocationsViewController ()
@@ -45,6 +51,20 @@
 @property (strong, nonatomic) UIScrollView *scrollView;
 @property (strong, nonatomic) UILabel *treatmentLabel;
 @property (strong, nonatomic) UILabel *priceRangeLabel;
+
+@property (nonatomic, strong) UIView *background;
+@property (nonatomic, strong) UIView *deductable;
+@property (nonatomic, strong) UIView *currentAmount;
+@property (nonatomic, strong) UIView *maxOutOfPocket;
+
+@property (nonatomic, strong) UILabel *deductableLabel;
+@property (nonatomic, strong) UILabel *currentAmountLabel;
+@property (nonatomic, strong) UILabel *maxOutOfPocketLabel;
+
+@property (nonatomic, strong)   MSTable *table;
+
+@property (nonatomic) int deductibleValue;
+@property (nonatomic) int currentAmountValue;
 
 @end
 
@@ -74,6 +94,40 @@
 //    [_logoView setCenter:CGPointMake(900, 45)];
 //    [[self view] addSubview:_logoView];
     
+    _background = [[UIView alloc] initWithFrame:CGRectMake(START, VMARGIN, LENGTH, HEIGHT)];
+    [_background setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.3]];
+    [[_background layer] setCornerRadius:5];
+    
+    _deductable = [[UIView alloc] initWithFrame:CGRectMake(START,VMARGIN,LENGTH*0.2, HEIGHT)];
+    [_deductable setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.7]];
+    [[_deductable layer] setCornerRadius:5];
+
+    _currentAmount = [[UIView alloc] initWithFrame:CGRectMake(START, VMARGIN, 3, HEIGHT)];
+    [_currentAmount setBackgroundColor:[UIColor redColor]];
+    
+    
+    _maxOutOfPocket = [[UIView alloc] initWithFrame:CGRectMake(START, VMARGIN, LENGTH, HEIGHT)];
+    [_maxOutOfPocket setBackgroundColor:[UIColor colorWithWhite:1 alpha:0.4]];
+    [[_maxOutOfPocket layer] setCornerRadius:5];
+    
+    
+    _deductableLabel = [[UILabel alloc] initWithFrame:CGRectMake(START, 0, LENGTH*0.6, HEIGHT )];
+    [_deductableLabel setFont:[UIFont systemFontOfSize:12]];
+    
+    _currentAmountLabel = [[UILabel alloc] initWithFrame:CGRectMake(START, VMARGIN+HEIGHT, LENGTH*0.3, HEIGHT)];
+    [_currentAmountLabel setFont:[UIFont systemFontOfSize:12]];
+    
+    _maxOutOfPocketLabel = [[UILabel alloc] initWithFrame:CGRectMake(START+LENGTH*0.5, 0,LENGTH*0.5, HEIGHT)];
+    [_maxOutOfPocketLabel setFont:[UIFont systemFontOfSize:12]];
+
+    [[self view] addSubview:_background];
+    [[self view] addSubview:_deductable];
+    [[self view] addSubview:_currentAmount];
+    [[self view] addSubview:_maxOutOfPocket];
+    [[self view] addSubview:_deductableLabel];
+    [[self view] addSubview:_currentAmountLabel];
+    [[self view] addSubview:_maxOutOfPocketLabel];
+
     int locationIndex = [[NSUserDefaults standardUserDefaults] integerForKey:@"location_preference"];
     _curLocation = locationIndex;
     switch (locationIndex) {
@@ -95,6 +149,49 @@
     }
     
     
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    MSClient *newClient = [MSClient clientWithApplicationURLString:@"https://strollmobile.azure-mobile.net/"
+                                                withApplicationKey:@"VWHKZcntaIYDRsbZWEowEyvKiLfTWi91"];
+    MSTable *deductibleStatusTable = [newClient getTable:@"patientsdata"];
+    _memberID = @"1598898";
+//    _memberID = [LLTreatmentManager sharedInstance].memberID;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"memberID == %@",[NSString stringWithFormat:@"%@:%@",_memberID, _memberID]];
+    [deductibleStatusTable readWhere:predicate completion:^(NSArray *items, NSInteger totalCount, NSError *error) {
+        NSDictionary *dict = [items lastObject];
+        _deductibleValue = [[dict objectForKey:@"Deductable"] intValue];
+        _currentAmountValue = [[dict objectForKey:@"Coverage"] intValue];
+        NSLog(@"%d,%d,%d",_deductibleValue, _currentAmountValue, 5*_deductibleValue);
+        double percentage = 0.0;
+        if(_deductibleValue!=0) percentage=((double)_currentAmountValue)/((double)(_deductibleValue*5));
+        else percentage = 0;
+        if(percentage <1 & percentage>0) {
+            [_currentAmount setFrame:CGRectMake(START+LENGTH*percentage, VMARGIN, 3, HEIGHT)];
+            [_currentAmountLabel setFrame:CGRectMake(START+LENGTH*percentage*0.6, VMARGIN+HEIGHT, LENGTH*0.5, HEIGHT)];
+            [_currentAmountLabel setText:[NSString stringWithFormat:@"Current Amount: $%d", _currentAmountValue]];
+        }
+        else if(percentage>=1){
+            [_currentAmount setFrame:CGRectMake(START+LENGTH*percentage, VMARGIN, 0, 0)];
+            [_currentAmountLabel setFrame:CGRectMake(START, VMARGIN+HEIGHT, LENGTH, HEIGHT)];
+            [_currentAmountLabel setText:@"Current amount has reached max_out_of_pocket!"];
+            [_currentAmountLabel setTextAlignment:NSTextAlignmentCenter];
+            [_currentAmountLabel setFont:[UIFont systemFontOfSize:12]];
+        }
+        
+        
+        
+        [_deductableLabel setText:[NSString stringWithFormat:@"Deductable: $%d", _deductibleValue]];
+        [_maxOutOfPocketLabel setText:[NSString stringWithFormat:@"Max out of Pocket: $%d", _deductibleValue*5]];
+        
+        
+    }];
+    
+    
+    
+
     
 }
 
