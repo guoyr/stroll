@@ -157,8 +157,8 @@
     MSClient *newClient = [MSClient clientWithApplicationURLString:@"https://strollmobile.azure-mobile.net/"
                                                 withApplicationKey:@"VWHKZcntaIYDRsbZWEowEyvKiLfTWi91"];
     MSTable *deductibleStatusTable = [newClient getTable:@"patientsdata"];
-    _memberID = @"1598898";
-//    _memberID = [LLTreatmentManager sharedInstance].memberID;
+//    _memberID = @"1598898";
+    _memberID = [LLTreatmentManager sharedInstance].memberID;
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"memberID == %@",[NSString stringWithFormat:@"%@:%@",_memberID, _memberID]];
     [deductibleStatusTable readWhere:predicate completion:^(NSArray *items, NSInteger totalCount, NSError *error) {
         NSDictionary *dict = [items lastObject];
