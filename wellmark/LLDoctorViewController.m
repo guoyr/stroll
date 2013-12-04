@@ -7,7 +7,6 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
-#import <Parse/Parse.h>
 
 #import "LLDoctorViewController.h"
 #import "LLTreatmentViewController.h"
@@ -236,7 +235,7 @@
     } else if (textField == _insuranceTextField2) {
         [[LLTreatmentManager sharedInstance] setMemberID:textField.text];
     } else if ([[_patientTextField text] length] && [[_insuranceTextField2 text] length] && [[_insuranceTextField2 text] length]) {
-//        [self performSegueWithIdentifier:@"showTreatment" sender:self];
+//        [self performSegueWithIdentifier:@"showTreatment"     sender:self];
     }
 }
 
